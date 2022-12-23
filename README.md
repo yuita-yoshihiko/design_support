@@ -70,3 +70,6 @@ README〜ER図作成：12/10 〆切
 
 ## ■画面遷移図
 [画面遷移図](https://www.figma.com/file/GddVj9pDkApNER6qXSPhmY/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=eQoRBW5SHxuSMXco-0)
+
+## ■ER図
+[ER図]([![Image from Gyazo](https://i.gyazo.com/e9b2d82c48a2e6d8a0db4cd46107bea6.png)](https://gyazo.com/e9b2d82c48a2e6d8a0db4cd46107bea6))
