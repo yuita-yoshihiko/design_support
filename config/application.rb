@@ -33,5 +33,16 @@ module DesignSupport
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # rails gコマンドのセッティング
+    config.generators do |g|
+      g.helper false 
+      g.test_framework :rspec, #rspecを使用
+        fixtures: false,
+        routing_specs: false,
+        view_specs: false,
+        helper_specs: false,
+        request_specs: false
+    end
   end
 end
