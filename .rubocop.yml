@@ -1,0 +1,81 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "bin/*"
+    - "node_modules/**/*"
+    - "Gemfile"
+
+  NewCops: enable
+
+# 1行あたりの文字数をチェック
+Layout/LineLength:
+  Max: 130
+  Exclude:
+    - "Rakefile"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+
+# ブロック内の行数をチェック
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'Gemfile'
+    - 'config/**/*'
+    - 'spec/**/*_spec.rb'
+    - "spec/**/*"
+
+# 変数への代入、メソッド呼び出し、条件文が基準値を超えないかチェック
+Metrics/AbcSize:
+  Max: 50
+
+# メソッドの中身の複雑さのチェック
+Metrics/PerceivedComplexity:
+  Max: 8
+
+# 循環的複雑度のチェック
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# メソッドの行数チェック
+Metrics/MethodLength:
+  Max: 30
+
+# ネストが深すぎないかをチェック
+Metrics/BlockNesting:
+  Max: 5
+
+# クラスの行数をチェック（無効）
+Metrics/ClassLength:
+  Enabled: false
+
+# 空メソッドの場合に、1行のスタイルにしない
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+# クラス内にクラスが定義されていないかチェック（無効）
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# クラスやモジュール定義前に、それらの説明書きがあるかをチェック（無効）
+Style/Documentation:
+  Enabled: false
+
+# ％i（）構文を使用していないシンボルで構成される配列リテラルをチェック（無効）
+Style/SymbolArray:
+  Enabled: false
+
+# 文字列に値が代入されて変わっていないかチェック（無効）
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# メソッドパラメータ名の最小文字数を設定
+Naming/MethodParameterName:
+  MinNameLength: 1
