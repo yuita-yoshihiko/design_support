@@ -1,0 +1,2 @@
+class DesignTip < ApplicationRecord
+end
