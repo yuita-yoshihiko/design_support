@@ -1,9 +1,7 @@
-<header class="py-6">
-  <div class="container mx-auto flex justify-center">
-    <div class="space-x-20">
-      <%= link_to '初心者はこれ', for_beginner_path %>
-      <%= link_to 'トップページへ', root_path %>
-      <%= link_to 'ログイン', '#' %>
-    </div>
-  </div>
+<header class="flex justify-between items-center py-4 md:py-8 mb-8 md:mb-12 xl:mb-16">
+  <a href="/" class="inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo">誰でもデザイン</a>
+  <nav class="hidden lg:flex gap-12">
+    <a href="for_beginner" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">初心者はこちら</a>
+    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">ログイン</a>
+  </nav>
 </header>
