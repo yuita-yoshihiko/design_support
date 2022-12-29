@@ -1,38 +1,77 @@
-<div>
-  <h1 class="font-bold text-4xl">初心者はまずこれ</h1>
-  <br>
-  <br>
-  <br>
-  <h2>知る</h2>
-    <p>
-      何事も基本が大切。まずは基本を学んでいきましょう。<br>
-      デザインの基本の中でも4つの基本原則というものが非常に役に立ちます。<br>
-      以下のサイトを参考にイメージをつかんでみましょう。<br>
-      <br>
-      書籍で学ぶのもおすすめです。<br>
-      以下の書籍を参考にしてみてください。<br>
-      <br>
-      <br>
-      <br>
-    </p>
-  <h2>見る</h2>
-    <p>
-      綺麗なデザインを見て学んでみましょう。<br>
-      素敵なデザインを集めてみました。<br>
-      なぜ綺麗に見えるのか？<br>
-      意識して見てみることでデザインのヒントが見つかるはずです。<br>
-      <br>
-      <br>
-      <br>
-    </p>
-  <h2>実践する</h2>
-    <p>
-      学んだことは実践してみましょう。<br>
-      以下の書籍が非常に役に立ちます。<br>
-      丁寧に解説されておりおしゃれなサイトが作れるのて最初の一冊に最適です。<br>
-      学んでいてとても楽しくなりますよ。<br>
-      <br>
-      <br>
-      <br>
-    </p>
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="md:h-80 flex flex-col sm:flex-row bg-gray-200 rounded-lg overflow-hidden">
+      <!-- image - start -->
+      <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
+        <img src="assets/pg.jpeg" loading="lazy" alt="Photo by Andras Vas" class="w-full h-full object-cover object-center" />
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+        <h2 class="text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">知る</h2>
+
+        <p class="max-w-md text-gray-600 mb-8">
+        何事も基本が大切。まずは基本を学んでいきましょう。<br>
+        デザインの基本の中でも4つの基本原則は非常に役立ちます。<br>
+        以下のサイトを参考にイメージを掴んでみましょう。<br>
+        <div class="text-indigo-500 hover:text-indigo-700">
+          <%= link_to("【センス不要】デザイン基本4原則で綺麗なレイアウトを実現", "https://321web.link/design-4principles/") %>
+        </div>
+        <br>
+        書籍で学ぶのもおすすめです。<br>
+        以下の書籍を参考にしてみてください。<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="md:h-80 flex flex-col sm:flex-row bg-gray-200 rounded-lg overflow-hidden">
+      <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+        <h2 class="text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">見る</h2>
+
+        <p class="max-w-md text-gray-600 mb-8">
+        デザインを見て学んでみましょう。<br>
+        素敵なデザインが見られるサイトを集めてみました。<br>
+        なぜ綺麗に見えるのか？<br>
+        意識して見ることでデザインのヒントが見つかるはずです。<br>
+        <div class="text-indigo-500 hover:text-indigo-700">
+          <%= link_to("bookma!", "https://bookma.org/") %>
+        </div>
+        </p>
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
+        <img src="assets/pa.jpeg" loading="lazy" alt="Photo by Andras Vas" class="w-full h-full object-cover object-center" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="md:h-80 flex flex-col sm:flex-row bg-gray-200 rounded-lg overflow-hidden">
+      <!-- image - start -->
+      <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
+        <img src="assets/pp.jpeg" loading="lazy" alt="Photo by Andras Vas" class="w-full h-full object-cover object-center" />
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+        <h2 class="text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">実践する</h2>
+
+        <p class="max-w-md text-gray-600 mb-8">
+        学んだことは実践してみましょう。<br>
+        以下の書籍が非常に役に立ちます。<br>
+        丁寧に解説をもとにおしゃれなサイトが作れるので<br>
+        最初の一冊に最適です。<br>
+        学んでいてとても楽しくなりますよ。<br>
+        <div class="text-indigo-500 hover:text-indigo-700">
+          <%= link_to("1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892") %>
+        </div>
+        <br>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
