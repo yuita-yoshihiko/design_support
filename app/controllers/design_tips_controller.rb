@@ -1,5 +1,6 @@
 class DesignTipsController < ApplicationController
   before_action :set_design_tip, only: %i[ show edit update destroy ]
+  before_action :set_q, only: [:index, :search]
 
   # GET /design_tips or /design_tips.json
   def index
@@ -57,14 +58,23 @@ class DesignTipsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_design_tip
-      @design_tip = DesignTip.find(params[:id])
-    end
+  def search
+    @results = @q.result
+  end
 
-    # Only allow a list of trusted parameters through.
-    def design_tip_params
-      params.require(:design_tip).permit(:title, :guidance, :url)
-    end
+  private
+
+  def set_q
+    @q = DesignTip.ransack(params[:q])
+  end
+
+    # Use callbacks to share common setup or constraints between actions.
+  def set_design_tip
+    @design_tip = DesignTip.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def design_tip_params
+    params.require(:design_tip).permit(:title, :guidance, :url)
+  end
 end
