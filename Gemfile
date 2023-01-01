@@ -47,6 +47,8 @@ gem "bootsnap", require: false
 
 gem "ransack"
 
+gem 'rails_material_design_icons'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
