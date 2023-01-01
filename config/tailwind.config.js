@@ -11,6 +11,15 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        elegant: 'fantasy',
+      },
+    },
+  },
+  theme: {
+    extend: {
+      colors: {
+        cream: '#f5f5f2',
+        brown: '#9a8756',
       },
     },
   },
