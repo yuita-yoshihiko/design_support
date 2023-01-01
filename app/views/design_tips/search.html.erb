@@ -1,5 +1,4 @@
-<h1>検索結果</h1>
-<%= link_to 'Top', design_tips_path %>
+<div class="text-2xl text-center">検索結果: <%= @results.count %>件</div>
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
@@ -17,27 +16,6 @@
           </div>
         </div>
       <% end %>
-
-      <!-- article - start -->
-      <div class="flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
-        <a href="#" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
-          <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Martin Sanchez" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
-        </a>
-
-        <div class="flex flex-col gap-2 p-4 lg:p-6">
-
-          <h2 class="text-gray-800 text-xl font-bold">
-            <a href="#" class="hover:text-indigo-500 active:text-indigo-600 transition duration-100">8 High performance Notebooks</a>
-          </h2>
-
-          <p class="text-gray-500">This is a section of some simple filler text, also known as placeholder text.</p>
-
-          <div>
-            <a href="#" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
-          </div>
-        </div>
-      </div>
-      <!-- article - end -->
     </div>
   </div>
 </div>
