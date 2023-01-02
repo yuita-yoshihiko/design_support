@@ -1,6 +1,7 @@
 class DesignTipsController < ApplicationController
   before_action :set_design_tip, only: %i[ show edit update destroy ]
   before_action :set_q, only: [:index, :search]
+  skip_before_action :require_login
 
   # GET /design_tips or /design_tips.json
   def index
