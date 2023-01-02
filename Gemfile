@@ -49,6 +49,8 @@ gem "ransack"
 
 gem 'rails_material_design_icons'
 
+gem 'sorcery'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
