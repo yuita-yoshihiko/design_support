@@ -84,4 +84,3 @@ production:
   database: design_support_production
   username: design_support
   password: <%= ENV["DESIGN_SUPPORT_DATABASE_PASSWORD"] %>
-  
