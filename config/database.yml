@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: design_support_production
+  username: design_support
+  password: <%= ENV["DESIGN_SUPPORT_DATABASE_PASSWORD"] %>
+  
