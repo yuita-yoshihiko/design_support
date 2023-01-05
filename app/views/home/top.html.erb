@@ -1,9 +1,7 @@
-<!-- hero - start -->
 <div class="pb-6 sm:pb-8 lg:pb-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
 
     <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
-      <!-- content - start -->
       <div class="xl:w-7/12 flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
         <h1 class="text-black-800 text-4xl sm:text-5xl md:text-1xl font-bold mb-8 md:mb-12">
           ここから始まるデザインがある。
@@ -21,29 +19,22 @@
           </div>
         </div>
       </div>
-      <!-- content - end -->
 
-      <!-- image - start -->
-      <div class="xl:w-5/12 h-48 lg:h-auto bg-gray-100 rounded-lg">
+      <div class="xl:w-5/12 h-48 lg:h-auto rounded-lg">
         <%= image_tag "woman.jpg" %>
       </div>
-      <!-- image - end -->
     </section>
   </div>
 </div>
-<!-- hero - end -->
 
-<!-- features - start -->
 <div class="bg-white py-6 sm:py-8 lg:py-48">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <!-- text - start -->
     <div class="mb-10 md:mb-16">
       <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">情報ジャンル</h2>
     </div>
-    <!-- text - end -->
 
     <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 md:my-18">
-      <!-- feature - start -->
+
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -56,9 +47,7 @@
           <p class="text-gray-500 mb-2">color</p>
         </div>
       </div>
-      <!-- feature - end -->
 
-      <!-- feature - start -->
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -71,9 +60,7 @@
           <p class="text-gray-500 mb-2">font</p>
         </div>
       </div>
-      <!-- feature - end -->
 
-      <!-- feature - start -->
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -86,9 +73,7 @@
           <p class="text-gray-500 mb-2">UX・UI</p>
         </div>
       </div>
-      <!-- feature - end -->
 
-      <!-- feature - start -->
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -101,9 +86,7 @@
           <p class="text-gray-500 mb-2">technique</p>
         </div>
       </div>
-      <!-- feature - end -->
 
-      <!-- feature - start -->
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -116,9 +99,7 @@
           <p class="text-gray-500 mb-2">template</p>
         </div>
       </div>
-      <!-- feature - end -->
 
-      <!-- feature - start -->
       <div class="flex gap-4 md:gap-6">
         <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-indigo-500 text-white rounded-lg md:rounded-xl shadow-lg">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -131,22 +112,17 @@
           <p class="text-gray-500 mb-2">example</p>
         </div>
       </div>
-      <!-- feature - end -->
     </div>
   </div>
 </div>
-<!-- features - end -->
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <!-- text - start -->
     <div class="mb-10 md:mb-16">
       <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">よく見られている情報</h2>
     </div>
-    <!-- text - end -->
 
     <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
-      <!-- question - start -->
       <% @design_tips.each do |design_tip| %>
         <div class="flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
           <div class="flex flex-col gap-2 p-4 lg:p-6">
