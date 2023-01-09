@@ -51,6 +51,8 @@ gem 'rails_material_design_icons'
 
 gem 'sorcery'
 
+gem 'rails-i18n'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

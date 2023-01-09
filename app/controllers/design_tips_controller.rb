@@ -7,7 +7,7 @@ class DesignTipsController < ApplicationController
     @design_tip = DesignTip.new(design_tip_params)
 
     if @design_tip.save
-      redirect_to admin_design_tip_url(@design_tip), notice: 'Design tip was successfully created.'
+      redirect_to admin_design_tip_url(@design_tip), success: t('defaults.message.created', item: DesignTip.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -15,7 +15,7 @@ class DesignTipsController < ApplicationController
 
   def update
     if @design_tip.update(design_tip_params)
-      redirect_to admin_design_tip_path(@design_tip), notice: 'Design tip was successfully updated.'
+      redirect_to admin_design_tip_path(@design_tip), success: t('defaults.message.updated', item: DesignTip.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
