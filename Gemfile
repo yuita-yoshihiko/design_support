@@ -83,4 +83,7 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+
+  # pry-byebugの導入
+  gem 'pry-byebug'
 end
