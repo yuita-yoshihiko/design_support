@@ -24,7 +24,7 @@ class Admin::DesignTipsController < Admin::BaseController
     @design_tip = DesignTip.new(design_tip_params)
 
     if @design_tip.save
-      redirect_to admin_design_tip_url(@design_tip), notice: 'Design tip was successfully created.'
+      redirect_to admin_design_tip_url(@design_tip), success: t('defaults.message.created', item: DesignTip.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # PATCH/PUT /design_tips/1 or /design_tips/1.json
   def update
     if @design_tip.update(design_tip_params)
-      redirect_to admin_design_tip_path(@design_tip), notice: 'Design tip was successfully updated.'
+      redirect_to admin_design_tip_path(@design_tip), success: t('defaults.message.updated', item: DesignTip.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # DELETE /design_tips/1 or /design_tips/1.json
   def destroy
     @design_tip.destroy!
-    redirect_to admin_design_tips_url, notice: 'Design tip was successfully destroyed.', status: :see_other
+    redirect_to admin_design_tips_url, success: t('defaults.message.deleted', item: DesignTip.model_name.human, status: :see_other)
   end
 
   def search

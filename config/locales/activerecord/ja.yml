@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      design_tip: '情報'
+    attributes:
+      user:
+        name: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        role: '権限'
+      design_tip:
+        title: 'タイトル'
+        guidance: '説明文'
+        url: 'url'
+
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
+        
