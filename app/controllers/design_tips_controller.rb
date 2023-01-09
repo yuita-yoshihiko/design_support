@@ -1,13 +1,13 @@
 class DesignTipsController < ApplicationController
-  before_action :set_design_tip, only: %i[ show edit update destroy ]
-  before_action :set_q, only: [:index, :search]
+  before_action :set_design_tip, only: %i[update]
+  before_action :set_q, only: [:search]
   skip_before_action :require_login
 
   def create
     @design_tip = DesignTip.new(design_tip_params)
 
     if @design_tip.save
-      redirect_to admin_design_tip_url(@design_tip), notice: "Design tip was successfully created."
+      redirect_to admin_design_tip_url(@design_tip), notice: 'Design tip was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -15,7 +15,7 @@ class DesignTipsController < ApplicationController
 
   def update
     if @design_tip.update(design_tip_params)
-      redirect_to admin_design_tip_path(@design_tip), notice: "Design tip was successfully updated."
+      redirect_to admin_design_tip_path(@design_tip), notice: 'Design tip was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class DesignTipsController < ApplicationController
     @q = DesignTip.ransack(params[:q])
   end
 
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_design_tip
     @design_tip = DesignTip.find(params[:id])
   end

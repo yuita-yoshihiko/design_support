@@ -1,5 +1,5 @@
 class Admin::DesignTipsController < Admin::BaseController
-  before_action :set_design_tip, only: %i[ show edit update destroy ]
+  before_action :set_design_tip, only: %i[show edit update destroy]
 
   # GET /design_tips or /design_tips.json
   def index
@@ -24,7 +24,7 @@ class Admin::DesignTipsController < Admin::BaseController
     @design_tip = DesignTip.new(design_tip_params)
 
     if @design_tip.save
-      redirect_to admin_design_tip_url(@design_tip), notice: "Design tip was successfully created."
+      redirect_to admin_design_tip_url(@design_tip), notice: 'Design tip was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # PATCH/PUT /design_tips/1 or /design_tips/1.json
   def update
     if @design_tip.update(design_tip_params)
-      redirect_to admin_design_tip_path(@design_tip), notice: "Design tip was successfully updated."
+      redirect_to admin_design_tip_path(@design_tip), notice: 'Design tip was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # DELETE /design_tips/1 or /design_tips/1.json
   def destroy
     @design_tip.destroy!
-    redirect_to admin_design_tips_url, notice: "Design tip was successfully destroyed.", status: :see_other
+    redirect_to admin_design_tips_url, notice: 'Design tip was successfully destroyed.', status: :see_other
   end
 
   def search
@@ -55,7 +55,7 @@ class Admin::DesignTipsController < Admin::BaseController
     @q = DesignTip.ransack(params[:q])
   end
 
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_design_tip
     @design_tip = DesignTip.find(params[:id])
   end
