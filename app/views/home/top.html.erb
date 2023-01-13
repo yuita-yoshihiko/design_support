@@ -10,7 +10,7 @@
         <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。</p>
 
         <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-          <%= link_to 'ユーザー登録', '#', class: 'btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg font-serif' %>
+          <%= link_to 'ユーザー登録', new_user_path, class: 'btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg font-serif' %>
             <%= search_form_for @q, url: search_design_tips_path do |f| %>
               <%= f.search_field :title_cont, class: "w-64 h-12 outline-green-800 rounded-lg font-serif", placeholder: 'フリーワード検索' %>
               <button class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg font-serif">検索</button>
