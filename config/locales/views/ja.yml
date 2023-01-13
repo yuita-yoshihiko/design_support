@@ -28,7 +28,7 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
-      to_register_page: '登録ページへ'
+      to_register_page: 'ユーザー登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
     create:
       success: 'ログインしました'
@@ -92,4 +92,3 @@ ja:
         title: '情報編集'
       show:
         title: '情報詳細'
-        
