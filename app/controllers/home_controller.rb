@@ -9,6 +9,9 @@ class HomeController < ApplicationController
   def for_beginner
   end
 
+  def growing
+  end
+
   def privacy_policy
   end
 
