@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'for_beginner' => 'home#for_beginner'
   get 'privacy_policy', to: 'home#privacy_policy'
+  get 'terms_of_use', to: 'home#terms_of_use'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
