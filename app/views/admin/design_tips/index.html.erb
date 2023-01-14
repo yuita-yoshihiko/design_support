@@ -4,8 +4,8 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Design tips</h1>
-    <%= link_to 'New design tip', new_admin_design_tip_url, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
+    <%= link_to t('admin.design_tips.new.title'), new_admin_design_tip_url, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
   </div>
 
   <div id="design_tips" class="min-w-full">

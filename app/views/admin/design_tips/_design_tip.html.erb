@@ -1,22 +1,22 @@
-<div id="<%= dom_id design_tip %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id design_tip %>", class='font-serif'>
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Title</strong>
     <%= design_tip.title %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Guidance:</strong>
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Guidance</strong>
     <%= design_tip.guidance %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Url:</strong>
-    <%= design_tip.url %>
-  </p>
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Url</strong>
+    <%= design_tip.url.truncate(24) %>
+  </div>
 
   <% if action_name != "show" %>
-    <%= link_to 'Show this design tip', admin_design_tip_path(design_tip), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this design tip', edit_admin_design_tip_path(design_tip), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to t('admin.design_tips.show.title'), admin_design_tip_path(design_tip), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    <%= link_to t('admin.design_tips.edit.title'), edit_admin_design_tip_path(design_tip), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
     <hr class="mt-6">
   <% end %>
 </div>
