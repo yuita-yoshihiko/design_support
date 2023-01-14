@@ -39,6 +39,7 @@ ja:
     index:
       title: '情報一覧'
       no_result: '情報がありません。'
+      to_index: '情報一覧へ'
     favorites:
       title: 'お気に入り一覧'
       no_result: 'お気に入り中の情報がありません。'
