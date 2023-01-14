@@ -1,30 +1,36 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t '.title' %></h1>
-      <%= form_with model: @user, local: true do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
+<div class="flex justify-center font-serif">
+  <div class="bg-white rounded-lg lg:w-5/12 md:6/12 w-10/12 shadow-3xl mb-16">
+    <div class="row flex justify-center">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h1 class="font-bold text-center text-2xl mt-12"><%= t '.title' %></h1>
+          <div class="p-12 md:p-18">
+            <%= form_with model: @user, local: true do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+              <div class="form-group flex flex-col mb-4 md:mb-6">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'w-64 h-12 outline-green-800 rounded-lg' %>
+              </div>
+              <div class="form-group flex flex-col mb-4 md:mb-6">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'w-64 h-12 outline-green-800 rounded-lg' %>
+              </div>
+              <div class="form-group flex flex-col mb-4 md:mb-6">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'w-64 h-12 outline-green-800 rounded-lg' %>
+              </div>
+              <div class="form-group flex flex-col mb-4 md:mb-6">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, class: 'w-64 h-12 outline-green-800 rounded-lg' %>
+              </div>
+              <div class="flex items-center justify-center">
+                <%= f.submit '登録', class: 'btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg' %>
+              </div>
+            <% end %>
+          </div>
+        <div class='text-center mb-10'>
+          <%= link_to (t '.to_login_page'), login_path, class: 'text-gray-400 hover:text-green-900 active:text-green-900' %>
         </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <%= f.submit '登録', class: 'btn btn-primary' %>
-      <% end %>
-      <div class='text-center'>
-        <%= link_to (t '.to_login_page'), login_path %>
       </div>
     </div>
   </div>
