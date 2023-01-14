@@ -8,4 +8,8 @@ class HomeController < ApplicationController
 
   def for_beginner
   end
+
+  def privacy_policy
+  end
+
 end
