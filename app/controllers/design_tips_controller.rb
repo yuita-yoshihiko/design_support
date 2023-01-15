@@ -3,6 +3,15 @@ class DesignTipsController < ApplicationController
   before_action :set_q, only: [:search]
   skip_before_action :require_login
 
+  def index
+    @search = DesignTip.ransack(params[:q])
+    @design_tips = @search.result(distinct: true)
+  end
+
+  def show
+    @design_tip = DesignTip.find(params[:id])
+  end
+
   def create
     @design_tip = DesignTip.new(design_tip_params)
 
@@ -23,6 +32,10 @@ class DesignTipsController < ApplicationController
 
   def search
     @results = @q.result
+  end
+
+  def likes
+    @like_design_tips = current_user.like_design_tips.includes(:user).order(created_at: :desc)
   end
 
   private

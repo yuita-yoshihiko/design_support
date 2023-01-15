@@ -9,13 +9,15 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
+  resources :users, only: %i[new create destroy]
   resources :design_tips do
     collection do
       get 'search'
+      get 'likes'
     end
   end
 
-  resources :users, only: %i[new create destroy]
+  resources :likes, only: %i[create destroy]
 
   namespace :admin do
     root to: 'dashboards#index'
