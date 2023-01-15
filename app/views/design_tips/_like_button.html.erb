@@ -1,0 +1,5 @@
+<% if current_user.like?(design_tip) %>
+  <%= render 'unlike', { design_tip: design_tip } %>
+<% else %>
+  <%= render 'like', { design_tip: design_tip } %>
+<% end %>
