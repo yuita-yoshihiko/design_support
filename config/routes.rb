@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[new create destroy]
-  resources :design_tips do
+  resources :design_tips, only: %i[index show] do
     collection do
       get 'search'
       get 'likes'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
+    resources :design_tips
     resources :users, only: %i[index edit update show destroy]
-    resources :design_tips, only: %i[new create index edit update show destroy]
   end
 end

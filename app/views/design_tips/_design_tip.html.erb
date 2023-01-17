@@ -9,6 +9,11 @@
           <%= render 'like_button', design_tip: design_tip %>
         <% end %>
         <p class="card-text"><%= design_tip.guidance %></p>
+        <div class="my-5">
+          <% design_tip.categories.each do|category| %>
+            <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary'%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
