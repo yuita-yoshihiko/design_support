@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_15_001548) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_103721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "design_tip_categories", force: :cascade do |t|
+    t.bigint "design_tip_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_design_tip_categories_on_category_id"
+    t.index ["design_tip_id", "category_id"], name: "index_design_tip_categories_on_design_tip_id_and_category_id", unique: true
+    t.index ["design_tip_id"], name: "index_design_tip_categories_on_design_tip_id"
+  end
 
   create_table "design_tips", force: :cascade do |t|
     t.string "title", null: false
@@ -43,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_001548) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "design_tip_categories", "categories"
+  add_foreign_key "design_tip_categories", "design_tips"
   add_foreign_key "likes", "design_tips"
   add_foreign_key "likes", "users"
 end

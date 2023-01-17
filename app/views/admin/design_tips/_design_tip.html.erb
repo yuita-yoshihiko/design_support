@@ -14,6 +14,12 @@
     <%= design_tip.url.truncate(24) %>
   </div>
 
+  <div class="my-5">
+    <% design_tip.categories.each do|category| %>
+      <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary'%>
+    <% end %>
+  </div>
+
   <% if action_name != "show" %>
     <%= link_to t('admin.design_tips.show.title'), admin_design_tip_path(design_tip), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
     <%= link_to t('admin.design_tips.edit.title'), edit_admin_design_tip_path(design_tip), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
