@@ -53,6 +53,8 @@ gem 'sorcery'
 
 gem 'rails-i18n'
 
+gem 'meta-tags'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
