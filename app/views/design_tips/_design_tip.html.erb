@@ -1,20 +1,19 @@
-<div class="col-sm-12 col-lg-4 mb-3">
-  <div id="design_tip-id-<%= design_tip.id %>">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">
-          <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
-        </h4>
-        <% if logged_in? %>
-          <%= render 'like_button', design_tip: design_tip %>
-        <% end %>
-        <p class="card-text"><%= design_tip.guidance %></p>
-        <div class="my-5">
-          <% design_tip.categories.each do|category| %>
-            <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary'%>
-          <% end %>
-        </div>
+<div id="design_tip-id-<%= design_tip.id %>">
+  <div class="bg-white flex flex-col md:flex-row items-center border rounded-lg h-full ">
+    <div class="flex flex-col gap-2 p-4 lg:p-6">
+      <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
+        <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
       </div>
+      <p class="card-text"><%= design_tip.guidance %></p>
+      <div class="my-5">
+        <% design_tip.categories.each do|category| %>
+          <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary'%>
+        <% end %>
+      </div>
+      <% if logged_in? %>
+        <%= render 'like_button', design_tip: design_tip %>
+      <% end %>
     </div>
   </div>
 </div>
+
