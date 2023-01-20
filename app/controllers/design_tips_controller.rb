@@ -1,5 +1,5 @@
 class DesignTipsController < ApplicationController
-  before_action :set_q, only: [:search]
+  before_action :set_q
   skip_before_action :require_login
 
   def index
