@@ -50,10 +50,15 @@ gem "ransack"
 gem 'rails_material_design_icons'
 
 gem 'sorcery'
+gem 'config'
 
 gem 'rails-i18n'
 
 gem 'meta-tags'
+
+gem 'dotenv-rails'
+
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
