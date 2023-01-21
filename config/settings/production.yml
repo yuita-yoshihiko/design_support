@@ -1,0 +1,2 @@
+sorcery:
+  twitter_callback_url: 'https://www.anyone-design.com/oauth/callback?provider=twitter'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'home#top'
   get 'for_beginner' => 'home#for_beginner'
   get 'growing', to: 'home#growing'
@@ -8,6 +9,10 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+
+  post "oauth/callback", to: "oauths#callback"
+  get "oauth/callback", to: "oauths#callback"
+  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
 
   resources :users, only: %i[new create destroy]
   resources :design_tips, only: %i[index show] do
