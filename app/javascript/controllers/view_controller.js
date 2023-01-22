@@ -17,3 +17,13 @@ document.addEventListener("turbo:load", function () {
     document.getElementsByClassName('panel')[index].classList.add('is-show');
   };
 }, false);
+
+$(function() {
+  $('#nav li').on("click mouseover", function(e) {
+      $('ul', this).stop().slideDown('fast');
+  })
+
+  .mouseout(function(e) {
+      $('ul', this).stop().slideUp('fast');
+  });
+});
