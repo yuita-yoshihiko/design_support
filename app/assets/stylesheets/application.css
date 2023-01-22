@@ -15,27 +15,9 @@
  *= require materialdesignicons
  */
 
-
-.tab-group{
-  display: flex;
-  justify-content: center;
-}
-.tab{
-  flex-grow: 1;
-  padding:5px;
-  list-style:none;
-  text-align:center;
-  cursor:pointer;
-}
-.panel{
-  display:none;
-}
 .tab.is-active{
-  color: #713f12;
+  color: #9a8756;
   transition: all 0.2s ease-out;
-}
-.panel.is-show{
-  display:block;
 }
 
 #nav {
