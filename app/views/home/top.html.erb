@@ -24,17 +24,13 @@
 
 <div class="bg-gray pt-36 pb-12 lg:py-48">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <div class="tab-panel">
-      <!--タブ-->
-      <ul class="tab-group">
-        <li class="tab tab-A is-active text-gray-500 hover:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6">情報ジャンル</li>
-        <li class="tab tab-B text-gray-500 hover:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6">よく見られている情報</li>
-      </ul>
-      
-      <!--タブを切り替えて表示するコンテンツ-->
-      <div class="panel-group">
-        <div class="panel tab-A is-show">
-          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20">
+    <div data-controller="view">
+      <div class="flex justify-around">
+        <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
+        <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">よく見られている情報</a>
+      </div>
+        <div data-view-target="content" >
+          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 ">
 
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
@@ -116,7 +112,7 @@
           </div>
         </div>
 
-        <div class="panel tab-B">
+        <div class="hidden" data-view-target="content">
           <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20">
             <% @design_tips.each do |design_tip| %>
               <div class="bg-white flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
@@ -130,7 +126,6 @@
             <% end %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
