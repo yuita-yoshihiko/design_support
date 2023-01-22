@@ -3,15 +3,14 @@
   <nav class="text-sm md:text-lg lg:flex gap-12 font-semibold items-center">
     <%= link_to '初心者はこちら', for_beginner_path, class: 'btn bg-green-800 hover:bg-green-700 text-white rounded-lg' %>
     <%= link_to '脱・初心者に向けて', growing_path, class: 'btn bg-green-800 hover:bg-green-700 text-white rounded-lg' %>
-    <ul id="nav">
-      <li class="text-gray-500">メニュー
-        <ul>
-          <li><%= link_to 'お気に入り情報', likes_design_tips_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900' %></li>
-          <li><%= link_to '情報リスト', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900' %></li>
-          <li><%= link_to '情報メモ', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900' %></li>
-          <li><%= link_to 'ログアウト', logout_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900', data: { turbo_method: :delete } %></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="dropdown dropdown-hover dropdown-end">
+      <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg">メニュー</label>
+      <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-48 font-normal text-sm">
+        <li><%= link_to 'お気に入り情報', likes_design_tips_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+        <li><%= link_to '情報リスト', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+        <li><%= link_to '情報メモ', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+        <li><%= link_to 'ログアウト', logout_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white', data: { turbo_method: :delete } %></li>
+      </ul>
+    </div>
   </nav>
 </header>
