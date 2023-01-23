@@ -4,13 +4,13 @@ class Admin::DesignTipsController < Admin::BaseController
   # GET /design_tips or /design_tips.json
   def index
     @design_tips = DesignTip.all
-    @category_list=Category.all
+    @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
   # GET /design_tips/1 or /design_tips/1.json
   def show
     @design_tip = DesignTip.find(params[:id])
-    @design_tip_categories = @design_tip.categories
+    @tag_list = @design_tip.tag_counts_on(:tags)
   end
 
   # GET /design_tips/new
@@ -21,15 +21,12 @@ class Admin::DesignTipsController < Admin::BaseController
   # GET /design_tips/1/edit
   def edit
     @design_tip = DesignTip.find(params[:id])
-    @category_list = @design_tip.categories.pluck(:name).join(',')
   end
 
   # POST /design_tips or /design_tips.json
   def create
     @design_tip = DesignTip.new(design_tip_params)
-    category_list = params[:design_tip][:category].split(',')
     if @design_tip.save
-      @design_tip.save_category(category_list)
       redirect_to admin_design_tip_url(@design_tip), success: t('defaults.message.created', item: DesignTip.model_name.human)
     else
       render :new, status: :unprocessable_entity
@@ -39,9 +36,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # PATCH/PUT /design_tips/1 or /design_tips/1.json
   def update
     @design_tip = DesignTip.find(params[:id])
-    category_list = params[:design_tip][:category].split(',')
     if @design_tip.update(design_tip_params)
-      @design_tip.save_category(category_list)
       redirect_to admin_design_tip_path(@design_tip), success: t('defaults.message.updated', item: DesignTip.model_name.human)
     else
       render :edit, status: :unprocessable_entity
@@ -71,6 +66,6 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # Only allow a list of trusted parameters through.
   def design_tip_params
-    params.require(:design_tip).permit(:title, :guidance, :url)
+    params.require(:design_tip).permit(:title, :guidance, :url, :tag_list)
   end
 end
