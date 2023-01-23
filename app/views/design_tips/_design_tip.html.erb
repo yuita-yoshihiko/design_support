@@ -6,9 +6,7 @@
       </div>
       <p class="card-text"><%= design_tip.guidance %></p>
       <div class="my-5">
-        <% design_tip.categories.each do|category| %>
-          <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary'%>
-        <% end %>
+        <%= render 'tag_list', tag_list: design_tip.tag_list %>
       </div>
       <% if logged_in? %>
         <%= render 'like_button', design_tip: design_tip %>

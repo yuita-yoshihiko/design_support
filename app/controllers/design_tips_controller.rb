@@ -5,11 +5,12 @@ class DesignTipsController < ApplicationController
   def index
     @search = DesignTip.ransack(params[:q])
     @design_tips = @search.result(distinct: true)
-    @category_list=Category.all
+    @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
   def search
     @results = @q.result
+    @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
   def likes
@@ -25,10 +26,5 @@ class DesignTipsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_design_tip
     @design_tip = DesignTip.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def design_tip_params
-    params.require(:design_tip).permit(:title, :guidance, :url)
   end
 end
