@@ -58,6 +58,8 @@ gem 'meta-tags'
 
 gem 'dotenv-rails'
 
+gem 'acts-as-taggable-on', '~> 9.0'
+
 
 
 # Use Sass to process CSS
