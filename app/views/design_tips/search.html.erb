@@ -8,13 +8,13 @@
       <% @results.each do |design_tip| %>
         <div class="bg-white flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
           <div class="flex flex-col gap-2 p-4 lg:p-6">
-
             <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
               <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
             </div>
-
             <p class="text-gray-500"><%= design_tip.guidance %></p>
-
+            <div class="my-5">
+              <%= render 'tag_list', tag_list: design_tip.tag_list %>
+            </div>
           </div>
         </div>
       <% end %>
