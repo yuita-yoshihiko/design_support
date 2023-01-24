@@ -66,6 +66,6 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # Only allow a list of trusted parameters through.
   def design_tip_params
-    params.require(:design_tip).permit(:title, :guidance, :url, :tag_list)
+    params.require(:design_tip).permit(:title, :guidance, :url, :medium, :tag_list)
   end
 end
