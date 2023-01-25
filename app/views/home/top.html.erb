@@ -121,6 +121,12 @@
                     <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                   <p class="text-gray-500"><%= design_tip.guidance %></p>
+                  <div class="my-5">
+                    <%= render 'design_tips/tag_list', tag_list: design_tip.tag_list %>
+                  </div>
+                  <% if logged_in? %>
+                    <%= render 'design_tips/like_button', design_tip: design_tip %>
+                  <% end %>
                 </div>
               </div>
             <% end %>
