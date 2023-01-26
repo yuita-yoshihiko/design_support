@@ -6,25 +6,27 @@ class OauthsController < ApplicationController
   end
 
   def callback
-    provider = auth_params[:provider]
-    if auth_params[:denied].present?
-      redirect_to root_path, notice: "#{provider.titleize}でログインしました"
-      return
-    end
-    create_user_from(provider) unless (@user = login_from(provider))
-    redirect_to root_path, notice: "#{provider.titleize}でログインしました"
-  end
+    provider = params[:provider]
+    if @user = login_from(provider)
+      redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+    else
+      begin
+        @user = create_from(provider)
 
+        reset_session
+        auto_login(@user)
+        redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+      rescue
+        redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
+      end
+    end
+  end
+  
   private
 
   def auth_params
     params.permit(:code, :provider)
   end
 
-  def create_user_from(provider)
-    @user = create_from(provider)
-    reset_session
-    auto_login(@user)
-  end
 end
 
