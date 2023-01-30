@@ -1,4 +1,4 @@
-<%= form_with model: @design_tip, url: admin_design_tips_path, class: "contents" do |form| %>
+<%= form_with model: @design_tip, url: admin_design_tip_path, class: "contents" do |form| %>
   <% if design_tip.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(design_tip.errors.count, "error") %> prohibited this design_tip from being saved:</h2>
