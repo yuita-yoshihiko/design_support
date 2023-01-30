@@ -20,12 +20,12 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # GET /design_tips/1/edit
   def edit
-    @design_tip = DesignTip.find(params[:id])
+    @design_tip = current_user.design_tips.find(params[:id])
   end
 
   # POST /design_tips or /design_tips.json
   def create
-    @design_tip = DesignTip.new(design_tip_params)
+    @design_tip = current_user.design_tips.build(design_tip_params)
     if @design_tip.save
       redirect_to admin_design_tip_url(@design_tip), success: t('defaults.message.created', item: DesignTip.model_name.human)
     else
@@ -35,7 +35,7 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # PATCH/PUT /design_tips/1 or /design_tips/1.json
   def update
-    @design_tip = DesignTip.find(params[:id])
+    @design_tip = current_user.design_tips.find(params[:id])
     if @design_tip.update(design_tip_params)
       redirect_to admin_design_tip_path(@design_tip), success: t('defaults.message.updated', item: DesignTip.model_name.human)
     else
