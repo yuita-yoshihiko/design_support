@@ -109,6 +109,50 @@
                 <p class="text-gray-500 mb-2">example</p>
               </div>
             </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <svg style="width:24px;height:24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account-edit</title><path d="M21.7,13.35L20.7,14.35L18.65,12.3L19.65,11.3C19.86,11.09 20.21,11.09 20.42,11.3L21.7,12.58C21.91,12.79 21.91,13.14 21.7,13.35M12,18.94L18.06,12.88L20.11,14.93L14.06,21H12V18.94M12,14C7.58,14 4,15.79 4,18V20H10V18.11L14,14.11C13.34,14.03 12.67,14 12,14M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4Z" /></svg>
+              </div>
+
+              <div>
+                <%= link_to '基礎知識',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'基礎知識'}}, { class: "text-lg md:text-xl font-serif font-semibold mb-2" } %>
+                <p class="text-gray-500 mb-2">basic knowledge</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <svg style="width:24px;height:24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>content-copy</title><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg>
+              </div>
+
+              <div>
+                <%= link_to 'フリー素材',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フリー素材'}}, { class: "text-lg md:text-xl font-serif font-semibold mb-2" } %>
+                <p class="text-gray-500 mb-2">material</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <svg style="width:24px;height:24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>view-compact</title><path d="M3,19H9V12H3V19M10,19H22V12H10V19M3,5V11H22V5H3Z" /></svg>
+              </div>
+
+              <div>
+                <%= link_to 'レイアウト',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'レイアウト'}}, { class: "text-lg md:text-xl font-serif font-semibold mb-2" } %>
+                <p class="text-gray-500 mb-2">layout</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown rounded-lg md:rounded-xl shadow-lg">
+                <svg style="width:24px;height:24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>space-invaders</title><path d="M7,6H5V4H7V6M17,6H19V4H17V6M23,12V18H21V14H19V18H17V16H7V18H5V14H3V18H1V12H3V10H5V8H7V6H9V8H15V6H17V8H19V10H21V12H23M15,10V12H17V10H15M7,12H9V10H7V12M11,18H7V20H11V18M17,18H13V20H17V18Z" /></svg>
+              </div>
+
+              <div>
+                <%= link_to 'エンジニア向け',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'エンジニア向け'}}, { class: "text-lg md:text-xl font-serif font-semibold mb-2" } %>
+                <p class="text-gray-500 mb-2">for engineers</p>
+              </div>
+            </div>
           </div>
         </div>
 
