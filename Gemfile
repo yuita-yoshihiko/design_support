@@ -62,6 +62,8 @@ gem 'acts-as-taggable-on', '~> 9.0'
 
 gem 'google-apis-analyticsreporting_v4', '~> 0.13.0'
 
+gem 'whenever', require: false
+
 
 
 # Use Sass to process CSS
