@@ -2,22 +2,22 @@
 <div class='flex justify-center pt-10'>
   <%= render 'home/search_form' %>
 </div>
-<div class="bg-gray py-6 sm:py-8 lg:py-12">
-  <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
-      <% @results.each do |design_tip| %>
-        <div class="bg-white flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
-          <div class="flex flex-col gap-2 p-4 lg:p-6">
-            <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
-              <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
-            </div>
-            <p class="text-gray-500"><%= design_tip.guidance %></p>
-            <div class="my-5">
-              <%= render 'tag_list', tag_list: design_tip.tag_list %>
-            </div>
-          </div>
+
+<div class="container pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+  <% @results.each do |design_tip| %>
+    <div class="bg-white flex md:flex-row rounded-lg shadow-lg overflow-hidden">
+      <div class="flex flex-col  place-content-between gap-2 p-4 lg:p-6">
+        <div class="text-brown text-xl font-serif hover:text-yellow-900">
+          <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
         </div>
-      <% end %>
+        <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
+        <div class="my-5 flex place-content-between">
+          <%= render 'tag_list', tag_list: design_tip.tag_list %>
+          <% if logged_in? %>
+            <%= render 'like_button', design_tip: design_tip %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
