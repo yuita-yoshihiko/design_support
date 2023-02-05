@@ -1,18 +1,10 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-3">
-
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-
-        <% if @like_design_tips.present? %>
-          <%= render @like_design_tips %>
-        <% else %>
-          <p>お気に入り中の情報がありません</p>
-        <% end%>
-
-      </div>
-    </div>
-  </div>
+<div class="container pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+  <% if @like_design_tips.present? %>
+    <%= render @like_design_tips %>
+  <% else %>
+    <p>お気に入り中の情報がありません</p>
+  <% end%>
 </div>
+
 
