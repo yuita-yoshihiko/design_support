@@ -190,6 +190,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    material_icons (4.0.0)
+      railties (>= 3.2)
     matrix (0.4.2)
     memoist (0.16.2)
     meta-tags (2.18.0)
@@ -405,6 +407,7 @@ DEPENDENCIES
   google-apis-analyticsreporting_v4 (~> 0.13.0)
   importmap-rails
   jbuilder
+  material_icons
   meta-tags
   pg (~> 1.1)
   pry-byebug

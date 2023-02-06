@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require materialdesignicons
+ *= require material_icons
  */
 
 .tab.is-active{

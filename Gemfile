@@ -64,6 +64,8 @@ gem 'google-apis-analyticsreporting_v4', '~> 0.13.0'
 
 gem 'whenever', require: false
 
+gem 'material_icons'
+
 
 
 # Use Sass to process CSS
