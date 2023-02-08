@@ -14,6 +14,7 @@
   <body>
     <main class="container mx-auto">
       <%= link_to '誰でもデザイン', root_path, class: 'font-serif pt-10 inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo' %>
+      <%= render 'admin/shared/flash_message' %>
       <%= yield %>
       <%= render 'admin/shared/footer' %>
     </main>
