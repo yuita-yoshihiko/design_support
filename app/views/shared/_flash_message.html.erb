@@ -1,0 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <% if message_type == 'success' %>
+    <div class="flex justify-center alert alert-success text-white bg-green-600 w-1/4 shadow-xl"><%= message %></div>
+  <% elsif message_type == 'error' %>
+    <div class="alert alert-error m-8 shadow-xl"><%= message %></div>
+  <% end %>
+<% end %>

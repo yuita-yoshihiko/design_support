@@ -6,7 +6,6 @@
         <h1 class="font-bold text-center text-2xl mt-12"><%= t '.title' %></h1>
           <div class="p-12 md:p-18">
             <%= form_with model: @user, local: true do |f| %>
-              <%= render 'shared/error_messages', object: f.object %>
               <div class="form-group flex flex-col mb-4 md:mb-6">
                 <%= f.label :name %>
                 <%= f.text_field :name, class: 'w-64 h-12 outline-green-800 rounded-lg' %>
