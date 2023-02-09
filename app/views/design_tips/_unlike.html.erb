@@ -1,7 +1,8 @@
 <%= turbo_frame_tag dom_id(design_tip, :like_design_tip) do %>
   <div class='container'>
-    <%= link_to like_path(current_user.likes.find_by(design_tip_id: design_tip.id)), id: "js-like-button-for-design_tip-#{design_tip.id}", data: { turbo_method: :delete } do %>
-      <svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
-    <% end %>
+    <%= link_to like_path(current_user.likes.find_by(design_tip_id: design_tip.id)), id: "js-like-button-for-design_tip-#{design_tip.id}",class: 'flex items-center text-xs', data: { turbo_method: :delete } do %>
+      <span class="material-icons text-rose-500">favorite</span>
+      <div class="text-gray-500">お気に入り</div>
+    <% end %>  
   </div>
 <% end %>
