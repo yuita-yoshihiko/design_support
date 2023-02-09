@@ -3,6 +3,12 @@
   <%= render 'home/search_form' %>
 </div>
 
+<% if params[:q].present? && params[:q][:tags_name_cont].present? %>
+  <div class='text-gray-500 text-2xl lg:text-3xl font-serif pt-10'>
+    <%= params[:q][:tags_name_cont] %>の情報一覧
+  </div>
+<% end %>
+
 <div data-controller="view">
   <div class="flex justify-around pt-20">
     <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-2xl lg:text-3xl font-serif mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">Webサイト</a>
