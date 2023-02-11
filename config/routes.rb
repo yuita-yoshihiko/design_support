@@ -32,4 +32,7 @@ Rails.application.routes.draw do
     resources :design_tips
     resources :users, only: %i[index edit update show destroy]
   end
+
+  get "/404", to: "errors#not_found", as: "not_found"
+  get "/500", to: "errors#internal_server_error", as: "internal_server_error"
 end
