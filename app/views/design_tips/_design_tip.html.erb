@@ -9,6 +9,8 @@
         <%= render 'tag_list', tag_list: design_tip.tag_list %>
         <% if logged_in? %>
           <%= render 'like_button', design_tip: design_tip %>
+        <% else %>
+          <%= render 'design_tips/before_login_like'%>
         <% end %>
       </div>
     </div>
