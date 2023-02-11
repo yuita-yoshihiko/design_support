@@ -38,6 +38,12 @@ module DesignSupport
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # エラー画面の表示
+    config.exceptions_app = self.routes
+    config.action_dispatch.rescue_responses.merge!(
+      'ErrorsController#internal_server_error' => :internal_server_error
+    )
+
     # rails gコマンドのセッティング
     config.generators do |g|
       g.helper false 
