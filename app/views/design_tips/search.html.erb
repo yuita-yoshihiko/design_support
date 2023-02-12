@@ -1,9 +1,20 @@
-<div class="font-serif text-2xl text-center">検索結果: <%= @results.count %>件</div>
-<div class='flex justify-center pt-10'>
+<div class='container mx-auto flex pt-10'>
   <%= render 'home/search_form' %>
 </div>
 
-<div class="container pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+<div class='my-12 shadow bg-zinc-100'>
+<hr>
+<div class="flex container mx-auto" >
+  <% @tag_list.each do|tag| %>
+    <%= link_to tag.name,{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>tag.name}}, { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
+  <% end %>
+</div>
+<hr>
+</div>
+
+<div class="font-serif text-2xl text-center">検索結果: <%= @results.count %>件</div>
+
+<div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
   <% @results.each do |design_tip| %>
     <div class="bg-white flex md:flex-row rounded-lg shadow-lg overflow-hidden">
       <div class="flex flex-col  place-content-between gap-2 p-4 lg:p-6">
