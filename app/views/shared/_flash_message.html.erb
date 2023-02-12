@@ -1,7 +1,7 @@
 <% flash.each do |message_type, message| %>
   <% if message_type == 'success' %>
-    <div class="flex justify-center alert alert-success text-white bg-green-600 w-1/4 shadow-xl"><%= message %></div>
+    <div class="mx-auto justify-center alert alert-success font-serif text-white bg-green-700 rounded-md w-1/4 shadow-lg my-6"><%= message %></div>
   <% elsif message_type == 'error' %>
-    <div class="alert alert-error m-8 shadow-xl"><%= message %></div>
+    <div class="mx-auto justify-center alert alert-error font-serif rounded-md w-1/2 shadow-lg m-8"><%= message %></div>
   <% end %>
 <% end %>

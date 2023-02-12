@@ -1,8 +1,8 @@
 <%= turbo_frame_tag dom_id(design_tip, :like_design_tip) do %>
-  <div class='container text-gray-300 xs'>
-    <%= link_to likes_path(design_tip_id: design_tip.id), id: "js-like-button-for-design_tip-#{design_tip.id}",class: 'flex items-center text-xs', data: { turbo_method: :post } do %>
+  <div class='container'>
+    <%= link_to likes_path(design_tip_id: design_tip.id), id: "js-like-button-for-design_tip-#{design_tip.id}",class: 'flex items-center  text-gray-300 text-xs hover:bg-pink-50 rounded-lg', data: { turbo_method: :post } do %>
       <span class="material-icons">favorite_border</span>
-      <div class='text-gray-200'>お気に入り</div>
+      <div>お気に入り</div>
     <% end %>
   </div>
 <% end %>
