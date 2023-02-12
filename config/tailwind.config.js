@@ -20,6 +20,7 @@ module.exports = {
       colors: {
         cream: '#f5f5f2',
         brown: '#9a8756',
+        blue: '#1DA1F2',
       },
     },
   },
