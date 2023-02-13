@@ -184,14 +184,14 @@
                   <%= image_tag "pg.jpg" %>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">知る</div>
+                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">基本を知る</div>
                   <p class="text-gray-600 mb-8">
-                    何事も基本が大切。まずは基本を学んでいきましょう。<br>
-                    こちらの動画でデザインの基本的な考え方を知ることができます。<br>
-                    そもそもデザインとは何なのか？動画を参考に考えてみましょう。<br>
+                    何事も基本から。<br>
+                    chot.designではデザインの基本的な考え方からHTML・CSSのコーディング、デザインツールの使い方まで<br>
+                    幅広く学ぶことができます。まずはこちらのサービスでwebデザインの基本に触れてみましょう。<br>
                   </p>
-                  <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
-                    <%= link_to "【デザインの基本】そもそもデザインとは？", "https://www.youtube.com/watch?v=d0-20fL652A", target: :_blank, rel: "noopener noreferrer" %>
+                  <div class="text-brown text-xl font-serif hover:text-yellow-900">
+                    <%= link_to "・chot.design", "https://chot.design/", target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                   <br>
                 </div>
@@ -203,15 +203,25 @@
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
               <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">見る</div>
-                  <p class="max-w-md text-gray-600 mb-8">
-                    デザインを見て学んでみましょう。<br>
-                    bookma!は素敵なデザインが集められています。<br>
-                    なぜ綺麗に見えるのか？<br>
-                    意識してデザインのヒントを探してみましょう。<br>
+                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">手を動かす</div>
+                  <p class="text-gray-600 mb-8">
+                    Webデザインに必須のコーディングついて、もう少し具体的に学んでいきましょう。<br>
+                    以下のサービスがとても役に立ちます。<br>
+                    実際に手を動かしながら理解を深めていきましょう。<br>
                   </p>
-                  <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
-                    <%= link_to "bookma!", "https://bookma.org/", target: :_blank, rel: "noopener noreferrer" %>
+                  <div class="flex flex-col font-serif">
+                    <div class='flex items-end'>
+                      <%= link_to "・ドットインストール", "https://dotinstall.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <p class="text-gray-400">  #動画で</p>
+                    </div>
+                    <div class='flex items-end my-2'>
+                      <%= link_to "・サルワカ", "https://saruwakakun.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <p class="text-gray-400">  #テキストで</p>
+                    </div>
+                    <div class='flex items-end'>
+                      <%= link_to "・Progate", "https://prog-8.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <p class="text-gray-400">  #手軽に</p>
+                    </div>
                   </div>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
@@ -228,18 +238,38 @@
                   <%= image_tag "pp.jpg" %>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-800 text-xl md:text-2xl lg:text-4xl font-bold mb-4">実践する</div>
-                  <p class="max-w-md text-gray-600 mb-8">
-                    学んだことは実践してみましょう。<br>
-                    以下の書籍が非常に役に立ちます。<br>
-                    丁寧な解説をもとにおしゃれなサイトが作れるので<br>
-                    最初の一冊に最適です。<br>
+                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">作ってみる</div>
+                  <p class="text-gray-600 mb-8">
+                    学んだことは実践してみましょう。以下の書籍が非常に役に立ちます。<br>
+                    丁寧な解説をもとにおしゃれなサイトが作れるので、最初の一冊に最適です。<br>
                     学んでいてとても楽しくなりますよ。<br>
                   </p>
-                  <div class="text-brown text-xl font-serif font-bold hover:text-yellow-900">
-                    <%= link_to "1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892", target: :_blank, rel: "noopener noreferrer" %>
+                  <div class="text-brown text-xl font-serif hover:text-yellow-900">
+                    <%= link_to "・1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892", target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                   <br>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray py-6 lg:py-20">
+            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+              <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
+                <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
+                  <p class="text-gray-600 mb-8">
+                    今後Webデザインを行う上で、フリー素材やテンプレートなどを利用する際は著作権に注意しましょう。<br>
+                    トラブルを防ぐためにも早めに学んでおくに越したことはありません。<br>
+                    以下のページなどを参考にしっかりと勉強しておきましょう。<br>
+                  </p>
+                  <div class="flex flex-col text-brown text-xl font-serif">
+                    <%= link_to "・WEBデザイナー必見！著作権を侵害しないために注意すべきこと！", "https://japan-design.jp/design/0068/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                    <%= link_to "・無料で自由に使えるは間違い！フリー素材を使うときの注意点を教えます", "https://www.mp-creative.jp/columns/764", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
+                  <%= image_tag "public.jpg" %>
                 </div>
               </div>
             </div>
