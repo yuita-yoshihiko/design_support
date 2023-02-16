@@ -3,7 +3,7 @@
 
     <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
       <div class="xl:w-7/12 flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
-        <h1 class="text-gray-600 text-3xl lg:text-5xl font-serif mb-8 md:mb-12">
+        <h1 class="text-gray-600 text-2xl lg:text-5xl font-serif mb-8 md:mb-12">
           ここから始まるデザインがある。
         </h1>
 
@@ -21,12 +21,12 @@
   </div>
 </div>
 
-<div class="bg-gray pt-36 pb-12 lg:py-48">
+<div class="bg-gray pt-36 pb-12 lg:py-48 mt-2 md:mt-80 lg:mt-2">
   <div class="px-4 md:px-8">
     <div data-controller="view">
       <div class="flex justify-around">
-        <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
-        <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
+        <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
+        <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
       </div>
         <div data-view-target="content" >
           <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 container mx-auto">
@@ -177,20 +177,20 @@
             </div>
           </div>
 
-          <div class="bg-gray py-6 lg:py-20">
+          <div class="bg-gray py-6 sm:py-8 lg:py-12">
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
               <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
-                <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "pg.jpg" %>
+                <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
+                  <%= image_tag "pg.jpg", loading: "lazy", class: "w-full h-full object-cover object-center"%>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">基本を知る</div>
-                  <p class="text-gray-600 mb-8">
+                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">基本を知る</div>
+                  <p class="text-gray-600 text-xs lg:text-base mb-8">
                     何事も基本から。<br>
                     chot.designではデザインの基本的な考え方からHTML・CSSのコーディング、デザインツールの使い方まで<br>
                     幅広く学ぶことができます。まずはこちらのサービスでwebデザインの基本に触れてみましょう。<br>
                   </p>
-                  <div class="text-brown text-xl font-serif hover:text-yellow-900">
+                  <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
                     <%= link_to "・chot.design", "https://chot.design/", target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                   <br>
@@ -203,29 +203,29 @@
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
               <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">手を動かす</div>
-                  <p class="text-gray-600 mb-8">
+                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">手を動かす</div>
+                  <p class="text-gray-600 text-xs lg:text-base mb-8">
                     Webデザインに必須のコーディングついて、もう少し具体的に学んでいきましょう。<br>
                     以下のサービスがとても役に立ちます。<br>
                     実際に手を動かしながら理解を深めていきましょう。<br>
                   </p>
                   <div class="flex flex-col font-serif">
                     <div class='flex items-end'>
-                      <%= link_to "・ドットインストール", "https://dotinstall.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <%= link_to "・ドットインストール", "https://dotinstall.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
                       <p class="text-gray-400">  #動画で</p>
                     </div>
                     <div class='flex items-end my-2'>
-                      <%= link_to "・サルワカ", "https://saruwakakun.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <%= link_to "・サルワカ", "https://saruwakakun.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
                       <p class="text-gray-400">  #テキストで</p>
                     </div>
                     <div class='flex items-end'>
-                      <%= link_to "・Progate", "https://prog-8.com/", class: 'text-brown text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                      <%= link_to "・Progate", "https://prog-8.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
                       <p class="text-gray-400">  #手軽に</p>
                     </div>
                   </div>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "pa.jpg" %>
+                  <%= image_tag "pa.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
                 </div>
               </div>
             </div>
@@ -235,16 +235,16 @@
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
               <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
                 <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "pp.jpg" %>
+                  <%= image_tag "pp.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">作ってみる</div>
-                  <p class="text-gray-600 mb-8">
+                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">作ってみる</div>
+                  <p class="text-gray-600 text-xs lg:text-base mb-8">
                     学んだことは実践してみましょう。以下の書籍が非常に役に立ちます。<br>
                     丁寧な解説をもとにおしゃれなサイトが作れるので、最初の一冊に最適です。<br>
                     学んでいてとても楽しくなりますよ。<br>
                   </p>
-                  <div class="text-brown text-xl font-serif hover:text-yellow-900">
+                  <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
                     <%= link_to "・1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892", target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                   <br>
@@ -257,19 +257,19 @@
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
               <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
                 <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
-                  <p class="text-gray-600 mb-8">
-                    今後Webデザインを行う上で、フリー素材やテンプレートなどを利用する際は著作権に注意しましょう。<br>
+                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
+                  <p class="text-gray-600 text-xs lg:text-base mb-8">
+                    Webデザインに、フリー素材やテンプレートを利用する際は著作権等に注意しましょう。<br>
                     トラブルを防ぐためにも早めに学んでおくに越したことはありません。<br>
-                    以下のページなどを参考にしっかりと勉強しておきましょう。<br>
+                    以下ページなどを参考に勉強しましょう。<br>
                   </p>
-                  <div class="flex flex-col text-brown text-xl font-serif">
+                  <div class="flex flex-col text-brown lg:text-xl font-serif">
                     <%= link_to "・WEBデザイナー必見！著作権を侵害しないために注意すべきこと！", "https://japan-design.jp/design/0068/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
                     <%= link_to "・無料で自由に使えるは間違い！フリー素材を使うときの注意点を教えます", "https://www.mp-creative.jp/columns/764", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
                   </div>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "public.jpg" %>
+                  <%= image_tag "public.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
                 </div>
               </div>
             </div>
