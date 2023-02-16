@@ -2,7 +2,7 @@
   <%= render 'home/search_form' %>
 </div>
 
-<div class='my-12 shadow bg-zinc-100'>
+<div class='my-12 shadow bg-zinc-100 hidden xl:flex'>
 <hr>
 <div class="flex container mx-auto" >
   <% @tag_list.each do|tag| %>
@@ -10,6 +10,19 @@
   <% end %>
 </div>
 <hr>
+</div>
+
+<div class='xl:hidden'>
+  <div class="dropdown dropdown-hover my-8">
+    <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 font-serif hover:text-white hover:bg-green-800 rounded-lg">情報ジャンル</label>
+    <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-164 font-normal text-sm">
+      <li>
+        <% @tag_list.each do|tag| %>
+          <%= link_to tag.name,{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>tag.name}}, { class: "text-base font-serif text-gray-500 hover:text-emerald-600" } %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="font-serif text-2xl text-center">検索結果: <%= @results.count %>件</div>
