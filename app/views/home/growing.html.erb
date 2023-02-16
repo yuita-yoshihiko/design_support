@@ -12,16 +12,16 @@
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
       <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-        <%= image_tag "design_tool.jpg" %>
+        <%= image_tag "design_tool.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
       </div>
       <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
         <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">デザインツールについて知る</div>
-        <p class="text-gray-600 mb-8">
+        <p class="text-gray-600 text-xs lg:text-base mb-8">
           デザインツールはWebデザインの強力な武器になります。<br>
           まずはどんなツールがあるか知ることから始めてみましょう。<br>
           色々と触れてみることで自分に合うものが見つかるはずです。<br>
         </p>
-        <div class="flex flex-col text-brown text-xl font-serif">
+        <div class="flex flex-col text-brown lg:text-xl font-serif">
           <%= link_to "・無料で使えるWebデザインツールおすすめ8選【2023年版】", "https://www.sejuku.net/blog/105585", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
           <%= link_to "・おすすめのWebデザインツール特集【初心者でも使える！】", "https://kredo.jp/media/web-design-tool/", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
         </div>
@@ -36,18 +36,18 @@
     <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
       <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
         <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">レスポンシブ対応について知る</div>
-        <p class="text-gray-600 mb-8">
+        <p class="text-gray-600 text-xs lg:text-base mb-8">
           レスポンシブ対応とはデバイスの画面幅に合わせてレイアウトを変えること。<br>
           あらゆるデバイスからネットに繋がれる現代には必須のスキルです。<br>
           作り方をしっかり学んでいきましょう。<br>
         </p>
-        <div class="flex flex-col text-brown text-xl font-serif">
+        <div class="flex flex-col text-brown lg:text-xl font-serif">
           <%= link_to "・CSSでスマホ対応！レスポンシブサイトの作り方と初心者向けQ&A", "https://www.sejuku.net/blog/99964", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
           <%= link_to "・【入門】レスポンシブWebデザインとは？概要と作り方を丁寧解説", "https://www.kagoya.jp/howto/it-glossary/web/responsive/", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
         </div>
       </div>
       <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-        <%= image_tag "responsive.jpg" %>
+        <%= image_tag "responsive.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
       </div>
     </div>
   </div>
@@ -57,16 +57,16 @@
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
       <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-        <%= image_tag "look.jpg" %>
+        <%= image_tag "look.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
       </div>
       <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
         <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">いいデザインを見る</div>
-        <p class="text-gray-600 mb-8">
+        <p class="text-gray-600 text-xs lg:text-base mb-8">
           いいデザインを見ることも非常に勉強になります。<br>
           自分のデザインに活かせる部分はないか<br>
           考えながら見ることで視野も広がっていくでしょう。<br>
         </p>
-        <div class="flex flex-col text-brown text-xl font-serif">
+        <div class="flex flex-col text-brown lg:text-xl font-serif">
           <%= link_to "・WebDesignClip｜Webサイト制作の参考になる日本のWebデザインリンク集", "https://webdesignclip.com/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
           <%= link_to "・I/O 3000｜Webデザインギャラリー", "https://io3000.com/", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
         </div>
@@ -81,18 +81,18 @@
     <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
       <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
         <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">UI/UXについて知識を深める</div>
-        <p class="text-gray-600 mb-8">
+        <p class="text-gray-600 text-xs lg:text-base mb-8">
           UI/UXとは何なのか？それらをよくするにはどうしたらいいのか？<br>
-          これを考えることでデザインの質もグッと上がるはずです。<br>
-          まずはUI/UXについての知識から深めていきましょう。<br>
+          これを考えるとデザインの質もグッと上がるはず。<br>
+          まずはUI/UXについて知識から深めていきましょう。<br>
         </p>
-        <div class="flex flex-col text-brown text-xl font-serif">
+        <div class="flex flex-col text-brown lg:text-xl font-serif">
           <%= link_to "・UI/UXとは｜UIとUXそれぞれの意味や違い、改善方法についてわかりやすく解説", "https://shiftasia.com/ja/column/ui-ux%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
           <%= link_to "・UIとUXの違いとは？Webデザイナー必見「UI/UXデザイン」をわかりやすく解説", "https://udemy.benesse.co.jp/design/web-design/ui-ux.html", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
         </div>
       </div>
       <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-        <%= image_tag "ui_ux.jpg" %>
+        <%= image_tag "ui_ux.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
       </div>
     </div>
   </div>
