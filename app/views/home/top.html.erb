@@ -8,9 +8,18 @@
         </h1>
 
         <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。</p>
-
-        <div>
+        
+        <div class="flex flex-col font-serif sm:flex-row sm:justify-center lg:justify-start gap-4">
           <%= render 'search_form' %>
+          <div class="dropdown dropdown-hover">
+            <label tabindex="0" class="btn bg-green-800 hover:bg-green-700 text-white rounded-lg'"><span class="material-icons">moving</span>レベルアップ</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-48 text-sm">
+              <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'SEO対策情報', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'Webマーケティングについて', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'サービスのブランディング', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+            </ul>
+          </div>
         </div>
       </div>
 
