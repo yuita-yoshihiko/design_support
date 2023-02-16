@@ -1,9 +1,8 @@
 <header class="container mx-auto flex justify-between font-serif items-center py-4 md:py-8 mb-8 md:mb-12 xl:mb-16">
   <%= link_to '誰でもデザイン', root_path, class: 'inline-flex items-center text-black-800 text-xl md:text-3xl font-bold gap-2.5" aria-label="logo' %>
   <nav class="text-sm md:text-lg lg:flex gap-12 font-semibold items-center">
-    <%= link_to '脱・初心者に向けて', growing_path, class: 'btn bg-green-800 hover:bg-green-700 text-white rounded-lg' %>
     <div class="dropdown dropdown-hover dropdown-end">
-      <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg">メニュー</label>
+      <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg">ユーザーメニュー</label>
       <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-48 font-normal text-sm">
         <li><%= link_to 'お気に入り情報', likes_design_tips_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
         <li><%= link_to '情報リスト', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
