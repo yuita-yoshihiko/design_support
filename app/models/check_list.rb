@@ -1,0 +1,2 @@
+class CheckList < ApplicationRecord
+end
