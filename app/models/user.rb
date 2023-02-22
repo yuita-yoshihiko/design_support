@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_design_tips, through: :likes, source: :design_tip
   has_many :authentications, dependent: :destroy
+  has_many :lists
   accepts_nested_attributes_for :authentications 
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -31,4 +32,5 @@ class User < ApplicationRecord
   def like?(design_tip)
     like_design_tips.include?(design_tip)
   end
+
 end

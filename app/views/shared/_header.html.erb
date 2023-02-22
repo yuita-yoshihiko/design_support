@@ -5,7 +5,7 @@
       <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg">ユーザーメニュー</label>
       <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-48 font-normal text-sm">
         <li><%= link_to 'お気に入り情報', likes_design_tips_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-        <li><%= link_to '情報リスト', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+        <li><%= link_to '情報リスト', list_design_tips_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
         <li><%= link_to '情報メモ', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
         <li><%= link_to 'ログアウト', logout_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white', data: { turbo_method: :delete } %></li>
       </ul>

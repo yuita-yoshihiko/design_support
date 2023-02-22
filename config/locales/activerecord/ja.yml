@@ -14,6 +14,8 @@ ja:
         title: 'タイトル'
         guidance: '説明文'
         url: 'url'
+      list:
+        name: 'リスト名'
 
   enums:
     user:

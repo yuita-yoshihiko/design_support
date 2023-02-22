@@ -6,6 +6,10 @@ class DesignTipsController < ApplicationController
     @search = DesignTip.ransack(params[:q])
     @design_tips = @search.result(distinct: true)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
+    @list = List.new
+    if current_user
+      @lists = current_user.lists
+    end
   end
 
   def search

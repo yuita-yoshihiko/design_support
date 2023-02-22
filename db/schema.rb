@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_133227) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_18_222153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_133227) do
     t.index ["design_tip_id"], name: "index_likes_on_design_tip_id"
     t.index ["user_id", "design_tip_id"], name: "index_likes_on_user_id_and_design_tip_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "list_design_tips", force: :cascade do |t|
+    t.bigint "list_id", null: false
+    t.bigint "design_tip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["design_tip_id"], name: "index_list_design_tips_on_design_tip_id"
+    t.index ["list_id"], name: "index_list_design_tips_on_list_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -88,5 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_133227) do
 
   add_foreign_key "likes", "design_tips"
   add_foreign_key "likes", "users"
+  add_foreign_key "list_design_tips", "design_tips"
+  add_foreign_key "list_design_tips", "lists"
+  add_foreign_key "lists", "users"
   add_foreign_key "taggings", "tags"
 end
