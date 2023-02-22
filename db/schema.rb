@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_122503) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_18_222153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,25 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_122503) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
-  end
-
-  create_table "check_lists", force: :cascade do |t|
-    t.bigint "check_id", null: false
-    t.bigint "list_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["check_id"], name: "index_check_lists_on_check_id"
-    t.index ["list_id"], name: "index_check_lists_on_list_id"
-  end
-
-  create_table "checks", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "design_tip_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["design_tip_id"], name: "index_checks_on_design_tip_id"
-    t.index ["user_id", "design_tip_id"], name: "index_checks_on_user_id_and_design_tip_id", unique: true
-    t.index ["user_id"], name: "index_checks_on_user_id"
   end
 
   create_table "design_tips", force: :cascade do |t|
@@ -61,6 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_122503) do
     t.index ["design_tip_id"], name: "index_likes_on_design_tip_id"
     t.index ["user_id", "design_tip_id"], name: "index_likes_on_user_id_and_design_tip_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "list_design_tips", force: :cascade do |t|
+    t.bigint "list_id", null: false
+    t.bigint "design_tip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["design_tip_id"], name: "index_list_design_tips_on_design_tip_id"
+    t.index ["list_id"], name: "index_list_design_tips_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -113,12 +103,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_122503) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "check_lists", "checks"
-  add_foreign_key "check_lists", "lists"
-  add_foreign_key "checks", "design_tips"
-  add_foreign_key "checks", "users"
   add_foreign_key "likes", "design_tips"
   add_foreign_key "likes", "users"
+  add_foreign_key "list_design_tips", "design_tips"
+  add_foreign_key "list_design_tips", "lists"
   add_foreign_key "lists", "users"
   add_foreign_key "taggings", "tags"
 end
