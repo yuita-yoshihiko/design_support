@@ -1,0 +1,64 @@
+<div>
+  <label for="my-modal-4" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs">
+    <span class="material-icons">playlist_add_check</span>
+    <div>リスト</div>
+  </label>
+</div>
+
+<input type="checkbox" id="my-modal-4" class="modal-toggle" />
+<div class="modal">
+  <div class="bg-white modal-box relative font-serif">
+    <label for="my-modal-4" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+    <h3 class="text-lg my-2">どのリストに追加しますか？</h3>
+    <div class="flex justify-center">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <div class="p-12 md:p-18">
+          <%= form_tag({controller: "list_design_tips", action: "create", class: 'items-end'})do %>
+            <%= hidden_field_tag :design_tip_id, design_tip.id %>
+            <%= select_tag :list_id, options_from_collection_for_select(@lists, :id, :name) %>
+            <%= submit_tag "追加", class: 'badge border-none bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
+          <% end %>
+          <div class='mt-10'>
+            <label for="my-modal-6" class="container">
+              <div class='flex justify-center text-green-800 hover:text-green900'>リストを作成する</div>
+            </label>
+          </div>
+
+          <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+          <div class="modal">
+            <div class="bg-white modal-box relative font-serif ">
+              <label for="my-modal-6" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+              <h3 class="text-lg">リスト作成</h3>
+              <div class="flex justify-center">
+                <div class="p-2">
+                  <%= form_with model: @list, local: true do |form| %>
+                    <% if @list.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this favorite_list from being saved:</h2>
+
+                        <ul>
+                          <% @list.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
+
+                    <div class="my-5">
+                      <%= form.label :name %>
+                      <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                    </div>
+
+                    <div class="inline">
+                      <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

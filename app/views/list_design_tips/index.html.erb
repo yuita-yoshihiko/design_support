@@ -1,0 +1,89 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto">
+  <div class='flex place-content-between'>
+    <div class='text-gray-600 text-2xl font-serif mb-8 md:mb-12'>
+      リスト一覧
+    </div>
+    <div>
+      <label for="my-modal-5" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs font-serif">
+        <div class='btn bg-green-800 hover:bg-green-700 text-white rounded-lg'><span class="material-icons">playlist_add</span>リスト作成</div>
+      </label>
+    </div>
+
+    <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+    <div class="modal">
+      <div class="bg-white modal-box relative font-serif">
+        <label for="my-modal-5" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+        <h3 class="text-lg">リスト作成</h3>
+        <div class="flex justify-center">
+          <div class="p-2">
+            <%= form_with model: @list, local: true do |form| %>
+              <% if @list.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@list.errors.count, "error") %> prohibited this favorite_list from being saved:</h2>
+
+                  <ul>
+                    <% @list.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="my-5">
+                <%= form.label :name %>
+                <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+              </div>
+
+              <div class="inline">
+                <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% @lists.each do |list| %>
+    <div class="flex gap-8 md:gap-12 mt-20 pb-16 items-center font-serif">
+      <div class="text-gray-600 text-2xl"><%= list.name %></div>
+      <%= link_to edit_list_path(list), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" do %>
+        <span class="material-icons">mode_edit</span>
+        <div>編集</div>
+      <% end %>
+      <%= button_to list_path(list), method: :delete, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" do %>
+        <span class="material-icons">delete</span>
+        <div>削除</div>
+      <% end %>
+    </div>
+    <% if list.list_design_tips.present? %>
+      <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 pb-16">
+        <% list.list_design_tips.each do |list_design_tip| %>
+          <div class="bg-white flex md:flex-row rounded-lg shadow-lg">
+            <div class="flex flex-col place-content-between gap-2 p-4 lg:p-6">
+              <div class="text-brown text-xl font-serif hover:text-yellow-900">
+                <%= link_to list_design_tip.design_tip.title, list_design_tip.design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+              <p class="text-gray-500 text-sm"><%= list_design_tip.design_tip.guidance %></p>
+              <div class="my-5 flex place-content-between">
+                <%= render 'design_tips/tag_list', tag_list: list_design_tip.design_tip.tag_list %>
+                <div class='flex gap-2'>
+                  <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %>
+                  <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete }, status: :see_other do %>
+                    <div class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs">
+                      <span class="material-icons">playlist_remove</span>
+                      <div>削除</div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class='pb-16'>リストに情報がありません</div>
+    <% end%>
+  <% end %>
+</div>
