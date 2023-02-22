@@ -51,11 +51,15 @@
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
                 <%= render 'tag_list', tag_list: design_tip.tag_list %>
-                <% if logged_in? %>
-                  <%= render 'like_button', design_tip: design_tip %>
-                <% else %>
-                  <%= render 'design_tips/before_login_like'%>
-                <% end %>
+                <div class='flex gap-2'>
+                  <% if logged_in? %>
+                    <%= render 'like_button', design_tip: design_tip %>
+                    <%= render 'list_button', design_tip: design_tip %>
+                  <% else %>
+                    <%= render 'design_tips/before_login_like'%>
+                    <%= render 'design_tips/before_login_list'%>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -76,11 +80,15 @@
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
                 <%= render 'tag_list', tag_list: design_tip.tag_list %>
-                <% if logged_in? %>
-                  <%= render 'like_button', design_tip: design_tip %>
-                <% else %>
-                  <%= render 'design_tips/before_login_like'%>
-                <% end %>
+                <div class='flex gap-2'>
+                  <% if logged_in? %>
+                    <%= render 'like_button', design_tip: design_tip %>
+                    <%= render 'list_button', design_tip: design_tip %>
+                  <% else %>
+                    <%= render 'design_tips/before_login_like'%>
+                    <%= render 'design_tips/before_login_list'%>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -101,11 +109,15 @@
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
                 <%= render 'tag_list', tag_list: design_tip.tag_list %>
-                <% if logged_in? %>
-                  <%= render 'like_button', design_tip: design_tip %>
-                <% else %>
-                  <%= render 'design_tips/before_login_like'%>
-                <% end %>
+                <div class='flex gap-2'>
+                  <% if logged_in? %>
+                    <%= render 'like_button', design_tip: design_tip %>
+                    <%= render 'list_button', design_tip: design_tip %>
+                  <% else %>
+                    <%= render 'design_tips/before_login_like'%>
+                    <%= render 'design_tips/before_login_list'%>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
