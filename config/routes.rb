@@ -24,6 +24,9 @@ Rails.application.routes.draw do
 
   resources :likes, only: %i[create destroy]
 
+  resources :lists
+  resources :list_design_tips
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
