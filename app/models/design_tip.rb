@@ -6,5 +6,9 @@ class DesignTip < ApplicationRecord
   has_many :list_design_tips
   has_many :lists, through: :list_design_tips
 
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :guidance, presence: true, length: { maximum: 65_535 }
+  validates :url, presence: true
+
   enum medium: { web: 0, book: 1, movie: 2 }
 end
