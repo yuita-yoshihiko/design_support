@@ -19,6 +19,10 @@ class DesignTipsController < ApplicationController
 
   def likes
     @like_design_tips = current_user.like_design_tips.includes(:user).order(created_at: :desc)
+    @list = List.new
+    if current_user
+      @lists = current_user.lists
+    end
   end
 
   private
