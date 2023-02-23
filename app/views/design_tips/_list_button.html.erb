@@ -16,11 +16,11 @@
           <%= form_tag({controller: "list_design_tips", action: "create", class: 'items-end'})do %>
             <%= hidden_field_tag :design_tip_id, design_tip.id %>
             <%= select_tag :list_id, options_from_collection_for_select(@lists, :id, :name) %>
-            <%= submit_tag "追加", class: 'badge border-none bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
+            <%= submit_tag "追加する", class: 'badge bg-green-700 hover:bg-green-600 text-white' %>
           <% end %>
           <div class='mt-10'>
             <label for="my-modal-6" class="container">
-              <div class='flex justify-center text-green-800 hover:text-green900'>リストを作成する</div>
+              <div class='flex justify-center text-gray-400 hover:text-green-800 active:text-green-900'><span class="material-icons">playlist_add</span>リストを作成する</div>
             </label>
           </div>
 
@@ -49,8 +49,8 @@
                       <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
                     </div>
 
-                    <div class="inline">
-                      <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+                    <div class="flex justify-center inline">
+                      <%= form.submit '作成', class: "px-5 py-1 btn bg-green-700 hover:bg-green-600 text-white rounded-lg" %>
                     </div>
                   <% end %>
                 </div>
