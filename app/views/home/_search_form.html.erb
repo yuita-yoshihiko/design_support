@@ -1,4 +1,9 @@
-<%= search_form_for @q, url: search_design_tips_path do |f| %>
-  <%= f.search_field :title_cont, class: "w-64 h-12 outline-green-800 rounded-lg font-serif", placeholder: 'フリーワード検索' %>
-  <button class="btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg font-serif">検索</button>
+<%= search_form_for @q, url: search_design_tips_path, class: 'flex items-center gap-2 font-serif' do |f| %>
+  <%= f.search_field :title_cont, class: "w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'フリーワード検索' %>
+  <button class="btn bg-green-700 hover:bg-green-600 text-white rounded-lg hidden md:inline-block">
+    <div class='flex items-center'>
+      <span class="material-icons">search</span>
+      <div>検索</div>
+    </div>
+  </button>
 <% end %>
