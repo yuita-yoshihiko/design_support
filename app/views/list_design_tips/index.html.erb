@@ -2,11 +2,11 @@
 <div class="container mx-auto">
   <div class='flex place-content-between'>
     <div class='text-gray-600 text-2xl font-serif mb-8 md:mb-12'>
-      リスト一覧
+      情報リスト一覧
     </div>
     <div>
-      <label for="my-modal-5" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs font-serif">
-        <div class='btn bg-green-800 hover:bg-green-700 text-white rounded-lg'><span class="material-icons">playlist_add</span>リスト作成</div>
+      <label for="my-modal-5" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center font-serif">
+        <div class='btn bg-green-700 hover:bg-green-600 text-white text-xs rounded-lg'><span class="material-icons">playlist_add</span>リスト作成</div>
       </label>
     </div>
 
@@ -35,8 +35,8 @@
                 <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
               </div>
 
-              <div class="inline">
-                <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+              <div class="flex justify-center inline">
+                <%= form.submit '作成', class: "px-5 py-1 btn bg-green-700 hover:bg-green-600 text-white rounded-lg" %>
               </div>
             <% end %>
           </div>
@@ -46,13 +46,13 @@
   </div>
 
   <% @lists.each do |list| %>
-    <div class="flex gap-8 md:gap-12 mt-20 pb-16 items-center font-serif">
+    <div class="flex gap-8 mt-20 pb-16 items-center font-serif">
       <div class="text-gray-600 text-2xl"><%= list.name %></div>
-      <%= link_to edit_list_path(list), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" do %>
+      <%= link_to edit_list_path(list), class: "text-xs text-green-700 hover:text-green-600" do %>
         <span class="material-icons">mode_edit</span>
         <div>編集</div>
       <% end %>
-      <%= button_to list_path(list), method: :delete, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" do %>
+      <%= button_to list_path(list), method: :delete, class: "text-xs text-green-700 hover:text-green-600" do %>
         <span class="material-icons">delete</span>
         <div>削除</div>
       <% end %>
