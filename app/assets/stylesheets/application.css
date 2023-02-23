@@ -20,3 +20,51 @@
   color: #9a8756;
   transition: all 0.2s ease-out;
 }
+
+input[type="text"]:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 3px 0px white;
+  border-bottom: solid;
+  border-bottom-color: #15803d;
+  background: #f3f4f6;
+}
+
+input[type="text"] {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #9ca3af;
+  width: 230px;
+}
+
+input[type="email"]:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 3px 0px white;
+  border-bottom: solid;
+  border-bottom-color: #15803d;
+  background: #f3f4f6;
+}
+
+input[type="email"] {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #9ca3af;
+  width: 230px;
+}
+
+input[type="password"]:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 3px 0px white;
+  border-bottom: solid;
+  border-bottom-color: #15803d;
+  background: #f3f4f6;
+}
+
+input[type="password"] {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #9ca3af;
+  width: 230px;
+}
