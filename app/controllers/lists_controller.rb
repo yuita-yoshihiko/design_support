@@ -15,9 +15,10 @@ class ListsController < ApplicationController
     @list = current_user.lists.build(list_params)
 
     if @list.save
-      redirect_to lists_url, notice: 'List was successfully created.'
+      redirect_to list_design_tips_path, success: 'リストを作成しました。'
     else
-      render :new
+      flash.now[:error] = 'リストを作成できませんでした。'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +31,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to @list, notice: 'List was successfully updated.'
+      redirect_to @list, success: 'リスト名を変更しました。'
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to list_design_tips_path, notice: 'List was successfully destroyed.'
+    redirect_to list_design_tips_path, success: 'リストを削除しました。'
   end
 
   private
