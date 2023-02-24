@@ -1,5 +1,5 @@
 <%= search_form_for @q, url: search_design_tips_path, class: 'flex items-center gap-2 font-serif' do |f| %>
-  <%= f.search_field :title_cont, class: "w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'フリーワード検索' %>
+  <%= f.search_field :title_cont, class: "w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'フリーワード検索', required: true %>
   <button class="btn bg-green-700 hover:bg-green-600 text-white rounded-lg hidden md:inline-block">
     <div class='flex items-center'>
       <span class="material-icons">search</span>
