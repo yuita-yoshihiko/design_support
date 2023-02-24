@@ -31,7 +31,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to @list, success: 'リスト名を変更しました。'
+      redirect_to list_design_tips_path, success: 'リスト名を変更しました。'
     else
       render :edit
     end
