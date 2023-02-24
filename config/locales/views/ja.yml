@@ -43,6 +43,9 @@ ja:
     favorites:
       title: 'お気に入り一覧'
       no_result: 'お気に入り中の情報がありません。'
+  lists:
+    edit:
+      title: 'リスト名編集'
   favorites:
     create:
       success: 'お気に入りしました'
