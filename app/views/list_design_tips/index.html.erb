@@ -52,7 +52,7 @@
         <span class="material-icons">mode_edit</span>
         <div>編集</div>
       <% end %>
-      <%= button_to list_path(list), method: :delete, class: "text-xs text-green-700 hover:text-green-600" do %>
+      <%= button_to list_path(list), method: :delete, form: { data: { turbo_confirm: "リストを削除しますか?" } }, class: "text-xs text-green-700 hover:text-green-600" do %>
         <span class="material-icons">delete</span>
         <div>削除</div>
       <% end %>
@@ -70,7 +70,7 @@
                 <%= render 'design_tips/tag_list', tag_list: list_design_tip.design_tip.tag_list %>
                 <div class='flex gap-2'>
                   <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %>
-                  <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete }, status: :see_other do %>
+                  <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete, turbo_confirm: 'リストから削除しますか?' }, status: :see_other do %>
                     <div class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs">
                       <span class="material-icons">playlist_remove</span>
                       <div>削除</div>
