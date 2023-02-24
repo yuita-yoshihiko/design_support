@@ -19,43 +19,10 @@
             <%= submit_tag "追加する", class: 'badge bg-green-700 hover:bg-green-600 text-white' %>
           <% end %>
           <div class='mt-10'>
-            <label for="my-modal-6" class="container">
-              <div class='flex justify-center text-gray-400 hover:text-green-800 active:text-green-900'><span class="material-icons">playlist_add</span>リストを作成する</div>
-            </label>
-          </div>
-
-          <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-          <div class="modal">
-            <div class="bg-white modal-box relative font-serif ">
-              <label for="my-modal-6" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
-              <h3 class="text-lg">リスト作成</h3>
-              <div class="flex justify-center">
-                <div class="p-2">
-                  <%= form_with model: @list, local: true do |form| %>
-                    <% if @list.errors.any? %>
-                      <div id="error_explanation">
-                        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this favorite_list from being saved:</h2>
-
-                        <ul>
-                          <% @list.errors.full_messages.each do |message| %>
-                            <li><%= message %></li>
-                          <% end %>
-                        </ul>
-                      </div>
-                    <% end %>
-
-                    <div class="my-5">
-                      <%= form.label :name %>
-                      <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-                    </div>
-
-                    <div class="flex justify-center inline">
-                      <%= form.submit '作成', class: "px-5 py-1 btn bg-green-700 hover:bg-green-600 text-white rounded-lg" %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+            <%= link_to new_list_path, class:'flex justify-center text-gray-400 hover:text-green-800 active:text-green-900' do %>
+              <span class="material-icons">playlist_add</span>
+              <div>リストを作成する</div>
+            <% end %>
           </div>
         </div>
       </div>
