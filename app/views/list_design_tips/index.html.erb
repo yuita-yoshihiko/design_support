@@ -4,45 +4,10 @@
     <div class='text-gray-600 text-2xl font-serif mb-8 md:mb-12'>
       情報リスト一覧
     </div>
-    <div>
-      <label for="my-modal-5" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center font-serif">
-        <div class='btn bg-green-700 hover:bg-green-600 text-white text-xs rounded-lg'><span class="material-icons">playlist_add</span>リスト作成</div>
-      </label>
-    </div>
-
-    <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-    <div class="modal">
-      <div class="bg-white modal-box relative font-serif">
-        <label for="my-modal-5" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
-        <h3 class="text-lg">リスト作成</h3>
-        <div class="flex justify-center">
-          <div class="p-2">
-            <%= form_with model: @list, local: true do |form| %>
-              <% if @list.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@list.errors.count, "error") %> prohibited this favorite_list from being saved:</h2>
-
-                  <ul>
-                    <% @list.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              <% end %>
-
-              <div class="my-5">
-                <%= form.label :name %>
-                <%= form.text_field :name, class: "block shadow rounded-md border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-              </div>
-
-              <div class="flex justify-center inline">
-                <%= form.submit '作成', class: "px-5 py-1 btn bg-green-700 hover:bg-green-600 text-white rounded-lg" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white text-xs rounded-lg' do %>
+      <span class="material-icons">playlist_add</span>
+      <div>リスト作成</div>
+    <% end %>
   </div>
 
   <% @lists.each do |list| %>
