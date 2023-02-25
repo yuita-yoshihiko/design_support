@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path, success: t('.success')
     else
-      flash.now[:error] = t('.fail')
+      flash.now[:error] = 'メールアドレスまたはパスワードに誤りがあります'
       render :new, status: :unprocessable_entity
     end
   end
