@@ -36,7 +36,7 @@
                 <div class='flex gap-2'>
                   <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %>
                   <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete, turbo_confirm: 'リストから削除しますか?' }, status: :see_other do %>
-                    <div class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs">
+                    <div class="container text-gray-300 hover:bg-red-400 rounded-lg flex items-center text-xs">
                       <span class="material-icons">playlist_remove</span>
                       <div>削除</div>
                     </div>
