@@ -18,6 +18,13 @@ ja:
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+  home:
+    growing:
+      title: '脱・初心者に向けて'
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms_of_use:
+      title: '利用規約'
   users:
     new:
       title: 'ユーザー登録'
@@ -40,11 +47,18 @@ ja:
       title: '情報一覧'
       no_result: '情報がありません。'
       to_index: '情報一覧へ'
+    likes:
+      title: 'お気に入り'
+    search:
+      title: '検索結果'
   lists:
     edit:
       title: 'リスト名編集'
     new:
       title: 'リスト作成'
+  list_design_tips:
+    index:
+      title: 'リスト一覧'
   password_resets:
     new:
       title: 'パスワードリセット申請'
