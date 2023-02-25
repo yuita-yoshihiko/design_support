@@ -33,7 +33,8 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to list_design_tips_path, success: 'リスト名を変更しました。'
     else
-      render :edit
+      flash.now[:error] = 'リスト名を変更できませんでした。'
+      render :edit, status: :unprocessable_entity
     end
   end
 
