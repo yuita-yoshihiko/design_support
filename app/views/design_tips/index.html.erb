@@ -50,7 +50,7 @@
               </div>
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
-                <%= render 'tag_list', tag_list: design_tip.tag_list %>
+                <div class='flex gap-3'><%= render 'tag_list', tag_list: design_tip.tag_list %></div>
                 <div class='flex gap-2'>
                   <% if logged_in? %>
                     <%= render 'like_button', design_tip: design_tip %>
@@ -77,7 +77,7 @@
               </div>
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
-                <%= render 'tag_list', tag_list: design_tip.tag_list %>
+                <div class='flex gap-3'><%= render 'tag_list', tag_list: design_tip.tag_list %></div>
                 <div class='flex gap-2'>
                   <% if logged_in? %>
                     <%= render 'like_button', design_tip: design_tip %>
@@ -104,7 +104,7 @@
               </div>
               <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
               <div class="my-5 flex place-content-between">
-                <%= render 'tag_list', tag_list: design_tip.tag_list %>
+                <div class='flex gap-3'><%= render 'tag_list', tag_list: design_tip.tag_list %></div>
                 <div class='flex gap-2'>
                   <% if logged_in? %>
                     <%= render 'like_button', design_tip: design_tip %>
