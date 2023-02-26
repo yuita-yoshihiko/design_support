@@ -1,7 +1,37 @@
 <div class="mx-auto md:w-2/3 w-full">
   <h1 class="font-bold text-4xl">New design tip</h1>
 
-  <%= render "form", design_tip: @design_tip %>
+  <%= form_with model: @design_tip, url: admin_design_tips_path, class: "contents" do |form| %>
+
+    <div class="my-5">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :guidance %>
+      <%= form.text_area :guidance, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :url %>
+      <%= form.text_field :url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :medium %>
+      <%= form.select :medium, DesignTip.media.keys.to_a, {}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :tag_list %>
+      <%= form.text_field :tag_list, value: @design_tip.tag_list.join(','), placeholder: ",で区切って入力してください", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="inline">
+      <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    </div>
+  <% end %>
 
   <%= link_to t('design_tips.index.to_index'), admin_design_tips_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
 </div>
