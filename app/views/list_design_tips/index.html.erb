@@ -2,7 +2,7 @@
 <div class="container mx-auto">
   <div class='flex place-content-between'>
     <div class='text-gray-600 text-2xl font-serif mb-8 md:mb-12'>
-      情報リスト一覧
+      お気に入りリスト一覧
     </div>
     <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg' do %>
       <span class="material-icons">playlist_add</span>
@@ -51,6 +51,7 @@
         <hr>
       <% else %>
         <div class='text-gray-600 pb-20 font-serif'>リストに情報がありません</div>
+        <hr>
       <% end%>
     <% end %>
   <% else %>
