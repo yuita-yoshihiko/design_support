@@ -3,7 +3,7 @@
   <div class="bg-white rounded-lg lg:w-5/12 md:6/12 w-10/12 shadow-3xl mb-16">
     <div class="flex justify-center">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h1 class="font-bold text-center text-2xl mt-12"><%= t '.title' %></h1>
+        <h1 class="text-gray-600 text-center text-2xl mt-12"><%= t '.title' %></h1>
         <div class="p-12 md:p-18">
           <%= form_with model: @list, local: true do |form| %>
             <%= render 'shared/error_messages', object: form.object %>
