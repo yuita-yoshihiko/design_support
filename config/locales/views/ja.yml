@@ -59,6 +59,8 @@ ja:
   list_design_tips:
     index:
       title: 'リスト一覧'
+    error:
+      title: '登録エラー'
   password_resets:
     new:
       title: 'パスワードリセット申請'
