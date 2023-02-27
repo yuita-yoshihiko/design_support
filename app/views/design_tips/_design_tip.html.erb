@@ -5,8 +5,8 @@
     </div>
     <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
     <div class="my-5 flex place-content-between">
-      <div class='flex gap-3'><%= render 'tag_list', tag_list: design_tip.tag_list %></div>
-      <div class='flex gap-2'>
+      <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag_list: design_tip.tag_list %></div>
+      <div class='flex gap-1 md:gap-2'>
         <% if logged_in? %>
           <%= render 'like_button', design_tip: design_tip %>
           <%= render 'list_button', design_tip: design_tip %>

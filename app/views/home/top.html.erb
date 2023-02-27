@@ -15,9 +15,9 @@
             <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white text-xs md:text-base tracking-tight md:tracking-normal hover:bg-green-800 rounded-lg">レベルアップ<span class="material-icons">moving</span></label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-48 text-sm">
               <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-              <li><%= link_to 'SEO対策情報', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-              <li><%= link_to 'Webマーケティングについて', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-              <li><%= link_to 'サービスのブランディング', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'SEO対策 ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'Webマーケティング ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'ブランディング ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
             </ul>
           </div>
         </div>
@@ -34,8 +34,8 @@
   <div class="px-4 md:px-8">
     <div data-controller="view">
       <div class="flex justify-around">
-        <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
-        <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
+        <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
+        <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
       </div>
         <div data-view-target="content" >
           <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 container mx-auto">
@@ -177,7 +177,7 @@
         <div class="hidden" data-view-target="content">
           <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="font-serif text-gray-600 text-3xl lg:text-4xl py-12">デザインって何から始めたらいいの？</div>
+              <div class="font-serif text-gray-600 text-xl md:text-3xl lg:text-4xl py-12">デザインって何から始めたらいいの？</div>
               <p class="max-w-md text-gray-600 mb-8">
               そんなあなたに向けて、まず始めに知っておきたいこと<br>
               やっておきたいことをまとめました。<br>
