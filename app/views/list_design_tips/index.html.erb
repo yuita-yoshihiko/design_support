@@ -1,10 +1,10 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mx-auto">
   <div class='flex place-content-between'>
-    <div class='text-gray-600 text-2xl font-serif mb-8 md:mb-12'>
+    <div class='text-gray-600  text-lg md:text-2xl font-serif mb-8 md:mb-12 ml-2 lg:ml-0'>
       お気に入りリスト一覧
     </div>
-    <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg' do %>
+    <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg mr-2 lg:mr-0' do %>
       <span class="material-icons">playlist_add</span>
       <div>リスト作成</div>
     <% end %>
@@ -35,7 +35,7 @@
                 <div class="my-5 flex place-content-between">
                   <%= render 'design_tips/tag_list', tag_list: list_design_tip.design_tip.tag_list %>
                   <div class='flex gap-2'>
-                    <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %>
+                    <div class='flex gap-1 md:gap-3'><%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %></div>
                     <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete, turbo_confirm: 'リストから削除しますか?' }, status: :see_other do %>
                       <div class="container text-gray-300 hover:bg-red-400 rounded-lg flex items-center text-xs">
                         <span class="material-icons">playlist_remove</span>
