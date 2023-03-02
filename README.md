@@ -25,7 +25,7 @@ Webデザイナーやエンジニアを目指しており、デザインの基�
 [![Image from Gyazo](https://i.gyazo.com/f4ba0d7eb709e263d22abc36fe4fe087.jpg)](https://gyazo.com/f4ba0d7eb709e263d22abc36fe4fe087)  
 
 #### 情報閲覧画面  
-トップページの情報ジャンルから遷移した画面で媒体ごとに分けられた各ジャンルの情報を閲覧することができます。 
+トップページの情報ジャンルから遷移した画面で、媒体ごとに分けられた各ジャンルの情報を閲覧できます。 
 [![Image from Gyazo](https://i.gyazo.com/ec973f355b30f1c16b43060904a89754.jpg)](https://gyazo.com/ec973f355b30f1c16b43060904a89754)  
 
 ### ログイン後
@@ -53,4 +53,4 @@ Webデザインから発展したWebマーケティングやブランディン�
 [画面遷移図](https://www.figma.com/file/GddVj9pDkApNER6qXSPhmY/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=eQoRBW5SHxuSMXco-0)
 
 ## ER図
-[ER図][![Image from Gyazo](https://i.gyazo.com/adc962470fd750ef6e98bfcaf8b29142.png)](https://gyazo.com/adc962470fd750ef6e98bfcaf8b29142)
+[ER図][![Image from Gyazo](https://i.gyazo.com/1c2a851161f354ad6f9a2beeacc1d6b2.png)](https://gyazo.com/1c2a851161f354ad6f9a2beeacc1d6b2)
