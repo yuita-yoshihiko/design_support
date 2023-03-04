@@ -33,9 +33,10 @@
                 </div>
                 <p class="text-gray-500 text-sm"><%= list_design_tip.design_tip.guidance %></p>
                 <div class="my-5 flex place-content-between">
-                  <%= render 'design_tips/tag_list', tag_list: list_design_tip.design_tip.tag_list %>
+                  <%= render 'design_tips/tag_list', tag: list_design_tip.design_tip.tags.pluck(:name) %>
                   <div class='flex gap-2'>
-                    <div class='flex gap-1 md:gap-3'><%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %></div>
+                    <div class='flex gap-1 md:gap-3'>
+                    <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %></div>
                     <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete, turbo_confirm: 'リストから削除しますか?' }, status: :see_other do %>
                       <div class="container text-gray-300 hover:bg-red-400 rounded-lg flex items-center text-xs">
                         <span class="material-icons">playlist_remove</span>

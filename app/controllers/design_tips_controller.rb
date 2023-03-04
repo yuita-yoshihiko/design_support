@@ -4,7 +4,7 @@ class DesignTipsController < ApplicationController
 
   def index
     @search = DesignTip.ransack(params[:q])
-    @design_tips = @search.result(distinct: true)
+    @design_tips = @search.result(distinct: true).preload(:tags)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
     @list = List.new
     if current_user
@@ -18,7 +18,7 @@ class DesignTipsController < ApplicationController
   end
 
   def likes
-    @like_design_tips = current_user.like_design_tips.includes(:user).order(created_at: :desc)
+    @like_design_tips = current_user.like_design_tips.order(created_at: :desc)
     @list = List.new
     if current_user
       @lists = current_user.lists
