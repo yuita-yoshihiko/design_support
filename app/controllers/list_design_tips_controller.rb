@@ -1,10 +1,8 @@
 class ListDesignTipsController < ApplicationController
 
   def index
-    @lists = current_user.lists
-    @list_design_tips = ListDesignTip.all.includes(:list, :design_tip)
-    @list = List.new
-    @design_tips = DesignTip.all
+    @list_design_tips = ListDesignTip.includes(:list, :desing_tip, :tags)
+    @lists = current_user.lists.includes(:list_design_tips)
   end
 
   def create
