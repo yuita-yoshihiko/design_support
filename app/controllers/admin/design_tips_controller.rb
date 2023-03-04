@@ -3,7 +3,7 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # GET /design_tips or /design_tips.json
   def index
-    @design_tips = DesignTip.all
+    @design_tips = DesignTip.page(params[:page]).per(15)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
