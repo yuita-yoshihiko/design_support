@@ -66,6 +66,8 @@ gem 'whenever', require: false
 
 gem 'material_icons'
 
+gem 'kaminari'
+
 
 
 # Use Sass to process CSS

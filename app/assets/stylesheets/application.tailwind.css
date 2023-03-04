@@ -10,4 +10,16 @@
   }
 }
 
+.pagination {
+  @apply flex justify-center;
+  @apply my-2 py-2;
+}
 
+.pagination * {
+  @apply px-2 py-2 mx-2;
+  @apply text-gray-700 bg-white rounded-lg;
+}
+
+.pagination a:hover {
+  @apply text-gray-200 bg-gray-700;
+}

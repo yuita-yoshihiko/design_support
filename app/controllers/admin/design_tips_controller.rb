@@ -1,9 +1,11 @@
 class Admin::DesignTipsController < Admin::BaseController
   before_action :set_design_tip, only: %i[show edit update destroy]
+  before_action :set_q, only: [:index, :search]
 
   # GET /design_tips or /design_tips.json
   def index
-    @design_tips = DesignTip.all
+    @q = DesignTip.ransack(params[:q])
+    @design_tips = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(15)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
