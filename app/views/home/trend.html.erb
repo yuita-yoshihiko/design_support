@@ -1,0 +1,21 @@
+<% content_for(:title, t('.title')) %>
+<div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>トレンド情報</div>
+    <p class="text-gray-600 mb-8">
+      日々移り変わるトレンドを掴むこともデザインを学ぶ上で重要なことです。<br>
+      まずは新しい情報に目を通す習慣を付けていきましょう。<br>
+    </p>
+  </div>
+</div>
+
+<div class='container mx-auto flex flex-row grid sm:grid-cols-2 xl:grid-cols-3 mt-20 pb-16 gap-8 md:gap-12 xl:gap-16'>
+  <% @img.zip(@photoshopvip).first(3).each do |i, photoshopvip| %>
+    <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
+      <%= image_tag i[:src], loading: "lazy", class: "w-96 h-64 object-cover mx-auto" %>
+      <div class="text-brown text-xl font-serif hover:text-yellow-900 pt-4">
+        <%= link_to photoshopvip.inner_text, photoshopvip[:href], target: :_blank, rel: "noopener noreferrer"%>
+      </div>
+    </div>
+  <% end %>
+</div>

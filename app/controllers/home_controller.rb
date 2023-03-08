@@ -6,6 +6,13 @@ class HomeController < ApplicationController
     @design_tips = @q.result(distinct: true)
   end
 
+  def trend
+    agent = Mechanize.new
+    page_photoshopvip = agent.get("https://photoshopvip.net/")
+    @photoshopvip = page_photoshopvip.search('.title a')
+    @img = page_photoshopvip.search('img')
+  end
+
   def for_beginner
   end
 

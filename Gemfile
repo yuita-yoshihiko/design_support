@@ -68,6 +68,8 @@ gem 'material_icons'
 
 gem 'kaminari'
 
+gem 'mechanize'
+
 
 
 # Use Sass to process CSS
