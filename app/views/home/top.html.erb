@@ -13,8 +13,9 @@
           <%= render 'search_form' %>
           <div class="dropdown dropdown-hover dropdown-end">
             <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white text-xs md:text-base tracking-tight md:tracking-normal hover:bg-green-800 rounded-lg">レベルアップ<span class="material-icons">moving</span></label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-48 text-sm">
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-60 text-sm">
               <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'トレンド情報', trend_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
               <li><%= link_to 'SEO対策 ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
               <li><%= link_to 'Webマーケティング ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
               <li><%= link_to 'ブランディング ※準備中', '#', class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
