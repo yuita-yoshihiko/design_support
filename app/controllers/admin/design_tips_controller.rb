@@ -5,7 +5,7 @@ class Admin::DesignTipsController < Admin::BaseController
   # GET /design_tips or /design_tips.json
   def index
     @q = DesignTip.ransack(params[:q])
-    @design_tips = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(15)
+    @design_tips = @q.result(distinct: true).preload(:taggings).order(created_at: :desc).page(params[:page]).per(15)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
