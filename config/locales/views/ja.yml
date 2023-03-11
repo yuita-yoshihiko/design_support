@@ -25,6 +25,8 @@ ja:
       title: 'プライバシーポリシー'
     terms_of_use:
       title: '利用規約'
+    trend:
+      title: 'トレンド情報'
   users:
     new:
       title: 'ユーザー登録'
