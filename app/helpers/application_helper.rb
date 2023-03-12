@@ -16,8 +16,8 @@ module ApplicationHelper
         type: 'website',
         url: request.original_url,
         image: image_url('ogp.jpg'),
-        locale: 'ja_JP',
-      },
+        locale: 'ja_JP'
+      }
     }
   end
 end
