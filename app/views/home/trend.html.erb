@@ -9,12 +9,25 @@
   </div>
 </div>
 
+<div class='container mx-auto font-serif text-gray-600 text-lg mb:text-xl lg:text-3xl py-12'>情報</div>
 <div class='container mx-auto flex flex-row grid sm:grid-cols-2 xl:grid-cols-3 mt-20 pb-16 gap-8 md:gap-12 xl:gap-16'>
   <% @img.zip(@photoshopvip).first(3).each do |i, photoshopvip| %>
     <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
       <%= image_tag i[:src], loading: "lazy", class: "w-96 h-64 object-cover mx-auto" %>
       <div class="text-brown text-xl font-serif hover:text-yellow-900 pt-4">
         <%= link_to photoshopvip.inner_text, photoshopvip[:href], target: :_blank, rel: "noopener noreferrer"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class='container mx-auto font-serif text-gray-600 text-lg mb:text-xl lg:text-3xl py-12'>ギャラリー</div>
+<div class='container mx-auto flex flex-row grid sm:grid-cols-2 xl:grid-cols-3 mt-20 pb-16 gap-8 md:gap-12 xl:gap-16'>
+  <% @img_second.zip(@webdesignclip).each do |i_s, webdesignclip| %>
+    <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
+      <%= image_tag i_s[:src], loading: "lazy", class: "w-96 h-64 object-cover mx-auto" %>
+      <div class="text-brown text-xl font-serif hover:text-yellow-900 pt-4">
+        <%= link_to webdesignclip.inner_text, webdesignclip[:href], target: :_blank, rel: "noopener noreferrer"%>
       </div>
     </div>
   <% end %>
