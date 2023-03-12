@@ -7,8 +7,15 @@ class ListsController < ApplicationController
     @list_design_tip = @list.design_tips
   end
 
+  def show
+    @design_tips = @list.design_tips
+  end
+
   def new
     @list = List.new
+  end
+
+  def edit
   end
 
   def create
@@ -20,13 +27,6 @@ class ListsController < ApplicationController
       flash.now[:error] = 'リストを作成できませんでした。'
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @design_tips = @list.design_tips
-  end
-
-  def edit
   end
 
   def update
@@ -44,11 +44,12 @@ class ListsController < ApplicationController
   end
 
   private
-    def set_list
-      @list = current_user.lists.find(params[:id])
-    end
 
-    def list_params
-      params.require(:list).permit(:name)
-    end
+  def set_list
+    @list = current_user.lists.find(params[:id])
+  end
+
+  def list_params
+    params.require(:list).permit(:name)
+  end
 end

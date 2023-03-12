@@ -1,9 +1,8 @@
 class DesignTip < ApplicationRecord
-
   belongs_to :user
   acts_as_taggable_on :tags
   has_many :likes, dependent: :destroy
-  has_many :list_design_tips
+  has_many :list_design_tips, dependent: :destroy
   has_many :lists, through: :list_design_tips
 
   validates :title, presence: true, length: { maximum: 255 }

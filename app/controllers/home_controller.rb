@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
   def trend
     agent = Mechanize.new
-    page_photoshopvip = agent.get("https://photoshopvip.net/")
+    page_photoshopvip = agent.get('https://photoshopvip.net/')
     @photoshopvip = page_photoshopvip.search('.title a')
     @img = page_photoshopvip.search('img')
   end
@@ -24,5 +24,4 @@ class HomeController < ApplicationController
 
   def terms_of_use
   end
-
 end

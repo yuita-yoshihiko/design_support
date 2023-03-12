@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Lists", type: :system do
+RSpec.describe 'Lists', type: :system do
   let(:user) { create(:user) }
   let(:list) { create(:list, user:) }
 
