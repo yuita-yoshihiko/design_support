@@ -1,0 +1,40 @@
+<div class="px-4 md:px-10 mx-auto w-full">
+  <div class="flex flex-wrap">
+    <div class="w-full lg:w-8/12 px-4">
+      <div
+        class="relative flex flex-col min-w-0 w-full mb-6"
+      >
+        <div class="rounded-t mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-xl font-serif">
+              <%= t('.title') %>
+            </h6>
+          </div>
+        </div>
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+          <%= form_with model: @user, url: admin_user_path(@user), local: true do |form| %>
+            <%= render 'shared/error_messages', object: form.object %>
+            <div class="my-5">
+              <%= form.label :name %>
+              <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+            <div class="my-5">
+              <%= form.label :email %>
+              <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            </div>
+
+            <div class="my-5">
+              <%= form.label :role %>
+              <%= form.select :role, User.roles.invert, {}, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+            </div>
+            <div class="text-right pt-5 pr-4">
+              <%= link_to t('defaults.back'), admin_users_path, class: 'badge text-white bg-green-700 hover:bg-green-600  mr-2' %>
+              <%= form.submit t('defaults.edit'), class: 'badge text-white bg-green-700 hover:bg-green-600  mr-2' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
