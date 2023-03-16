@@ -35,6 +35,7 @@
             <% end %>
             <br>
             <%= link_to (t '.to_login_page'), login_path, class: 'text-gray-400 hover:text-green-800 active:text-green-900' %>
+            <%= link_to 'Login with Google', auth_at_provider_path(provider: :google) %>
           </div>
         </div>
       </div>
