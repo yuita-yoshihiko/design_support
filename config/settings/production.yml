@@ -4,4 +4,4 @@ sorcery:
 
 default_url_options:
   protocol: 'https'
-  host: 'anyone-design.com'
+  host: 'www.anyone-design.com'
