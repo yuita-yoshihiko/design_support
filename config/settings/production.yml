@@ -3,5 +3,5 @@ sorcery:
   google_callback_url: 'https://www.anyone-design.com/oauth/callback?provider=google'
 
 default_url_options:
-  protocol: 'https'
-  host: 'www.anyone-design.com'
+  protcol: 'https'
+  host: 'anyone-design.com'
