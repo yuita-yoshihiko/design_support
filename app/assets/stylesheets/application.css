@@ -34,7 +34,7 @@ input[type="text"] {
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: #9ca3af;
-  width: 230px;
+  width: 250px;
 }
 
 input[type="email"]:focus {
@@ -50,7 +50,7 @@ input[type="email"] {
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: #9ca3af;
-  width: 230px;
+  width: 250px;
 }
 
 input[type="password"]:focus {
@@ -66,5 +66,5 @@ input[type="password"] {
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: #9ca3af;
-  width: 230px;
+  width: 250px;
 }
