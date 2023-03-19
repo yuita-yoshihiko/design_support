@@ -17,7 +17,7 @@ class OauthsController < ApplicationController
         auto_login(@user)
         redirect_to root_path, success: "#{provider.titleize}アカウントでログインしました"
       rescue
-        redirect_to root_path, error: "#{provider.titleize}アカウントでログインに失敗しました。 #{@user.errors.full_messages}"
+        redirect_to root_path, error: "#{provider.titleize}アカウントでログインに失敗しました"
       end
     end
   end
