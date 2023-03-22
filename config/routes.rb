@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'home#privacy_policy'
   get 'terms_of_use', to: 'home#terms_of_use'
   get 'trend', to: 'home#trend'
+  get 'operation', to: 'home#operation'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
