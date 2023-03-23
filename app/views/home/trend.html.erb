@@ -4,12 +4,15 @@
     <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>トレンド情報</div>
     <p class="text-gray-600 mb-8">
       日々移り変わるトレンドを掴むこともデザインを学ぶ上で重要なことです。<br>
-      まずは新しい情報に目を通す習慣を付けていきましょう。<br>
+      新しい情報に目を通す習慣を付けていきましょう。<br>
     </p>
   </div>
 </div>
 
 <div class='container mx-auto font-serif text-gray-600 text-lg mb:text-xl lg:text-3xl py-12'>情報</div>
+    <p class="container mx-auto text-gray-600 mb-8">
+      Webデザインに関する新着の記事などの文字情報を掲載しています。<br>
+    </p>
 <div class='container mx-auto flex flex-row grid sm:grid-cols-2 xl:grid-cols-3 mt-20 pb-16 gap-8 md:gap-12 xl:gap-16'>
   <% @img.zip(@photoshopvip).first(3).each do |i, photoshopvip| %>
     <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
@@ -22,6 +25,9 @@
 </div>
 
 <div class='container mx-auto font-serif text-gray-600 text-lg mb:text-xl lg:text-3xl py-12'>ギャラリー</div>
+    <p class="container mx-auto text-gray-600 mb-8">
+      デザインのお手本になるモダンなWebサイトを日々更新しながら掲載しています。<br>
+    </p>
 <div class='container mx-auto flex flex-row grid sm:grid-cols-2 xl:grid-cols-3 mt-20 pb-16 gap-8 md:gap-12 xl:gap-16'>
   <% @img_second.zip(@webdesignclip).each do |i_s, webdesignclip| %>
     <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
