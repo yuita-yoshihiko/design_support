@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_022304) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_111239) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answer_design_tips", force: :cascade do |t|
+    t.bigint "answer_id", null: false
+    t.bigint "design_tip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_answer_design_tips_on_answer_id"
+    t.index ["design_tip_id"], name: "index_answer_design_tips_on_design_tip_id"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer1", null: false
+    t.string "answer2", null: false
+    t.string "answer3", null: false
+    t.string "answer_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -108,6 +126,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_022304) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "answer_design_tips", "answers"
+  add_foreign_key "answer_design_tips", "design_tips"
   add_foreign_key "likes", "design_tips"
   add_foreign_key "likes", "users"
   add_foreign_key "list_design_tips", "design_tips"

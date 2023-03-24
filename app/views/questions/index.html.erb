@@ -1,0 +1,16 @@
+<h1>2択の質問</h1>
+<%= form_with url: answer_questions_path, method: 'get' do |f| %>
+  <p>Web系のサービスやデザインの作成に関わった経験は？</p>
+  <%= f.radio_button :answer1, "A" %> 全くない
+  <%= f.radio_button :answer1, "B" %> 少しはある
+
+  <p>あなたがデザインする際に重視したいのは？</p>
+  <%= f.radio_button :answer2, "A" %> 使いやすさ
+  <%= f.radio_button :answer2, "B" %> おしゃれさ
+
+  <p>あなたの学習スタイルは？</p>
+  <%= f.radio_button :answer3, "A" %> まずは基本を抑える
+  <%= f.radio_button :answer3, "B" %> 手を動かしながら覚える
+
+  <%= f.submit "回答する" %>
+<% end %>
