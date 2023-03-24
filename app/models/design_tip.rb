@@ -4,6 +4,7 @@ class DesignTip < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :list_design_tips, dependent: :destroy
   has_many :lists, through: :list_design_tips
+  has_many :answers, through: :answert_design_tips
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :guidance, presence: true, length: { maximum: 65_535 }
