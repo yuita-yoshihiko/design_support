@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   resources :lists
   resources :list_design_tips
 
+  resources :questions, only: %i[index] do
+    collection do
+      get 'answer'
+    end
+  end
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
