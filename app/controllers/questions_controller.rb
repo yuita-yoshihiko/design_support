@@ -12,6 +12,6 @@ class QuestionsController < ApplicationController
     
     @answer_code = Answer.get_answer(@answer1, @answer2, @answer3)
 
-    @answer_design_tip = AnswerDesignTip.all
+    @answer_design_tip = AnswerDesignTip.preload(:answer, :design_tip)
   end
 end
