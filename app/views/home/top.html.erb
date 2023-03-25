@@ -7,7 +7,10 @@
           ここから始まるデザインがある。
         </h1>
 
-        <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。</p>
+        <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
+          誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。<br>
+          まずはこちらの<%= link_to 'あなたに合った情報', questions_path, class: 'text-brown hover:text-yellow-900' %>から。
+        </p>
         
         <div class="flex font-serif flex-row justify-center lg:justify-start gap-2 lg:gap-8 items-center">
           <%= render 'search_form' %>
@@ -16,7 +19,7 @@
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-36 text-sm">
               <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
               <li><%= link_to 'トレンド情報', trend_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-              <li><%= link_to 'サービスの運用について', operation_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'サービスの運用について', operation_path, class: 'text-gray-500 hover:text-yellow-900 active:text-green-900 active:bg-white' %></li>
             </ul>
           </div>
         </div>
