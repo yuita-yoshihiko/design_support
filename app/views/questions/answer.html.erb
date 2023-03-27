@@ -1,9 +1,12 @@
 <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div class="flex justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
     <p class="text-gray-600 mb-8">
       あなたにおすすめの情報をピックアップしました。<br>
       まずはこちらの情報から目を通してみて下さい。<br>
     </p>
+    <%= link_to design_tips_path(q: { tags_name_cont: 'テクニック' }), class: "btn font-serif bg-green-700 hover:bg-green-600 text-white text-center rounded-lg" do %>
+      情報一覧ページへ
+    <% end %>
   </div>
 </div>
 

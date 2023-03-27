@@ -17,9 +17,9 @@
           <div class="dropdown dropdown-hover dropdown-end">
             <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 hover:text-white text-xs md:text-base tracking-tight md:tracking-normal hover:bg-green-800 rounded-lg">サブコンテンツ</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white rounded-lg w-60 h-36 text-sm">
-              <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
               <li><%= link_to 'トレンド情報', trend_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
-              <li><%= link_to 'サービスの運用について', operation_path, class: 'text-gray-500 hover:text-yellow-900 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to '脱・初心者に向けて', growing_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
+              <li><%= link_to 'サービスの運用について', operation_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %></li>
             </ul>
           </div>
         </div>
@@ -41,40 +41,6 @@
       </div>
         <div data-view-target="content" >
           <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 container mx-auto">
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">palette</span>
-              </div>
-
-              <div>
-                <%= link_to '配色',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'配色'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">color</p>
-              </div>
-            </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">sort_by_alpha</span>
-              </div>
-
-              <div>
-                <%= link_to 'フォント',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フォント'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">font</p>
-              </div>
-            </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">swipe</span>
-              </div>
-
-              <div>
-                <%= link_to 'UI・UX',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'UI・UX'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">UI・UX</p>
-              </div>
-            </div>
-
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
                 <span class="material-icons">star_border</span>
@@ -88,23 +54,12 @@
 
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">attach_file</span>
+                <span class="material-icons">palette</span>
               </div>
 
               <div>
-                <%= link_to 'テンプレート',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'テンプレート'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">template</p>
-              </div>
-            </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">wallpaper</span>
-              </div>
-
-              <div>
-                <%= link_to 'デザイン例',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'デザイン例'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">designs</p>
+                <%= link_to '配色',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'配色'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">color</p>
               </div>
             </div>
 
@@ -121,12 +76,34 @@
 
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">photo_library</span>
+                <span class="material-icons">subtitles</span>
               </div>
 
               <div>
-                <%= link_to 'フリー素材',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フリー素材'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">material</p>
+                <%= link_to 'HTML・CSS',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'HTML・CSS'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">HTML・CSS</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <span class="material-icons">swipe</span>
+              </div>
+
+              <div>
+                <%= link_to 'UI・UX',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'UI・UX'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">UI・UX</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <span class="material-icons">sort_by_alpha</span>
+              </div>
+
+              <div>
+                <%= link_to 'フォント',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フォント'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">font</p>
               </div>
             </div>
 
@@ -152,6 +129,29 @@
               </div>
             </div>
 
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <span class="material-icons">photo_library</span>
+              </div>
+
+              <div>
+                <%= link_to 'フリー素材',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フリー素材'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">material</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 md:gap-6">
+              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+                <span class="material-icons">wallpaper</span>
+              </div>
+
+              <div>
+                <%= link_to 'デザイン例',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'デザイン例'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">designs</p>
+              </div>
+            </div>
+
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
                 <span class="material-icons">brush</span>
@@ -165,14 +165,15 @@
 
             <div class="flex gap-4 md:gap-6">
               <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">subtitles</span>
+                <span class="material-icons">attach_file</span>
               </div>
 
               <div>
-                <%= link_to 'HTML・CSS',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'HTML・CSS'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">HTML・CSS</p>
+                <%= link_to 'テンプレート',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'テンプレート'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
+                <p class="text-gray-400 mb-2">template</p>
               </div>
             </div>
+
           </div>
         </div>
 
