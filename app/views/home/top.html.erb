@@ -1,7 +1,7 @@
 <div class="pb-6 sm:pb-8 lg:pb-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
 
-    <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
+    <div class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
       <div class="xl:w-7/12 flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
         <h1 class="text-gray-600 text-2xl lg:text-5xl font-serif mb-8 md:mb-12">
           ここから始まるデザインがある。
@@ -28,7 +28,7 @@
       <div class="xl:w-5/12 h-48 lg:h-auto rounded-lg">
         <%= image_tag "top.jpg" %>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 
@@ -39,254 +39,242 @@
         <a class="tab is-active text-gray-500 hover:text-brown active:text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">情報ジャンル</a>
         <a class="tab not-active text-gray-500 hover:text-brown active:text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
       </div>
-        <div data-view-target="content" >
-          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 container mx-auto">
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">star_border</span>
-              </div>
+      <div data-view-target="content" >
+        <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 container mx-auto">
 
-              <div>
-                <%= link_to 'テクニック',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'テクニック'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">technique</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">star_border</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">palette</span>
-              </div>
-
-              <div>
-                <%= link_to '配色',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'配色'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">color</p>
-              </div>
+            <div>
+              <%= link_to 'テクニック', design_tips_path(q: { tags_name_cont: 'テクニック' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">technique</p>
             </div>
+          </div>
 
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">school</span>
-              </div>
-
-              <div>
-                <%= link_to '基礎知識',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'基礎知識'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">basic knowledge</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">palette</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">subtitles</span>
-              </div>
-
-              <div>
-                <%= link_to 'HTML・CSS',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'HTML・CSS'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">HTML・CSS</p>
-              </div>
+            <div>
+              <%= link_to '配色', design_tips_path(q: { tags_name_cont: '配色' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">color</p>
             </div>
+          </div>
 
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">swipe</span>
-              </div>
-
-              <div>
-                <%= link_to 'UI・UX',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'UI・UX'}}, { class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">UI・UX</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">school</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">sort_by_alpha</span>
-              </div>
-
-              <div>
-                <%= link_to 'フォント',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フォント'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">font</p>
-              </div>
+            <div>
+              <%= link_to '基礎知識', design_tips_path(q: { tags_name_cont: '基礎知識' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">basic knowledge</p>
             </div>
+          </div>
 
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">dashboard</span>
-              </div>
-
-              <div>
-                <%= link_to 'レイアウト',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'レイアウト'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">layout</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">subtitles</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">android</span>
-              </div>
-
-              <div>
-                <%= link_to 'エンジニア向け',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'エンジニア向け'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">for engineers</p>
-              </div>
+            <div>
+              <%= link_to 'HTML・CSS', design_tips_path(q: { tags_name_cont: 'HTML・CSS' }), class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2"  %>
+              <p class="text-gray-400 mb-2">HTML・CSS</p>
             </div>
+          </div>
 
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">photo_library</span>
-              </div>
-
-              <div>
-                <%= link_to 'フリー素材',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'フリー素材'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">material</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">swipe</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">wallpaper</span>
-              </div>
-
-              <div>
-                <%= link_to 'デザイン例',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'デザイン例'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">designs</p>
-              </div>
+            <div>
+              <%= link_to 'UI・UX', design_tips_path(q: { tags_name_cont: 'UI・UX' }), class: "text-lg md:text-xl font-serif text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">UI・UX</p>
             </div>
+          </div>
 
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">brush</span>
-              </div>
-
-              <div>
-                <%= link_to 'お手本',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'お手本'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">example</p>
-              </div>
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">sort_by_alpha</span>
             </div>
-
-            <div class="flex gap-4 md:gap-6">
-              <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
-                <span class="material-icons">attach_file</span>
-              </div>
-
-              <div>
-                <%= link_to 'テンプレート',{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>'テンプレート'}}, { class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" } %>
-                <p class="text-gray-400 mb-2">template</p>
-              </div>
+            <div>
+              <%= link_to 'フォント', design_tips_path(q: { tags_name_cont: 'フォント' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">font</p>
             </div>
+          </div>
 
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">dashboard</span>
+            </div>
+            <div>
+              <%= link_to 'レイアウト', design_tips_path(q: { tags_name_cont: 'レイアウト' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">layout</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">android</span>
+            </div>
+            <div>
+              <%= link_to 'エンジニア向け', design_tips_path(q: { tags_name_cont: 'エンジニア向け' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">for engineers</p>
+            </div>
+          </div>
+
+
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">photo_library</span>
+            </div>
+            <div>
+              <%= link_to 'フリー素材', design_tips_path(q: { tags_name_cont: 'フリー素材' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">material</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">wallpaper</span>
+            </div>
+            <div>
+              <%= link_to 'デザイン例', design_tips_path(q: { tags_name_cont: 'デザイン例' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">designs</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">brush</span>
+            </div>
+            <div>
+              <%= link_to 'お手本', design_tips_path(q: { tags_name_cont: 'お手本' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">example</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 md:gap-6">
+            <div class="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center shrink-0 bg-brown text-white rounded-lg md:rounded-xl shadow-lg">
+              <span class="material-icons">attach_file</span>
+            </div>
+            <div>
+              <%= link_to 'テンプレート', design_tips_path(q: { tags_name_cont: 'テンプレート' }), class: "text-lg md:text-xl font-serif font-semibold text-stone-500 hover:text-stone-700 mb-2" %>
+              <p class="text-gray-400 mb-2">template</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden" data-view-target="content">
+        <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+          <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <div class="font-serif text-gray-600 text-xl md:text-3xl lg:text-4xl py-12">デザインって何から始めたらいいの？</div>
+            <p class="max-w-md text-gray-600 mb-8">
+            そんなあなたに向けて、まず始めに知っておきたいこと<br>
+            やっておきたいことをまとめました。<br>
+            まずはここから始めてみましょう。
+            </p>
           </div>
         </div>
 
-        <div class="hidden" data-view-target="content">
-          <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="font-serif text-gray-600 text-xl md:text-3xl lg:text-4xl py-12">デザインって何から始めたらいいの？</div>
-              <p class="max-w-md text-gray-600 mb-8">
-              そんなあなたに向けて、まず始めに知っておきたいこと<br>
-              やっておきたいことをまとめました。<br>
-              まずはここから始めてみましょう。
-              </p>
-            </div>
-          </div>
-
-          <div class="bg-gray py-6 sm:py-8 lg:py-12">
-            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
-                <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "base.jpg", loading: "lazy", class: "w-full h-full object-cover object-center"%>
-                </div>
-                <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">基本を知る</div>
-                  <p class="text-gray-600 text-xs lg:text-base mb-8">
-                    何事も基本から。<br>
-                    chot.designではデザインの基本的な考え方からHTML・CSSのコーディング、デザインツールの使い方まで<br>
-                    幅広く学ぶことができます。まずはこちらのサービスでwebデザインの基本に触れてみましょう。<br>
-                  </p>
-                  <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
-                    <%= link_to "・chot.design", "https://chot.design/", target: :_blank, rel: "noopener noreferrer" %>
-                  </div>
-                  <br>
-                </div>
+        <div class="bg-gray py-6 sm:py-8 lg:py-12">
+          <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
+              <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
+                <%= image_tag "base.jpg", loading: "lazy", class: "w-full h-full object-cover object-center"%>
               </div>
-            </div>
-          </div>
-
-          <div class="bg-gray py-6 lg:py-20">
-            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
-                <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">手を動かす</div>
-                  <p class="text-gray-600 text-xs lg:text-base mb-8">
-                    Webデザインに必須のコーディングついて、もう少し具体的に学んでいきましょう。<br>
-                    以下のサービスがとても役に立ちます。<br>
-                    実際に手を動かしながら理解を深めていきましょう。<br>
-                  </p>
-                  <div class="flex flex-col font-serif">
-                    <div class='flex items-end'>
-                      <%= link_to "・ドットインストール", "https://dotinstall.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
-                      <p class="text-gray-400">  #動画で</p>
-                    </div>
-                    <div class='flex items-end my-2'>
-                      <%= link_to "・サルワカ", "https://saruwakakun.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
-                      <p class="text-gray-400">  #テキストで</p>
-                    </div>
-                    <div class='flex items-end'>
-                      <%= link_to "・Progate", "https://prog-8.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
-                      <p class="text-gray-400">  #手軽に</p>
-                    </div>
-                  </div>
+              <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+                <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">基本を知る</div>
+                <p class="text-gray-600 text-xs lg:text-base mb-8">
+                  何事も基本から。<br>
+                  chot.designではデザインの基本的な考え方からHTML・CSSのコーディング、デザインツールの使い方まで<br>
+                  幅広く学ぶことができます。まずはこちらのサービスでwebデザインの基本に触れてみましょう。<br>
+                </p>
+                <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
+                  <%= link_to "・chot.design", "https://chot.design/", target: :_blank, rel: "noopener noreferrer" %>
                 </div>
-                <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "move.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray pt-6 pb-12 lg:py-20">
-            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
-                <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "make.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
-                </div>
-                <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">作ってみる</div>
-                  <p class="text-gray-600 text-xs lg:text-base mb-8">
-                    学んだことは実践してみましょう。以下の書籍が非常に役に立ちます。<br>
-                    丁寧な解説をもとにおしゃれなサイトが作れるので、最初の一冊に最適です。<br>
-                    学んでいてとても楽しくなりますよ。<br>
-                  </p>
-                  <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
-                    <%= link_to "・1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892", target: :_blank, rel: "noopener noreferrer" %>
-                  </div>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gray py-6 lg:py-20">
-            <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-              <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
-                <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
-                  <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
-                  <p class="text-gray-600 text-xs lg:text-base mb-8">
-                    Webデザインに、フリー素材やテンプレートを利用する際は著作権等に注意しましょう。<br>
-                    トラブルを防ぐためにも早めに学んでおくに越したことはありません。<br>
-                    以下ページなどを参考に勉強しましょう。<br>
-                  </p>
-                  <div class="flex flex-col text-brown lg:text-xl font-serif">
-                    <%= link_to "・WEBデザイナー必見！著作権を侵害しないために注意すべきこと！", "https://japan-design.jp/design/0068/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
-                    <%= link_to "・無料で自由に使えるは間違い！フリー素材を使うときの注意点を教えます", "https://www.mp-creative.jp/columns/764", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
-                  </div>
-                </div>
-                <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
-                  <%= image_tag "public.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
-                </div>
+                <br>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="bg-gray py-6 lg:py-20">
+          <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
+              <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+                <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">手を動かす</div>
+                <p class="text-gray-600 text-xs lg:text-base mb-8">
+                  Webデザインに必須のコーディングついて、もう少し具体的に学んでいきましょう。<br>
+                  以下のサービスがとても役に立ちます。<br>
+                  実際に手を動かしながら理解を深めていきましょう。<br>
+                </p>
+                <div class="flex flex-col font-serif">
+                  <div class='flex items-end'>
+                    <%= link_to "・ドットインストール", "https://dotinstall.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                    <p class="text-gray-400">  #動画で</p>
+                  </div>
+                  <div class='flex items-end my-2'>
+                    <%= link_to "・サルワカ", "https://saruwakakun.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                    <p class="text-gray-400">  #テキストで</p>
+                  </div>
+                  <div class='flex items-end'>
+                    <%= link_to "・Progate", "https://prog-8.com/", class: 'text-brown lg:text-xl hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                    <p class="text-gray-400">  #手軽に</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
+                <%= image_tag "move.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray pt-6 pb-12 lg:py-20">
+          <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
+              <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
+                <%= image_tag "make.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
+              </div>
+              <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+                <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">作ってみる</div>
+                <p class="text-gray-600 text-xs lg:text-base mb-8">
+                  学んだことは実践してみましょう。以下の書籍が非常に役に立ちます。<br>
+                  丁寧な解説をもとにおしゃれなサイトが作れるので、最初の一冊に最適です。<br>
+                  学んでいてとても楽しくなりますよ。<br>
+                </p>
+                <div class="text-brown lg:text-xl font-serif hover:text-yellow-900">
+                  <%= link_to "・1冊ですべて身につくHTML&CSSとWebデザイン入門講座", "https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892", target: :_blank, rel: "noopener noreferrer" %>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray py-6 lg:py-20">
+          <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
+              <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
+                <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
+                <p class="text-gray-600 text-xs lg:text-base mb-8">
+                  Webデザインに、フリー素材やテンプレートを利用する際は著作権等に注意しましょう。<br>
+                  トラブルを防ぐためにも早めに学んでおくに越したことはありません。<br>
+                  以下ページなどを参考に勉強しましょう。<br>
+                </p>
+                <div class="flex flex-col text-brown lg:text-xl font-serif">
+                  <%= link_to "・WEBデザイナー必見！著作権を侵害しないために注意すべきこと！", "https://japan-design.jp/design/0068/", class: 'hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+                  <%= link_to "・無料で自由に使えるは間違い！フリー素材を使うときの注意点を教えます", "https://www.mp-creative.jp/columns/764", class: 'hover:text-yellow-900 my-2', target: :_blank, rel: "noopener noreferrer" %>
+                </div>
+              </div>
+              <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
+                <%= image_tag "public.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
