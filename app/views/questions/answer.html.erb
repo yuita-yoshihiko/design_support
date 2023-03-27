@@ -20,7 +20,7 @@
           </div>
           <p class="text-gray-500 text-sm"><%= answer_design_tip.design_tip.guidance %></p>
           <div class="my-5 flex place-content-between">
-            <%= render 'design_tips/tag_list', tag: answer_design_tip.design_tip.tags.pluck(:name) %>
+            <div class='flex gap-1 md:gap-3'><%= render 'design_tips/tag_list', tag: answer_design_tip.design_tip.tags.pluck(:name) %></div>
             <% if logged_in? %>
               <%= render 'design_tips/like_button', design_tip: answer_design_tip.design_tip %>
             <% else %>
