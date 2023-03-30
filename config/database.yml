@@ -84,6 +84,7 @@ test:
 #
 production:
   <<: *default
-  database: design_support_production
-  username: design_support
+  database: <%= ENV["DESIGN_SUPPORT_DATABASE"] %>
+  username: <%= ENV["DESIGN_SUPPORT_DATABASE_USERNAME"] %>
   password: <%= ENV["DESIGN_SUPPORT_DATABASE_PASSWORD"] %>
+  host: <%= ENV["DESIGN_SUPPORT_DATABASE_HOST"] %>
