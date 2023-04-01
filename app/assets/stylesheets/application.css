@@ -68,3 +68,15 @@ input[type="password"] {
   border-bottom-color: #9ca3af;
   width: 250px;
 }
+
+.icons {
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-person {
+  fill: #166534;
+  width: 24px;
+  height: 24px;
+}
