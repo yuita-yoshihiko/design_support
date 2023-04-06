@@ -28,6 +28,8 @@ ja:
       title: '利用規約'
     trend:
       title: 'トレンド情報'
+    operation:
+      title: 'サービスの運用について'
   users:
     new:
       title: 'ユーザー登録'
