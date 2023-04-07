@@ -1,6 +1,6 @@
 <div>
   <label for="my-modal-<%= design_tip.id %>" class="container text-gray-300 hover:bg-amber-100 rounded-lg flex items-center text-xs">
-    <span class="material-icons">playlist_add_check</span>
+    <svg class="icons-list"><use xlink:href="#icons-list_add_check"></use></svg>
     <div>リスト</div>
   </label>
 </div>
@@ -20,8 +20,7 @@
           <% end %>
           <div class='mt-10'>
             <%= link_to new_list_path, class:'flex justify-center text-gray-400 hover:text-green-800 active:text-green-900' do %>
-              <span class="material-icons">playlist_add</span>
-              <div>リストを作成する</div>
+              <div>リスト作成ページへ</div>
             <% end %>
           </div>
         </div>

@@ -5,7 +5,7 @@
       お気に入りリスト一覧
     </div>
     <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg mr-2 lg:mr-0' do %>
-      <span class="material-icons">playlist_add</span>
+      <svg class="icons-list_create"><use xlink:href="#icons-list_add"></use></svg>
       <div>リスト作成</div>
     <% end %>
   </div>
@@ -13,13 +13,13 @@
   <% if @lists.present? %>
     <% @lists.each do |list| %>
       <div class="flex gap-8 mt-20 pb-16 items-center font-serif">
-        <div class="text-gray-600 text-2xl"><%= list.name %></div>
-        <%= link_to edit_list_path(list), class: "text-xs text-green-700 hover:text-green-600" do %>
-          <span class="material-icons">mode_edit</span>
+        <div class="flex text-gray-600 text-2xl"><%= list.name %></div>
+        <%= link_to edit_list_path(list), class: "flex flex-col text-xs text-green-700 hover:text-green-600 mb-0.5" do %>
+          <svg class="icons-list_edit"><use xlink:href="#icons-mode_edit"></use></svg>
           <div>編集</div>
         <% end %>
-        <%= button_to list_path(list), method: :delete, form: { data: { turbo_confirm: "リストを削除しますか?" } }, class: "text-xs text-green-700 hover:text-green-600" do %>
-          <span class="material-icons">delete</span>
+        <%= button_to list_path(list), method: :delete, form: { data: { turbo_confirm: "リストを削除しますか?" } }, class: "flex flex-col text-xs text-green-700 hover:text-green-600" do %>
+          <svg class="icons-list_edit"><use xlink:href="#icons-delete"></use></svg>
           <div>削除</div>
         <% end %>
       </div>
@@ -39,7 +39,7 @@
                     <%= render 'design_tips/like_button', design_tip: list_design_tip.design_tip %></div>
                     <%= link_to list_design_tip_url(list_design_tip), data: { turbo_method: :delete, turbo_confirm: 'リストから削除しますか?' }, status: :see_other do %>
                       <div class="container text-gray-300 hover:bg-red-400 rounded-lg flex items-center text-xs">
-                        <span class="material-icons">playlist_remove</span>
+                        <svg class="icons-list"><use xlink:href="#icons-list_remove"></use></svg>
                         <div>削除</div>
                       </div>
                     <% end %>
