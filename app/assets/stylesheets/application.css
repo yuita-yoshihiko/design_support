@@ -80,3 +80,37 @@ input[type="password"] {
   width: 24px;
   height: 24px;
 }
+
+.icons-favorite {
+  fill: #f43f5e;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-favorite_border {
+  fill: #d1d5db;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-list {
+  fill: #d1d5db;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-list_create {
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-list_edit {
+  fill: #166534;
+  width: 24px;
+  height: 24px;
+}
+
+.icons-list_edit:hover {
+  fill: #16a34a;
+}
