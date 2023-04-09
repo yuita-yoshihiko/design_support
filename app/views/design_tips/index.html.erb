@@ -43,24 +43,7 @@
     <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
       <% @design_tips.each do |design_tip| %>
         <% if design_tip.medium == 'web' %>
-          <div class="bg-white flex md:flex-row rounded-lg shadow-lg overflow-hidden">
-            <div class="flex flex-col  place-content-between gap-2 p-4 lg:p-6">
-              <div class="text-brown text-xl font-serif hover:text-yellow-900">
-                <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-              <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
-              <div class="my-5 flex place-content-between">
-                <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag: design_tip.tags.pluck(:name) %></div>
-                <div class='flex gap-2'>
-                  <% if logged_in? %>
-                    <%= render 'like_button', design_tip: design_tip %>
-                  <% else %>
-                    <%= render 'design_tips/before_login_like'%>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'design_tip', design_tip: design_tip %>
         <% end %>
       <% end %>
     </div>
@@ -70,24 +53,7 @@
     <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
       <% @design_tips.each do |design_tip| %>
         <% if design_tip.medium == 'book' %>
-          <div class="bg-white flex md:flex-row rounded-lg shadow-lg overflow-hidden">
-            <div class="flex flex-col  place-content-between gap-2 p-4 lg:p-6">
-              <div class="text-brown text-xl font-serif hover:text-yellow-900">
-                <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-              <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
-              <div class="my-5 flex place-content-between">
-                <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag: design_tip.tags.pluck(:name) %></div>
-                <div class='flex gap-2'>
-                  <% if logged_in? %>
-                    <%= render 'like_button', design_tip: design_tip %>
-                  <% else %>
-                    <%= render 'design_tips/before_login_like'%>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'design_tip', design_tip: design_tip %>
         <% end %>
       <% end %>
     </div>
@@ -97,24 +63,7 @@
     <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
       <% @design_tips.each do |design_tip| %>
         <% if design_tip.medium == 'movie' %>
-          <div class="bg-white flex md:flex-row rounded-lg shadow-lg overflow-hidden">
-            <div class="flex flex-col  place-content-between gap-2 p-4 lg:p-6">
-              <div class="text-brown text-xl font-serif hover:text-yellow-900">
-                <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
-              </div>
-              <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
-              <div class="my-5 flex place-content-between">
-                <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag: design_tip.tags.pluck(:name) %></div>
-                <div class='flex gap-2'>
-                  <% if logged_in? %>
-                    <%= render 'like_button', design_tip: design_tip %>
-                  <% else %>
-                    <%= render 'design_tips/before_login_like'%>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'design_tip', design_tip: design_tip %>
         <% end %>
       <% end %>
     </div>

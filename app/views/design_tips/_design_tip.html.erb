@@ -9,7 +9,9 @@
       <div class='flex gap-1 md:gap-2'>
         <% if logged_in? %>
           <%= render 'like_button', design_tip: design_tip %>
-          <%= render 'list_button', design_tip: design_tip %>
+          <% if request.path == likes_design_tips_path %>
+            <%= render 'list_button', design_tip: design_tip %>
+          <% end %>
         <% else %>
           <%= render 'design_tips/before_login_like'%>
         <% end %>
