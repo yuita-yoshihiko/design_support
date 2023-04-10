@@ -3,8 +3,7 @@ class DesignTipsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @search = DesignTip.ransack(params[:q])
-    @design_tips = @search.result(distinct: true).preload(:tags)
+    @design_tips = @q.result(distinct: true).preload(:tags)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
     @list = List.new
     return unless current_user
@@ -29,10 +28,5 @@ class DesignTipsController < ApplicationController
 
   def set_q
     @q = DesignTip.ransack(params[:q])
-  end
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_design_tip
-    @design_tip = DesignTip.find(params[:id])
   end
 end

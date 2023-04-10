@@ -7,7 +7,7 @@
 <hr>
   <div class="flex container mx-auto" >
     <% @tag_list.each do|tag| %>
-      <%= link_to tag.name,{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>tag.name}}, { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
+      <%= link_to tag.name, design_tips_path(q: { tags_name_cont: tag.name }), { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
     <% end %>
   </div>
 <hr>
@@ -19,7 +19,7 @@
     <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-164 font-normal text-sm">
       <li>
         <% @tag_list.each do|tag| %>
-          <%= link_to tag.name,{:controller=>"design_tips",:action=>"index",:q=>{:tags_name_cont=>tag.name}}, { class: "text-base font-serif text-gray-500 hover:text-emerald-600" } %>
+          <%= link_to tag.name, design_tips_path(q: { tags_name_cont: tag.name }), { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
         <% end %>
       </li>
     </ul>
