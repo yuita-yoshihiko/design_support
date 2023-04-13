@@ -1,15 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[:how edit update destroy]
-
-  def index
-    @lists = current_user.lists
-    @list = List.new
-    @list_design_tip = @list.design_tips
-  end
-
-  def show
-    @design_tips = @list.design_tips
-  end
+  before_action :set_list, only: %i[edit update destroy]
 
   def new
     @list = List.new
