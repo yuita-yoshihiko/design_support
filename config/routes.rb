@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
 
   resources :users, only: %i[new create destroy]
-  resources :design_tips, only: %i[index show] do
+  resources :design_tips, only: %i[index] do
     collection do
       get 'search'
       get 'likes'
@@ -27,9 +27,8 @@ Rails.application.routes.draw do
   end
 
   resources :likes, only: %i[create destroy]
-
-  resources :lists
-  resources :list_design_tips
+  resources :lists, only: %i[new create edit update destroy]
+  resources :list_design_tips, only: %i[index create destroy]
 
   resources :questions, only: %i[index] do
     collection do
