@@ -1,15 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @lists = current_user.lists
-    @list = List.new
-    @list_design_tip = @list.design_tips
-  end
-
-  def show
-    @design_tips = @list.design_tips
-  end
+  before_action :set_list, only: %i[edit update destroy]
 
   def new
     @list = List.new
@@ -20,7 +10,6 @@ class ListsController < ApplicationController
 
   def create
     @list = current_user.lists.build(list_params)
-
     if @list.save
       redirect_to list_design_tips_path, success: 'リストを作成しました。'
     else

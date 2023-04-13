@@ -1,4 +1,4 @@
-class ErrorsController < ApplicationController
+class ErrorController < ApplicationController
   skip_before_action :require_login
 
   def not_found

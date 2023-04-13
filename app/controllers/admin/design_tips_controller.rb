@@ -1,17 +1,15 @@
 class Admin::DesignTipsController < Admin::BaseController
   before_action :set_design_tip, only: %i[show edit update destroy]
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: %i[index search]
 
   # GET /design_tips or /design_tips.json
   def index
-    @q = DesignTip.ransack(params[:q])
     @design_tips = @q.result(distinct: true).preload(:taggings).order(created_at: :desc).page(params[:page]).per(15)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
 
   # GET /design_tips/1 or /design_tips/1.json
   def show
-    @design_tip = DesignTip.find(params[:id])
     @tag_list = @design_tip.tag_counts_on(:tags)
   end
 
@@ -22,7 +20,6 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # GET /design_tips/1/edit
   def edit
-    @design_tip = current_user.design_tips.find(params[:id])
   end
 
   # POST /design_tips or /design_tips.json
@@ -37,7 +34,6 @@ class Admin::DesignTipsController < Admin::BaseController
 
   # PATCH/PUT /design_tips/1 or /design_tips/1.json
   def update
-    @design_tip = current_user.design_tips.find(params[:id])
     if @design_tip.update(design_tip_params)
       redirect_to admin_design_tip_path(@design_tip), success: t('defaults.message.updated', item: DesignTip.model_name.human)
     else
@@ -61,12 +57,10 @@ class Admin::DesignTipsController < Admin::BaseController
     @q = DesignTip.ransack(params[:q])
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_design_tip
-    @design_tip = DesignTip.find(params[:id])
+    @design_tip = current_user.design_tips.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def design_tip_params
     params.require(:design_tip).permit(:title, :guidance, :url, :medium, :tag_list)
   end
