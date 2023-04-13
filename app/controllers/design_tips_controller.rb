@@ -1,5 +1,5 @@
 class DesignTipsController < ApplicationController
-  before_action :set_q
+  before_action :set_q, only: %i[index search]
   before_action :set_likes, only: %i[likes]
   skip_before_action :require_login
 
