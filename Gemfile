@@ -51,7 +51,6 @@ gem 'rails_material_design_icons'
 
 gem 'sorcery'
 gem 'config'
-gem 'omniauth-google-oauth2'
 
 gem 'rails-i18n'
 
