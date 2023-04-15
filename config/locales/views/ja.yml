@@ -26,8 +26,6 @@ ja:
       title: 'プライバシーポリシー'
     terms_of_use:
       title: '利用規約'
-    trend:
-      title: 'トレンド情報'
     operation:
       title: 'サービスの運用について'
   users:
@@ -80,6 +78,9 @@ ja:
   questions:
     index:
       title: '質問'
+  trends:
+    index:
+      title: 'トレンド情報'
 
   admin:
     user_sessions:
