@@ -19,6 +19,12 @@
 .tab.is-active{
   color: #9a8756;
   transition: all 0.2s ease-out;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+}
+
+.tab-top.is-active{
+  color: #9a8756;
+  transition: all 0.2s ease-out;
 }
 
 input[type="text"]:focus {
