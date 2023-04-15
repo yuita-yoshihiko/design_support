@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'growing', to: 'home#growing'
   get 'privacy_policy', to: 'home#privacy_policy'
   get 'terms_of_use', to: 'home#terms_of_use'
-  get 'trend', to: 'home#trend'
   get 'operation', to: 'home#operation'
 
   get 'login', to: 'user_sessions#new'
@@ -15,6 +14,8 @@ Rails.application.routes.draw do
   post "oauth/callback", to: "oauths#callback"
   get "oauth/callback", to: "oauths#callback"
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
+
+  get 'trend', to: 'trends#index'
 
   resources :password_resets, only: %i[new create edit update]
 
