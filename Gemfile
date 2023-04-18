@@ -71,6 +71,8 @@ gem 'kaminari'
 
 gem 'mechanize'
 
+gem 'faraday'
+
 
 
 # Use Sass to process CSS
