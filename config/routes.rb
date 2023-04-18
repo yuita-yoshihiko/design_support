@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   resources :likes, only: %i[create destroy]
   resources :lists, only: %i[new create edit update destroy]
   resources :list_design_tips, only: %i[index create destroy]
+  resources :images do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :questions, only: %i[index] do
     collection do

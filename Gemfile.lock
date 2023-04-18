@@ -472,6 +472,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  faraday
   google-apis-analyticsreporting_v4 (~> 0.13.0)
   importmap-rails
   jbuilder
