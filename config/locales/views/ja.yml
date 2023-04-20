@@ -81,6 +81,9 @@ ja:
   trends:
     index:
       title: 'トレンド情報'
+  images:
+    index:
+      title: '画像解析'
 
   admin:
     user_sessions:
