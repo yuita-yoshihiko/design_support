@@ -73,6 +73,7 @@ gem 'mechanize'
 
 gem 'faraday'
 
+gem 'google-cloud-vision'
 
 
 # Use Sass to process CSS

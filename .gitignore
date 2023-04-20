@@ -30,6 +30,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/google_cloud_vision_key.json
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
@@ -40,3 +41,5 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 
 lib/
+
+/.env
