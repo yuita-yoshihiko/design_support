@@ -4,7 +4,7 @@ class PixabayApi < ApplicationRecord
 
   def self.search_images(query)
     conn = Faraday.new(url: BASE_URL)
-    response = conn.get("", {key: API_KEY, q: query})
+    response = conn.get("", {key: API_KEY, q: query, per_page: 12})
     json = JSON.parse(response.body)
 
     if json['hits']
