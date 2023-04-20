@@ -1,12 +1,31 @@
-<h1>hello</h1>
-<%= turbo_frame_tag 'search' do %>
-  <%= form_tag images_path, method: :get, remote: true do %>
-    <%= text_field_tag :query, nil, placeholder: 'Search Images...' %>
-    <%= submit_tag 'Search', data: { turbo_frame: 'search' } %>
+<% content_for(:title, t('.title')) %>
+<div class='container mx-auto flex pt-10'>
+  <%= form_with(url: images_path, method: "post", data: { turbo: false }, remote: true, multipart: true) do |form| %>
+    <%= form.file_field :image %>
+    <%= form.submit "送信", class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
   <% end %>
 
+  <% if @colors.present? %>
+    <ul>
+      <% @colors.each do |color| %>
+        <div class='bg-rgb-ff0000'><%= "R: #{color.color.red}, G: #{color.color.green}, B: #{color.color.blue}" %></div>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<%= turbo_frame_tag 'search' do %>
+  <div class='container mx-auto'>
+    <%= form_with(url: images_path, method: 'get', remote: true) do |form| %>
+      <%= form.text_field :query, placeholder: 'Search Images...' %>
+      <%= form.submit '検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
+    <% end %>
+  </div>
+
+  <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
     <% @images.each do |image_url| %>
       <%= image_tag image_url %>
     <% end %>
+  </div>
 <% end %>
 
