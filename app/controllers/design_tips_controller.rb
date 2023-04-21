@@ -4,8 +4,13 @@ class DesignTipsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @design_tips = @q.result(distinct: true).preload(:tags)
+    @design_tips = @q.result(distinct: true).preload(:tags, :reviews)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
+  end
+
+  def show
+    @design_tip = DesignTip.find(params[:id])
+    @review = Review.new
   end
 
   def search
