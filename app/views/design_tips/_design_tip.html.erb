@@ -17,18 +17,19 @@
         <% end %>
       </div>
     </div>
-    <label for="my-modal-3">評価する</label>
-    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-    <div class="modal">
-      <div class="modal-box relative">
-        <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-        <div class="rating">
-          <input type="radio" name="rating-1" class="mask mask-star" />
-          <input type="radio" name="rating-1" class="mask mask-star" checked />
-          <input type="radio" name="rating-1" class="mask mask-star" />
-          <input type="radio" name="rating-1" class="mask mask-star" />
-          <input type="radio" name="rating-1" class="mask mask-star" />
-        </div>
+    <div class="flex place-content-between">
+      <div class="text-sm text-gray-500">評価：
+        <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= design_tip.average_score(design_tip.id) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+        </span> 
+      </div>
+      <div class="text-right text-sm text-gray-500">
+        <% if logged_in? %>
+          <%= link_to '評価する', design_tip_path(design_tip), class: 'text-gray-500 hover:text-green-800 active:text-green-900 active:bg-white' %>
+        <% else %>
+          <%= render 'design_tips/before_login_review'%>
+        <% end %>
       </div>
     </div>
   </div>
