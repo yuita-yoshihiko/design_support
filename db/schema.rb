@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_24_111239) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_005630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_24_111239) do
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "design_tip_id", null: false
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["design_tip_id"], name: "index_reviews_on_design_tip_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.bigint "tag_id"
     t.string "taggable_type"
@@ -133,5 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_24_111239) do
   add_foreign_key "list_design_tips", "design_tips"
   add_foreign_key "list_design_tips", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "reviews", "design_tips"
+  add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"
 end
