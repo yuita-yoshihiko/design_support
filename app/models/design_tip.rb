@@ -12,4 +12,12 @@ class DesignTip < ApplicationRecord
   validates :url, presence: true
 
   enum medium: { web: 0, book: 1, movie: 2 }
+
+  def average_score(design_tip_id)
+    unless self.reviews.empty?
+      reviews.average(:score).to_f * 20
+    else
+      0
+    end
+  end
 end

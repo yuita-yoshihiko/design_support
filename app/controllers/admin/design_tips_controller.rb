@@ -62,6 +62,6 @@ class Admin::DesignTipsController < Admin::BaseController
   end
 
   def design_tip_params
-    params.require(:design_tip).permit(:title, :guidance, :url, :medium, :tag_list)
+    params.require(:design_tip).permit(:title, :guidance, :url, :medium, :tag_list, :review)
   end
 end
