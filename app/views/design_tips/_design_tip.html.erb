@@ -4,7 +4,7 @@
       <%= link_to design_tip.title, design_tip.url, target: :_blank, rel: "noopener noreferrer" %>
     </div>
     <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
-    <div class="my-5 flex place-content-between">
+    <div class="my-4 flex place-content-between">
       <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag: design_tip.tags.pluck(:name) %></div>
       <div class='flex gap-1 md:gap-2'>
         <% if logged_in? %>
@@ -18,11 +18,12 @@
       </div>
     </div>
     <div class="flex place-content-between">
-      <div class="text-sm text-gray-500">評価：
+      <div class="flex text-sm gap-1 text-gray-500">評価 :
         <span class="star-rating">
-          <span class="star-rating-front" style="width: <%= design_tip.average_score(design_tip.id) %>%;">★★★★★</span>
+          <span class="star-rating-front" style="width: <%= design_tip.average_score_percentage(design_tip.id) %>%;">★★★★★</span>
           <span class="star-rating-back">★★★★★</span>
         </span> 
+        <div><%= design_tip.average_score(design_tip.id) %>点</div>
       </div>
       <div class="text-right text-sm text-gray-500">
         <% if logged_in? %>
