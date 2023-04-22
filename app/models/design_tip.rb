@@ -15,9 +15,17 @@ class DesignTip < ApplicationRecord
 
   def average_score(design_tip_id)
     unless self.reviews.empty?
-      reviews.average(:score).to_f * 20
+      reviews.average(:score).to_f.round(1)
     else
-      0
+      0.0
+    end
+  end
+
+  def average_score_percentage(design_tip_id)
+    unless self.reviews.empty?
+      reviews.average(:score).to_f.round(1) * 20
+    else
+      0.0
     end
   end
 end
