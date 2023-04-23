@@ -32,6 +32,19 @@
   </div>
 </div>
 
+<% if logged_in? %>
+  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6'>あなたにおすすめの情報</div>
+  <% if @recommend_design_tips.present? %>
+    <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+      <% @recommend_design_tips.take(3).each do |design_tip| %>
+        <%= render 'design_tips/design_tip', design_tip: design_tip %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class='text-center text-gray-600 pb-20 font-serif'>お気に入り登録された情報がありません。情報をお気に入りしていただくと、<br>そちらをもとにあなたにおすすめの情報を表示します。</div>
+  <% end %>
+<% end %>
+
 <div class="bg-gray pt-36 pb-12 lg:py-48 mt-2 md:mt-80 lg:mt-2">
   <div class="px-4 md:px-8">
     <div data-controller="view">
