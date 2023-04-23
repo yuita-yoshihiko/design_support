@@ -3,7 +3,8 @@ class HomeController < ApplicationController
 
   def top
     @q = DesignTip.ransack(params[:q])
-    @design_tips = @q.result(distinct: true)
+    @design_tips = @q.result(distinct: true).preload(:reviews)
+    @sort_design_tips = DesignTip.preload(:reviews).sort_by_average_score
   end
 
   def for_beginner
