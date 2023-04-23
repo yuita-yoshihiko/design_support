@@ -5,12 +5,12 @@
     </div>
     <p class="text-gray-500 text-sm"><%= design_tip.guidance %></p>
     <div class="my-4 flex place-content-between">
-      <div class='flex gap-1 md:gap-3'><%= render 'tag_list', tag: design_tip.tags.pluck(:name) %></div>
+      <div class='flex gap-1 md:gap-3'><%= render 'design_tips/tag_list', tag: design_tip.tags.pluck(:name) %></div>
       <div class='flex gap-1 md:gap-2'>
         <% if logged_in? %>
-          <%= render 'like_button', design_tip: design_tip %>
+          <%= render 'design_tips/like_button', design_tip: design_tip %>
           <% if request.path == likes_design_tips_path %>
-            <%= render 'list_button', design_tip: design_tip %>
+            <%= render 'design_tips/list_button', design_tip: design_tip %>
           <% end %>
         <% else %>
           <%= render 'design_tips/before_login_like'%>

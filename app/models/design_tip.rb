@@ -28,4 +28,9 @@ class DesignTip < ApplicationRecord
       0.0
     end
   end
+
+  def self.sort_by_average_score
+    DesignTip.all.sort_by { |tip| -tip.average_score(tip.id) }
+  end
+
 end
