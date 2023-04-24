@@ -43,6 +43,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :notifications, only: :index
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'

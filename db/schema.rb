@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_005630) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_140838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_005630) do
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
+  create_table "notification_reads", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "notification_id", null: false
+    t.boolean "checked", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notification_id"], name: "index_notification_reads_on_notification_id"
+    t.index ["user_id"], name: "index_notification_reads_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "design_tip_id", null: false
+    t.string "title", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "design_tip_id", null: false
@@ -143,6 +161,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_005630) do
   add_foreign_key "list_design_tips", "design_tips"
   add_foreign_key "list_design_tips", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "notification_reads", "notifications"
+  add_foreign_key "notification_reads", "users"
   add_foreign_key "reviews", "design_tips"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"
