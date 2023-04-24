@@ -26,6 +26,7 @@ class Admin::DesignTipsController < Admin::BaseController
   def create
     @design_tip = current_user.design_tips.build(design_tip_params)
     if @design_tip.save
+      DesignTip.create_notification(@design_tip)
       redirect_to admin_design_tip_url(@design_tip), success: t('defaults.message.created', item: DesignTip.model_name.human)
     else
       render :new, status: :unprocessable_entity
