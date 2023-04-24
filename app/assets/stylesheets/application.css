@@ -165,3 +165,21 @@ input[type="password"] {
   color: #ccc;
 }
 
+.box{
+  position: relative;
+}
+
+.icons-circle {
+  position: absolute;
+  fill: #f59e0b;
+  bottom: 16px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+}
+
+.icons-notifications {
+  fill: #166534;
+  width: 30px;
+  height: 30px;
+}
