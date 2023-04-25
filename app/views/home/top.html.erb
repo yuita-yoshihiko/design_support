@@ -9,7 +9,7 @@
 
         <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
           誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。<br>
-          まずはこちらから。  <%= link_to '　あなたに合った情報　', answers_path, class: 'text-xl text-brown hover:text-yellow-900 font-serif bg-white rounded-lg shadow' %>
+          まずはこちらから。  <%= link_to '　あなたに合った情報　', answers_path, class: 'md:text-xl text-brown hover:text-yellow-900 font-serif bg-white rounded-lg shadow' %>
         </p>
         
         <div class="flex font-serif flex-row justify-center lg:justify-start gap-2 lg:gap-8 items-center">
@@ -33,7 +33,7 @@
 </div>
 
 <% if logged_in? %>
-  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6'>あなたにおすすめの情報</div>
+  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-36'>あなたにおすすめの情報</div>
   <% if @recommend_design_tips.present? %>
     <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
       <% @recommend_design_tips.take(3).each do |design_tip| %>
@@ -291,7 +291,7 @@
   </div>
 </div>
 
-<div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center mb-4 md:mb-6'>高評価の情報</div>
+<div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center'>高評価の情報</div>
 <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
   <% @sort_design_tips.take(3).each do |design_tip| %>
     <%= render 'design_tips/design_tip', design_tip: design_tip %>
