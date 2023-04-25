@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   skip_before_action :require_login
+  before_action :set_q, only: :top
 
   def top
-    @q = DesignTip.ransack(params[:q])
-    @design_tips = @q.result(distinct: true).preload(:reviews)
+    @search_design_tips = DesignTip.all
     @sort_design_tips = DesignTip.preload(:reviews).sort_by_average_score
     return unless current_user
     @recommend_design_tips = DesignTip.recommended_for(current_user)
@@ -22,5 +22,11 @@ class HomeController < ApplicationController
   end
 
   def operation
+  end
+
+  private
+
+  def set_q
+    @q = DesignTip.ransack(params[:q])
   end
 end
