@@ -15,6 +15,7 @@ class DesignTipsController < ApplicationController
   end
 
   def search
+    @search_design_tips = DesignTip.all.preload(:reviews)
     @results = @q.result
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
   end
