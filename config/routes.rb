@@ -37,12 +37,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :questions, only: %i[index] do
-    collection do
-      get 'answer'
-    end
-  end
-
+  resources :answers, only: :index
   resources :notifications, only: :index
 
   namespace :admin do
