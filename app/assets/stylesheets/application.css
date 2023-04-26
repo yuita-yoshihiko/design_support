@@ -133,10 +133,10 @@ input[type="password"] {
 
 .post_form label{
   position: relative;
-  padding: 10px 10px 0;
+  padding: 10px 3px 10px;
   color: gray;
   cursor: pointer;
-  font-size: 30px; /*星の大きさを変更*/
+  font-size: 18px;
 }
 
 .post_form label:hover,
@@ -182,4 +182,8 @@ input[type="password"] {
   fill: #166534;
   width: 30px;
   height: 30px;
+}
+
+.submit:hover {
+  color: #eab308;
 }
