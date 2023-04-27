@@ -84,6 +84,9 @@ ja:
   images:
     index:
       title: '画像解析'
+  notifications:
+    index:
+      title: '新着情報通知'
 
   admin:
     user_sessions:

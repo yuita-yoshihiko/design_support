@@ -1,10 +1,8 @@
-<div class="container col-md-6 mx-auto">
-  <div>新しい情報が掲載されました</div>
-  <div class="small text-muted text-right">
-    <div class="text-brown text-xl font-serif hover:text-yellow-900">
-      <%= link_to notification.title, notification.url, target: :_blank, rel: "noopener noreferrer" %>
-    </div>
+<div class="flex flex-col gap-3 py-4">
+  <span class="block text-xl text-brown font-serif hover:text-yellow-900">
+    <%= link_to notification.title, notification.url, target: :_blank, rel: "noopener noreferrer" %>
+  </span>
+  <span class="block text-sm text-gray-500">
     <%= time_ago_in_words(notification.created_at).upcase %>前
-  </div>
-  <hr>
+  </span>
 </div>
