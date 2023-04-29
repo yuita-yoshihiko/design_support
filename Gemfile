@@ -75,6 +75,7 @@ gem 'faraday'
 
 gem 'google-cloud-vision'
 
+gem 'google-api-client'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
