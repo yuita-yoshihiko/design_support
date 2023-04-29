@@ -87,6 +87,9 @@ ja:
   notifications:
     index:
       title: '新着情報通知'
+  maps:
+    index:
+      title: 'design Trip'
 
   admin:
     user_sessions:
