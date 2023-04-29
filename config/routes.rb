@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'maps/index'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   root 'home#top'
   get 'for_beginner' => 'home#for_beginner'
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
 
   resources :answers, only: :index
   resources :notifications, only: :index
+  resources :maps, only: :index
 
   namespace :admin do
     root to: 'dashboards#index'
