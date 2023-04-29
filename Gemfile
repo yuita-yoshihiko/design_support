@@ -77,6 +77,8 @@ gem 'google-cloud-vision'
 
 gem 'google-api-client'
 
+gem 'gon'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
