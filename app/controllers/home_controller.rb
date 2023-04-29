@@ -5,6 +5,9 @@ class HomeController < ApplicationController
   def top
     @search_design_tips = DesignTip.all
     @sort_design_tips = DesignTip.preload(:reviews).sort_by_average_score
+    @search_design_tips.each do |design_tip|
+      @thumbnail = YoutubeApi.get_thumbnail(design_tip)
+    end
     return unless current_user
     @recommend_design_tips = DesignTip.recommended_for(current_user)
   end
