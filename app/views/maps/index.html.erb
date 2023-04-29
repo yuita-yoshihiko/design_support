@@ -1,0 +1,117 @@
+<% content_for(:title, t('.title')) %>
+<div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>Design Trip</div>
+    <p class="text-gray-600 mb-8">
+      世の中には色々なデザインがあります。<br>
+      いいデザインを見つける旅に出てみましょう！<br>
+    </p>
+    <input id="address" type="textbox" placeholder='地域検索' class='w-44 md:w-48 md:w-64 h-12 border-2 border-gray-200 outline-green-800 rounded-lg font-serif'>
+    <input type="button" value="検索" onclick="codeAddress()" class='btn bg-green-700 hover:bg-green-600 text-white rounded-lg hidden md:inline-block font-serif'>
+    <div id="display">緯度、軽度表示</div>
+  </div>
+</div>
+
+<div class='flex justify-center pb-8'>
+  <div id='map'></div>
+</div>
+
+<style>
+#map {
+  height: 700px;
+  width: 1400px;
+}
+</style>
+
+<script>
+let map
+let geocoder
+let marker = []
+let infoWindow = []
+let markerData = [ // マーカーを立てる場所名・緯度・経度
+  {name: '東京', lat: 35.6812, lng: 139.7671}, 
+  {name: '京都', lat: 34.9858, lng: 135.7587},
+  {name: '大阪', lat: 34.7024, lng: 135.4959},
+  {name: '北海道', lat: 43.0686, lng: 141.3507},
+  {name: '沖縄', lat: 26.2114, lng: 127.6758},
+  {name: '福岡', lat: 33.5897, lng: 130.4207},
+  {name: '四国', lat: 34.0142, lng: 133.5758},
+  {name: '中国地方', lat: 34.6661, lng: 133.9177},
+  {name: '名古屋', lat: 35.1709, lng: 136.8815},
+  {name: '東北', lat: 38.2601, lng: 140.8824},
+  {name: 'アメリカ', lat: 37.0902, lng: -95.7128},
+  {name: '韓国', lat: 35.9077, lng: 127.7669},
+  {name: 'オーストラリア', lat: -25.2743, lng: 133.7751},
+  {name: 'カナダ', lat: 56.1303, lng: -106.3467},
+  {name: 'フランス', lat: 46.2276, lng: 2.2137},
+  {name: 'イタリア', lat: 41.8719, lng: 12.5673},
+  {name: 'ブラジル', lat: -14.2350, lng: -51.9252},
+  {name: 'メキシコ', lat: 23.6345, lng: -102.5527},
+  {name: 'スウェーデン', lat: 60.1281, lng: 18.6435},
+  {name: 'サウジアラビア', lat: 23.8859, lng: 45.0791},
+  {name: 'インド', lat: 20.5936, lng: 78.9628},
+  {name: 'フィリピン', lat: 12.8797, lng: 121.7740},
+  {name: 'アフリカ', lat: 6.6111, lng: 20.9394},
+  {name: 'ハワイ', lat: 19.8967, lng: -155.5827},
+  {name: 'スイス', lat: 46.8181, lng: 8.2275},
+  {name: 'アルゼンチン', lat: -38.4160, lng: -63.6166},
+  {name: '中国', lat: 35.8616, lng: 104.1953}
+];
+
+const display = document.getElementById('display')
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat:35.6812, lng:139.7671},
+    zoom: 2,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat:35.6812, lng:139.7671},
+    map: map
+  });
+
+ // マーカー毎の処理
+  for (let i = 0; i < markerData.length; i++) {
+    markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
+    marker[i] = new google.maps.Marker({ // マーカーの追加
+      position: markerLatLng, // マーカーを立てる位置を指定
+      map: map // マーカーを立てる地図を指定
+    });
+    
+    infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+      content: `<a href='https://www.gransta.jp/'>${markerData[i]['name']}</a>`// 吹き出しに表示する内容
+    });
+    
+    markerEvent(i); // マーカーにクリックイベントを追加
+  }
+}
+
+// マーカーにクリックイベントを追加
+function markerEvent(i) {
+  marker[i].addListener('click', function() { // マーカーをクリックしたとき
+    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+      display.textContent = "検索結果：" + results[ 0 ].geometry.location
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :map_key) %>&callback=initMap" async defer></script>
