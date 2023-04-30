@@ -1,24 +1,53 @@
 <% content_for(:title, t('.title')) %>
-<div class='container mx-auto flex pt-10'>
-  <%= form_with(url: images_path, method: "post", data: { turbo: false }, remote: true, multipart: true) do |form| %>
-    <%= form.file_field :image %>
-    <%= form.submit "送信", class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
-  <% end %>
+<div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>カラー抽出</div>
+    <p class="text-gray-600 mb-6">
+      お持ちの写真や画像から多く使われている色とそのカラーコードを抽出します。<br>
+      この写真の中にある色は何色だろう？　この画像みたいな雰囲気のデザインを作りたい！<br>
+      そんなとき、色の特定や配色のヒントを得るためにお使いください。<br>
+    </p>
+  </div>
+</div>
 
+<div class='container mx-auto'>
+  <div class='flex font-serif'>
+    <%= form_with(url: images_path, method: "post", data: { turbo: false }, remote: true, multipart: true) do |form| %>
+      <%= form.file_field :image, required: true %>
+      <%= form.submit "カラー抽出を行う", class: 'btn bg-green-700 hover:bg-green-600 text-white font-serif rounded-lg' %>
+    <% end %>
+  </div>
   <% if @colors.present? %>
-    <ul>
+    <div class='font-serif pt-5 text-gray-600 '>以下の色が抽出されました。</div>
+    <div class='flex gap-4 pt-10'>
       <% @colors.each do |color| %>
-        <div class='bg-rgb-ff0000'><%= "R: #{color.color.red}, G: #{color.color.green}, B: #{color.color.blue}" %></div>
+        <div class='text-gray-600'>
+          <div style="background-color: rgb<%= "(#{color.color.red}, #{color.color.green}, #{color.color.blue})" %>;">　</div>
+          <div><%= "R: #{color.color.red}, G: #{color.color.green}, B: #{color.color.blue}" %></div>
+        </div>
       <% end %>
-    </ul>
+    </div>
   <% end %>
 </div>
 
+<hr class='my-28'>
+
+<div>
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <p class="text-gray-600 mb-8">
+      下のフォームから画像を検索　→　画像を保存　→　カラー抽出<br>
+      以上の手順でも機能をお使いいただけます。<br>
+      <br>
+      出典元：<%= link_to 'pixabay', 'https://pixabay.com/ja/', class: 'text-green-700 hover:text-green-900', target: :_blank, rel: "noopener noreferrer" %>
+    </p>
+  </div>
+</div>
+
 <%= turbo_frame_tag 'search' do %>
-  <div class='container mx-auto'>
+  <div class='container mx-auto font-serif'>
     <%= form_with(url: images_path, method: 'get', remote: true) do |form| %>
-      <%= form.text_field :query, placeholder: 'Search Images...' %>
-      <%= form.submit '検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
+      <%= form.search_field :query, class: "w-44 md:w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'キーワードを入力', required: true  %>
+      <%= form.submit '画像を検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
     <% end %>
   </div>
 
