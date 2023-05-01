@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   resources :answers, only: :index
   resources :notifications, only: :index
   resources :maps, only: :index
+  resources :quizees, only: :index
 
   namespace :admin do
     root to: 'dashboards#index'
