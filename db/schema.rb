@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_140838) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_01_104428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_140838) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string "content", null: false
+    t.boolean "correct", default: false, null: false
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_choices_on_quiz_id"
   end
 
   create_table "design_tips", force: :cascade do |t|
@@ -93,6 +102,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_140838) do
     t.integer "design_tip_id", null: false
     t.string "title", null: false
     t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "question", null: false
+    t.text "commentary", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -156,6 +172,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_140838) do
 
   add_foreign_key "answer_design_tips", "answers"
   add_foreign_key "answer_design_tips", "design_tips"
+  add_foreign_key "choices", "quizzes"
   add_foreign_key "likes", "design_tips"
   add_foreign_key "likes", "users"
   add_foreign_key "list_design_tips", "design_tips"
