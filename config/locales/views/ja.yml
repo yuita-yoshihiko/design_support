@@ -90,6 +90,9 @@ ja:
   maps:
     index:
       title: 'design Trip'
+  quizees:
+    index:
+      title: 'UI・UXクイズ'
 
   admin:
     user_sessions:
