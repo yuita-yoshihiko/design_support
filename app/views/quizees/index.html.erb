@@ -7,20 +7,19 @@
       具体的にどんなことなのか？クイズ形式で学べるようにしてみました。<br>
     </p>
     <%= link_to commentary_quizees_path, class: "btn font-serif bg-green-700 hover:bg-green-600 text-white text-center rounded-lg" do %>
-      問題一覧はこちら
+      問題と解説一覧
     <% end %>
   </div>
 </div>
 
-<% @quizees.each do |quiz| %>
-  <div class="container mx-auto w-3/12 my-12 bg-white flex shadow-lg flex-col rounded-lg border-2 border-green-700">
-    <div class="bg-green-700 py-2 text-center text-sm text-white">問題</div>
-    <div class="flex flex-col p-6 pt-8">
-      <div class="mx-auto mb-8 px-8 text-center text-gray-500">
-        <%= quiz.question %>
-      </div>
-
-      <%= turbo_frame_tag 'quiz' do %>
+<% @quizees.sample(5).each do |quiz| %>
+  <%= turbo_frame_tag quiz do %>
+    <div class="container mx-auto w-80 md:w-96 my-12 bg-white flex shadow-lg flex-col rounded-lg border-2 border-green-700">
+      <div class="bg-green-700 py-2 text-center text-sm text-white">問題</div>
+      <div class="flex flex-col p-6 pt-8">
+        <div class="mx-auto mb-8 px-8 text-center text-gray-500">
+          <%= quiz.question %>
+        </div>
         <%= form_with(url: quizees_path, method: 'get', remote: true) do |f| %>
           <% @choices.each do |choice| %>
             <% if choice.quiz_id == quiz.id %>
@@ -32,12 +31,19 @@
               </div>
             <% end %>
           <% end %>
-          <div class="mx-auto">
+          <div class="mx-auto flex justify-center">
             <%= f.submit "回答する", data: { turbo_frame: 'quiz' }, class: "btn font-serif bg-green-700 hover:bg-green-600 text-white text-center rounded-lg" %>
           </div>
+          <div>
+            <div>
+              <%= @result %>
+            </div>
+            <% if @result %>
+              <%= quiz.commentary%>
+            <% end %>
+          </div>
         <% end %>
-        <%= @result %>
-      <% end %>
-    </div>
-  </div> 
+      </div>
+    </div> 
+  <% end %>
 <% end %>
