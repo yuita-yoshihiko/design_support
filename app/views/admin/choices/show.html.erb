@@ -1,0 +1,30 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <div class='font-serif'>
+      <div class="my-5">
+        <strong class="block font-medium mb-1">回答</strong>
+        <%= @choice.content %>
+      </div>
+
+      <div class="my-5">
+        <strong class="block font-medium mb-1">正誤</strong>
+        <%= @choice.correct %>
+      </div>
+
+      <div class="my-5">
+        <strong class="block font-medium mb-1">クイズid</strong>
+        <%= @choice.quiz_id %>
+      </div>
+    </div>
+
+    <%= link_to '選択編集へ', edit_admin_choice_path(@choice), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    <div class="inline-block ml-2">
+      <%= button_to '選択削除', admin_choice_path(@choice), method: :delete, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    </div>
+    <%= link_to '選択一覧へ', admin_choices_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+</div>

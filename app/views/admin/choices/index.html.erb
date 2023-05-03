@@ -1,0 +1,39 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
+    <%= link_to '選択作成へ', new_admin_choice_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+
+  <div class="min-w-full">
+    <div class='font-serif'>
+      <% @choices.each do |choice| %>
+        <div class="my-5">
+          <strong class="block font-medium mb-1">回答</strong>
+          <%= choice.content %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">正誤</strong>
+          <%= choice.correct %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">クイズid</strong>
+          <%= choice.quiz_id %>
+        </div>
+
+
+        <% if action_name != "show" %>
+          <%= link_to '選択一覧へ', admin_choices_path(choice), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '選択編集', edit_admin_choice_path(choice), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '選択詳細へ', admin_choice_path(choice), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <hr class="mt-6">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

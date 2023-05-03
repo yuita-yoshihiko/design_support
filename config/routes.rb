@@ -41,7 +41,11 @@ Rails.application.routes.draw do
   resources :answers, only: :index
   resources :notifications, only: :index
   resources :maps, only: :index
-  resources :quizees, only: :index
+  resources :quizees, only: :index do
+    collection do
+      get 'commentary'
+    end
+  end
 
   namespace :admin do
     root to: 'dashboards#index'
@@ -54,6 +58,8 @@ Rails.application.routes.draw do
       end
     end
     resources :users, only: %i[index edit update show destroy]
+    resources :quizees
+    resources :choices
   end
 
   get "/404", to: "error#not_found", as: "not_found"
