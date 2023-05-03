@@ -13,9 +13,9 @@ class QuizeesController < ApplicationController
   def check_answer
     correct = params[:correct]
     if correct == "true"
-      @result = "正解！"
+      @result = "正解です！"
     elsif correct == "false"
-      @result = "不正解..."
+      @result = "残念、不正解です..."
     end
   end
 end
