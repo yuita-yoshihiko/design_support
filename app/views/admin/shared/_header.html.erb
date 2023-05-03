@@ -2,6 +2,8 @@
   <%= link_to 'ダッシュボード', admin_root_path, class: 'inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo' %>
   <nav class="lg:flex gap-12">
     <%= link_to '情報一覧', admin_design_tips_path, class: "text-gray-500 hover:text-green-800 active:text-green-900" %>
+    <%= link_to 'クイズ一覧', admin_quizees_path, class: "text-gray-500 hover:text-green-800 active:text-green-900" %>
+    <%= link_to '選択一覧', admin_choices_path, class: "text-gray-500 hover:text-green-800 active:text-green-900" %>
     <%= link_to 'ユーザー一覧', admin_users_path, class: "text-gray-500 hover:text-green-800 active:text-green-900" %>
     <%= link_to 'ログアウト', admin_logout_path, class: 'text-gray-500 hover:text-green-800 active:text-green-900',  data: { turbo_method: :delete }  %>
   </nav>
