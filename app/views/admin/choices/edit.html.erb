@@ -1,0 +1,28 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">問題編集</h1>
+
+  <%= form_with model: @choice, url: admin_choice_path, class: "contents" do |form| %>
+
+  <div class="my-5">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :correct %>
+    <%= form.check_box :correct, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-3 mt-2" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :quiz_id %>
+    <%= form.number_field :quiz_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+  <% end %>
+
+  <%= link_to '選択一覧へ', admin_choice_url, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  <%= link_to '選択詳細へ', admin_choice_path(@choice), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+</div>

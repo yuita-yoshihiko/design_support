@@ -1,0 +1,23 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">質問編集</h1>
+
+  <%= form_with model: @quiz, url: admin_quizee_path, class: "contents" do |form| %>
+
+  <div class="my-5">
+    <%= form.label :question %>
+    <%= form.text_area :question, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :commentary %>
+    <%= form.text_area :commentary, rows: 5, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+  <% end %>
+
+  <%= link_to '質問一覧へ', admin_quizee_url, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  <%= link_to '質問詳細へ', admin_quizee_path(@quiz), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+</div>

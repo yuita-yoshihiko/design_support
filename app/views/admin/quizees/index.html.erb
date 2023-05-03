@@ -1,0 +1,34 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
+    <%= link_to '質問作成へ', new_admin_quizee_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+
+  <div class="min-w-full">
+    <div class='font-serif'>
+      <% @quizees.each do |quiz| %>
+        <div class="my-5">
+          <strong class="block font-medium mb-1">質問</strong>
+          <%= quiz.question %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">解説</strong>
+          <%= quiz.commentary %>
+        </div>
+
+
+        <% if action_name != "show" %>
+          <%= link_to '質問一覧へ', admin_quizees_path(quiz), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '質問編集', edit_admin_quizee_path(quiz), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '質問詳細へ', admin_quizee_path(quiz), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <hr class="mt-6">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
