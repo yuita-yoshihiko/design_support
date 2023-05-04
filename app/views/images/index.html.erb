@@ -3,39 +3,53 @@
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>カラー抽出</div>
     <p class="text-gray-600 mb-6">
-      お持ちの写真や画像から多く使われている色とそのカラーコードを抽出します。<br>
+      お持ちの写真や画像に多く使われている色とそのカラーコード、RGB値を抽出します。<br>
       この写真の中にある色は何色だろう？　この画像みたいな雰囲気のデザインを作りたい！<br>
-      そんなとき、色の特定や配色のヒントを得るためにお使いください。<br>
+      そんなときに色の特定や、配色のヒントを得るためにお使いください。<br>
     </p>
   </div>
 </div>
 
-<div class='container mx-auto'>
-  <div class='flex font-serif'>
-    <%= form_with(url: images_path, method: "post", data: { turbo: false }, remote: true, multipart: true) do |form| %>
-      <%= form.file_field :image, required: true %>
-      <%= form.submit "カラー抽出を行う", class: 'btn bg-green-700 hover:bg-green-600 text-white font-serif rounded-lg' %>
-    <% end %>
-  </div>
-  <% if @colors.present? %>
-    <div class='font-serif pt-5 text-gray-600 '>以下の色が抽出されました。</div>
-    <div class='flex gap-4 pt-10'>
-      <% @colors.each do |color| %>
-        <div class='text-gray-600'>
-          <div style="background-color: rgb<%= "(#{color.color.red}, #{color.color.green}, #{color.color.blue})" %>;">　</div>
-          <div><%= "R: #{color.color.red}, G: #{color.color.green}, B: #{color.color.blue}" %></div>
+<%= turbo_frame_tag "color" do %>
+  <div class='container mx-auto'>
+    <div class='flex'>
+      <%= form_with(url: images_path, data: { turbo_frame: 'color' }, remote: true, multipart: true) do |form| %>
+        <div class='flex gap-1'>
+          <div class='flex flex-col'>
+            <label class="mt-2 sm:mt-0 py-2 w-48 sm:w-64 h-12 border border-gray-500 bg-white text-primary-300 flex justify-center items-center rounded-lg gap-2">
+              <svg class="icons-image"><use xlink:href="#icons-image"></use></svg>
+              <span class='input_image font-serif'>画像を選択</span>
+              <%= form.file_field :image, required: true, class: 'hidden' %>
+            </label>
+            <div class='file'>選択されていません</div>
+          </div>
+          <div>
+            <%= form.submit "カラー抽出を行う", class: 'btn bg-green-700 hover:bg-green-600 text-white  font-serif rounded-lg' %>
+          </div>
         </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+    <% if @colors.present? %>
+      <div class='font-serif pt-8 text-gray-600 '>多く使われているのは以下の5色です。</div>
+      <div class='flex gap-4 pt-10'>
+        <% @colors.each do |color| %>
+          <div class='text-gray-600'>
+            <div style="background-color: rgb<%= "(#{color.color.red}, #{color.color.green}, #{color.color.blue})" %>;">　</div>
+            <div><%= "##{color.color.red.round.to_s(16).rjust(2, '0')}#{color.color.green.round.to_s(16).rjust(2, '0')}#{color.color.blue.round.to_s(16).rjust(2, '0')}" %></div>
+            <div><%= "RGB:(#{color.color.red.round}, #{color.color.green.round}, #{color.color.blue.round})" %></div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <hr class='my-28'>
 
 <div>
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <p class="text-gray-600 mb-8">
-      下のフォームから画像を検索　→　画像を保存　→　カラー抽出<br>
+      下のフォームから、画像を検索　→　画像を保存　→　保存した画像を選択してカラー抽出<br>
       以上の手順でも機能をお使いいただけます。<br>
       <br>
       出典元：<%= link_to 'pixabay', 'https://pixabay.com/ja/', class: 'text-green-700 hover:text-green-900', target: :_blank, rel: "noopener noreferrer" %>
@@ -44,17 +58,21 @@
 </div>
 
 <%= turbo_frame_tag 'search' do %>
-  <div class='container mx-auto font-serif'>
+  <div class='container mx-auto font-serif mb-12'>
     <%= form_with(url: images_path, method: 'get', remote: true) do |form| %>
       <%= form.search_field :query, class: "w-44 md:w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'キーワードを入力', required: true  %>
       <%= form.submit '画像を検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
     <% end %>
   </div>
 
-  <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
-    <% @images.each do |image_url| %>
-      <%= image_tag image_url %>
-    <% end %>
-  </div>
+  <% if @query.present? %>
+    <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+      <% @images.each do |image_url| %>
+        <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
+          <%= image_tag image_url , class: "w-96 h-64 object-cover mx-auto" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
