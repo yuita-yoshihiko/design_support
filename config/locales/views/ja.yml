@@ -83,7 +83,7 @@ ja:
       title: 'トレンド情報'
   images:
     index:
-      title: '画像解析'
+      title: 'カラー抽出'
   notifications:
     index:
       title: '新着情報通知'
