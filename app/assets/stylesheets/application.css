@@ -122,6 +122,12 @@ input[type="password"] {
   fill: #16a34a;
 }
 
+.icons-image {
+  fill: #6b7280;
+  width: 24px;
+  height: 24px;
+}
+
 .post_form{
   display: flex;
   flex-direction: row-reverse;
@@ -186,4 +192,9 @@ input[type="password"] {
 
 .submit:hover {
   color: #eab308;
+}
+
+.input_image {
+  cursor: pointer;
+  color: #6b7280;
 }
