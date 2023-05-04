@@ -3,3 +3,8 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import jquery from "jquery"
 window.$ = jquery
+
+$('input').on('change', function () {
+  let file = $(this).prop('files')[0];
+  $('.file').text(file.name);
+});

@@ -2,8 +2,8 @@ class ImagesController < ApplicationController
   skip_before_action :require_login
 
   def index
-    query = params[:query]
-    @images = PixabayApi.search_images(query)
+    @query = params[:query]
+    @images = PixabayApi.search_images(@query)
   end
 
   def create
