@@ -79,6 +79,8 @@ gem 'google-api-client'
 
 gem 'gon'
 
+gem 'rakuten_web_service'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
