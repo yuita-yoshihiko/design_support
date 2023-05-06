@@ -2,11 +2,8 @@ Rails.application.routes.draw do
   get 'maps/index'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   root 'home#top'
-  get 'for_beginner' => 'home#for_beginner'
-  get 'growing', to: 'home#growing'
   get 'privacy_policy', to: 'home#privacy_policy'
   get 'terms_of_use', to: 'home#terms_of_use'
-  get 'operation', to: 'home#operation'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
