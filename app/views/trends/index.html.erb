@@ -18,7 +18,7 @@
     <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
       <%= image_tag i[:src], loading: "lazy", class: "w-96 h-64 object-cover mx-auto" %>
       <div class="text-brown text-xl font-serif hover:text-yellow-900 pt-4">
-        <%= link_to photoshopvip.inner_text, photoshopvip[:href], target: :_blank, rel: "noopener noreferrer"%>
+        <%= link_to photoshopvip[:title], photoshopvip[:url], target: :_blank, rel: "noopener noreferrer"%>
       </div>
     </div>
   <% end %>
@@ -33,7 +33,7 @@
     <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
       <%= image_tag i_s[:src], loading: "lazy", class: "w-96 h-64 object-cover mx-auto" %>
       <div class="text-brown text-xl font-serif hover:text-yellow-900 pt-4">
-        <%= link_to webdesignclip.inner_text, webdesignclip[:href], target: :_blank, rel: "noopener noreferrer"%>
+        <%= link_to webdesignclip[:title], webdesignclip[:url], target: :_blank, rel: "noopener noreferrer"%>
       </div>
     </div>
   <% end %>
