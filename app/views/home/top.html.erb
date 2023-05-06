@@ -42,13 +42,15 @@
                       <%= f.radio_button :answer3, "B" %> 手を動かしながら覚える
                     </div>
 
-                    <%= f.submit "回答する", data: { turbo_frame: 'search' }, class: "btn bg-green-700 hover:bg-green-600 text-white font-serif rounded-lg" %>
+                    <%= f.submit "回答する", data: { turbo_frame: 'search' }, class: "btn btn-sm bg-green-700 hover:bg-green-600 text-white font-serif font-light rounded-full" %>
                   <% end %>
 
                   <div class="container mx-auto gap-8 md:gap-12 xl:gap-16 pt-8">
                     <% @answer_design_tip.each do |answer_design_tip| %>
                       <% if answer_design_tip.answer.answer_code == @answer_code %>
-                        <%= render 'design_tips/design_tip', design_tip: answer_design_tip.design_tip %>
+                        <div class='pt-4'>
+                          <%= render 'design_tips/design_tip', design_tip: answer_design_tip.design_tip %>
+                        </div>
                       <% end %>
                     <% end %>
                   </div>

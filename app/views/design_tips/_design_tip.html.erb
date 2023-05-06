@@ -13,7 +13,7 @@
             <%= render 'design_tips/list_button', design_tip: design_tip %>
           <% end %>
         <% else %>
-          <%= render 'design_tips/before_login_like'%>
+          <%= render 'design_tips/before_login_like', design_tip: design_tip %>
         <% end %>
       </div>
     </div>
@@ -61,7 +61,7 @@
             </div>
           </div>
         <% else %>
-          <%= render 'design_tips/before_login_review'%>
+          <%= render 'design_tips/before_login_review', design_tip: design_tip %>
         <% end %>
       </div>
     </div>

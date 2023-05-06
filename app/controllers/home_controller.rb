@@ -9,28 +9,20 @@ class HomeController < ApplicationController
     # @search_design_tips.each do |design_tip|
     #   @thumbnail = YoutubeApi.get_thumbnail(design_tip)
     # end
-    return unless current_user
-    @recommend_design_tips = DesignTip.recommended_for(current_user)
-
     @answer_code = Answer.get_answer(params[:answer1], params[:answer2], params[:answer3])
     @answer_design_tip = AnswerDesignTip.preload(:answer)
 
+    @user = User.new
+
     @review = Review.new
-  end
-
-  def for_beginner
-  end
-
-  def growing
+    return unless current_user
+    @recommend_design_tips = DesignTip.recommended_for(current_user)
   end
 
   def privacy_policy
   end
 
   def terms_of_use
-  end
-
-  def operation
   end
 
   private

@@ -1,0 +1,12 @@
+<input type="checkbox" id="my-modal-<%= design_tip.id %>" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box bg-white">
+    <label for="my-modal-<%= design_tip.id %>" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+    <div class="flex justify-center font-serif">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h1 class="text-center mt-12">この機能を利用するには<br>ユーザー登録が必要です。</h1>
+        <%= render 'shared/user_register' %>
+      </div>
+    </div>
+  </div>
+</div>

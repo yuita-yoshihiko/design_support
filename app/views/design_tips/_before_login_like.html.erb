@@ -1,6 +1,6 @@
-<%= link_to new_user_path, data: { turbo_method: :get, turbo_confirm: 'お気に入り機能を利用するにはユーザー登録が必要です。ユーザー登録画面に移動しますか？' } do %>
-  <label for="my-modal-3" class="container text-gray-300 hover:bg-pink-50 rounded-lg flex items-center text-xs">
-    <svg class="icons-favorite_border"><use xlink:href="#icons-favorite_border"></use></svg>
-    <div>お気に入り</div>
-  </label>
-<% end %>
+<label for="my-modal-<%= design_tip.id %>" class="container text-gray-300 hover:bg-pink-50 rounded-lg flex items-center text-xs">
+  <svg class="icons-favorite_border"><use xlink:href="#icons-favorite_border"></use></svg>
+  <div>お気に入り</div>
+</label>
+
+<%= render 'design_tips/modal', design_tip: design_tip%>
