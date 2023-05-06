@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '0:10 am' do
-  rake "rails analytics:update_day_pageview_from_ga"
+every 1.day, at: '0:00 am' do
+  runner 'Scraping.scrape_data'
 end
