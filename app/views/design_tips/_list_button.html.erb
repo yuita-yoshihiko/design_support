@@ -7,21 +7,46 @@
 
 <input type="checkbox" id="my-modal-<%= design_tip.id %>" class="modal-toggle" />
 <div class="modal">
-  <div class="bg-white modal-box relative font-serif">
+  <div class="bg-white modal-box relative font-serif h-96">
     <label for="my-modal-<%= design_tip.id %>" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
     <h3 class="text-lg my-2">どのリストに追加しますか？</h3>
     <div class="flex justify-center">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="p-12 md:p-18">
+        <div class="p-12 md:p-24">
           <%= form_with url: {controller: "list_design_tips", action: "create"}, class: 'items-end' do |f| %>
             <%= hidden_field_tag :design_tip_id, design_tip.id %>
             <%= f.select :list_id, options_from_collection_for_select(@lists, :id, :name) %>
-            <%= f.submit "追加する", class: 'badge bg-green-700 hover:bg-green-600 text-white' %>
+            <%= f.submit "追加する", class: 'btn btn-sm rounded-full bg-green-700 hover:bg-green-600 text-white font-light' %>
           <% end %>
           <div class='mt-10'>
-            <%= link_to new_list_path, class:'flex justify-center text-gray-400 hover:text-green-800 active:text-green-900' do %>
-              <div>リスト作成ページへ</div>
-            <% end %>
+            <label for="my-modal-3" class="text-gray-400 hover:text-green-700 flex justify-center">
+              <svg class="icons-list_create"><use xlink:href="#icons-list_add"></use></svg>
+              <div>リストを作成する</div>
+            </label>
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <div class="modal">
+              <div class="modal-box bg-white">
+                <label for="my-modal-3" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+                <div class="flex justify-center font-serif">
+                  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <h1 class="text-gray-600 text-center text-2xl mt-12">リスト作成</h1>
+                    <div class="p-12 md:p-18">
+                      <%= form_with model: @list, local: true do |form| %>
+                        <%= render 'shared/error_messages', object: form.object %>
+                        <div class="flex flex-col mb-6 md:mb-8">
+                          <%= form.label :name %>
+                          <%= form.text_field :name, class: "border-none", required: true %>
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                          <%= form.submit class: "btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg" %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
