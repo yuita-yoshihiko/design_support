@@ -13,8 +13,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_design_tips_path, success: 'リストを作成しました。'
     else
-      flash.now[:error] = 'リストを作成できませんでした。'
-      render :new, status: :unprocessable_entity
+      flash[:error] = 'リストを作成できませんでした。'
+      redirect_to request.referer
     end
   end
 
@@ -22,8 +22,8 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to list_design_tips_path, success: 'リスト名を変更しました。'
     else
-      flash.now[:error] = 'リスト名を変更できませんでした。'
-      render :edit, status: :unprocessable_entity
+      flash[:error] = 'リスト名を変更できませんでした。'
+      redirect_to request.referer
     end
   end
 

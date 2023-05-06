@@ -4,20 +4,69 @@
     <div class='text-gray-600  text-lg md:text-2xl font-serif mb-8 md:mb-12 ml-2 lg:ml-0'>
       お気に入りリスト一覧
     </div>
-    <%= link_to new_list_path, class:'btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg mr-2 lg:mr-0' do %>
+    <label for="my-modal-3" class="btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg mr-2 lg:mr-0">
       <svg class="icons-list_create"><use xlink:href="#icons-list_add"></use></svg>
       <div>リスト作成</div>
-    <% end %>
+    </label>
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box bg-white">
+        <label for="my-modal-3" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+        <div class="flex justify-center font-serif">
+          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <h1 class="text-gray-600 text-center text-2xl mt-12">リスト作成</h1>
+            <div class="p-12 md:p-18">
+              <%= form_with model: @list, local: true do |form| %>
+                <%= render 'shared/error_messages', object: form.object %>
+                <div class="flex flex-col mb-6 md:mb-8">
+                  <%= form.label :name %>
+                  <%= form.text_field :name, class: "border-none", required: true %>
+                </div>
+
+                <div class="flex items-center justify-center">
+                  <%= form.submit class: "btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <% if @lists.present? %>
     <% @lists.each do |list| %>
       <div class="flex gap-8 mt-20 pb-16 items-center font-serif">
         <div class="flex text-gray-600 text-2xl"><%= list.name %></div>
-        <%= link_to edit_list_path(list), class: "flex flex-col text-xs text-green-700 hover:text-green-600 mb-0.5" do %>
+        <label for="my-modal-<%= list.id %>" class="flex flex-col text-xs text-green-700 hover:text-green-600 mb-0.5">
           <svg class="icons-list_edit"><use xlink:href="#icons-mode_edit"></use></svg>
           <div>編集</div>
-        <% end %>
+        </label>
+        <input type="checkbox" id="my-modal-<%= list.id %>" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box bg-white">
+            <label for="my-modal-<%= list.id %>" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+            <div class="flex justify-center font-serif">
+              <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <h1 class="text-gray-600 text-center text-2xl mt-12">リスト編集</h1>
+                <div class="p-12 md:p-18">
+                  <%= form_with model: list, local: true do |form| %>
+                    <%= render 'shared/error_messages', object: form.object %>
+                    <div class="flex flex-col mb-6 md:mb-8">
+                      <%= form.label :name %>
+                      <%= form.text_field :name, class: "border-none", required: true %>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                      <%= form.submit class: "btn bg-green-700 hover:bg-green-600 text-white font-serif text-xs rounded-lg" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <%= button_to list_path(list), method: :delete, form: { data: { turbo_confirm: "リストを削除しますか?" } }, class: "flex flex-col text-xs text-green-700 hover:text-green-600" do %>
           <svg class="icons-list_edit"><use xlink:href="#icons-delete"></use></svg>
           <div>削除</div>
