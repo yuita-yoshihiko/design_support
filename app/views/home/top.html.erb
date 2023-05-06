@@ -23,7 +23,7 @@
                   </p>
 
                 <%= turbo_frame_tag 'search' do %>
-                  <%= form_with(url: answers_path, method: 'get', remote: true) do |f| %>
+                  <%= form_with(url: root_path, method: 'get', remote: true) do |f| %>
                     <div class= 'font-serif xl:text-lg'>Web系のサービスやデザインの作成に関わった経験は？</div>
                     <div class="mb-6 md:mb-8">
                       <%= f.radio_button :answer1, "A", required: true %> 全くない
