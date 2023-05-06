@@ -20,14 +20,10 @@ ja:
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
   home:
-    growing:
-      title: '脱・初心者に向けて'
     privacy_policy:
       title: 'プライバシーポリシー'
     terms_of_use:
       title: '利用規約'
-    operation:
-      title: 'サービスの運用について'
   users:
     new:
       title: 'ユーザー登録'
@@ -75,24 +71,21 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
-  questions:
-    index:
-      title: '質問'
   trends:
     index:
       title: 'トレンド情報'
   images:
     index:
       title: 'カラー抽出'
-  notifications:
-    index:
-      title: '新着情報通知'
   maps:
     index:
       title: 'design Trip'
   quizees:
     index:
       title: 'UI・UXクイズ'
+  notifications:
+    index:
+      title: '新着情報通知'
 
   admin:
     user_sessions:
