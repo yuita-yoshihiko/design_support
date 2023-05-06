@@ -88,6 +88,10 @@ input[type="password"] {
   height: 24px;
 }
 
+.icons-person:hover {
+  fill: white;
+}
+
 .icons-favorite {
   fill: #f43f5e;
   width: 24px;
