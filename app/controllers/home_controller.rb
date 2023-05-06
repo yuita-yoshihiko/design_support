@@ -14,6 +14,8 @@ class HomeController < ApplicationController
 
     @answer_code = Answer.get_answer(params[:answer1], params[:answer2], params[:answer3])
     @answer_design_tip = AnswerDesignTip.preload(:answer)
+
+    @review = Review.new
   end
 
   def for_beginner
