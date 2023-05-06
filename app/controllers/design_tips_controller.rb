@@ -7,6 +7,7 @@ class DesignTipsController < ApplicationController
     @search_design_tips = DesignTip.all
     @design_tips = @q.result(distinct: true).preload(:tags, :reviews)
     @tag_list = DesignTip.tag_counts_on(:tags).most_used(20)
+    @review = Review.new
   end
 
   def show

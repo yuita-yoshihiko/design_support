@@ -17,23 +17,53 @@
         <% end %>
       </div>
     </div>
-    <%= turbo_frame_tag design_tip do %>
-      <div class="flex place-content-between">
-        <div class="flex text-sm gap-1 text-gray-500">評価 :
-          <span class="star-rating">
-            <span class="star-rating-front" style="width: <%= design_tip.average_score_percentage(design_tip.id) %>%;">★★★★★</span>
-            <span class="star-rating-back">★★★★★</span>
-          </span> 
-          <div><%= design_tip.average_score(design_tip.id) %>点</div>
-        </div>
-        <div class="text-right text-sm text-gray-400 hover:bg-amber-100 rounded-lg">
-          <% if logged_in? %>
-              <%= link_to '評価する', design_tip_path(design_tip) %>
-          <% else %>
-            <%= render 'design_tips/before_login_review'%>
-          <% end %>
-        </div>
+
+    <div class="flex place-content-between">
+      <div class="flex text-sm gap-1 text-gray-500">評価 :
+        <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= design_tip.average_score_percentage(design_tip.id) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+        </span> 
+        <div><%= design_tip.average_score(design_tip.id) %>点</div>
       </div>
-    <% end %>
+      <div class="text-right text-gray-400 hover:bg-amber-100 rounded-lg">
+        <% if logged_in? %>
+          <label for="my-modal-<%= design_tip.id %>" class="text-sm">評価する</label>
+          <input type="checkbox" id="my-modal-<%= design_tip.id %>" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label for="my-modal-<%= design_tip.id %>" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+                <div class="flex justify-between items-center my-8">
+                  <div class="text-gray-500">この情報の評価は？</div>
+                  <%= form_with model: @review, url: design_tip_reviews_path(design_tip), data: { turbo_confirm: '評価ありがとうございます！' } do |f| %>
+                    <div class="flex gap-4">
+                      <div class="post_form">
+                        <%= f.radio_button :score, 5 ,id: 'star1'%>
+                        <label for="star1">★</label>
+
+                        <%= f.radio_button :score, 4 ,id: 'star2'%>
+                        <label for="star2">★</label>
+
+                        <%= f.radio_button :score, 3 ,id: 'star3'%>
+                        <label for="star3">★</label>
+
+                        <%= f.radio_button :score, 2 ,id: 'star4'%>
+                        <label for="star4">★</label>
+
+                        <%= f.radio_button :score, 1 ,id: 'star5'%>
+                        <label for="star5">★</label>
+                        <%= f.hidden_field :design_tip_id, value: design_tip.id %>
+                      </div>
+                      <%= f.submit '評価を送信', class: "submit text-gray-400 rounded-lg mt-1" %>
+                    </div>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+        <% else %>
+          <%= render 'design_tips/before_login_review'%>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
