@@ -22,27 +22,20 @@
                     質問に対する回答を元に情報をピックアップします。<br>
                   </p>
 
-                <%= turbo_frame_tag 'search' do %>
+                <%= turbo_frame_tag 'ans' do %>
                   <%= form_with(url: root_path, method: 'get', remote: true) do |f| %>
-                    <div class= 'font-serif xl:text-lg'>Web系のサービスやデザインの作成に関わった経験は？</div>
-                    <div class="mb-6 md:mb-8">
-                      <%= f.radio_button :answer1, "A", required: true %> 全くない
-                      <%= f.radio_button :answer1, "B" %> 少しはある
-                    </div>
-
-                    <div class= 'font-serif xl:text-lg'>デザインする際に重視したいのは？</div>
-                    <div class="mb-6 md:mb-8">
-                      <%= f.radio_button :answer2, "A", required: true %> 使いやすさ
-                      <%= f.radio_button :answer2, "B" %> おしゃれさ
-                    </div>
-
-                    <div class= 'font-serif xl:text-lg'>学習スタイルは？</div>
-                    <div class="md:mb-8">
-                      <%= f.radio_button :answer3, "A", required: true %> まずは基本を抑える
-                      <%= f.radio_button :answer3, "B" %> 手を動かしながら覚える
-                    </div>
-
-                    <%= f.submit "回答する", data: { turbo_frame: 'search' }, class: "btn btn-sm bg-green-700 hover:bg-green-600 text-white font-serif font-light rounded-full" %>
+                    <% @asks.each do |ask| %>
+                      <div class='mb-10'>
+                        <div class= 'font-serif xl:text-lg'><%= ask.ask_detail %></div>
+                        <% ask.responses.each do |response| %>
+                          <div class="my-2">
+                            <%= f.radio_button "responses[#{ask.id}]", response.id %>
+                            <%= label_tag "responses_#{ask.id}_#{response.id}", response.content %>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+                    <%= f.submit '回答する', data: { turbo_frame: 'ans' }, class: "btn btn-sm bg-green-700 hover:bg-green-600 text-white font-serif font-light rounded-full" %>
                   <% end %>
 
                   <div class="container mx-auto gap-8 md:gap-12 xl:gap-16 pt-8">

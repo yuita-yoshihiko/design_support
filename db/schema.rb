@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_01_104428) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_06_231117) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,10 +24,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_104428) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.string "answer1", null: false
-    t.string "answer2", null: false
-    t.string "answer3", null: false
     t.string "answer_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "asks", force: :cascade do |t|
+    t.string "ask_detail", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,6 +116,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_104428) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "responses", force: :cascade do |t|
+    t.string "content", null: false
+    t.string "is_answer", null: false
+    t.bigint "ask_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ask_id"], name: "index_responses_on_ask_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "design_tip_id", null: false
@@ -180,6 +192,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_104428) do
   add_foreign_key "lists", "users"
   add_foreign_key "notification_reads", "notifications"
   add_foreign_key "notification_reads", "users"
+  add_foreign_key "responses", "asks"
   add_foreign_key "reviews", "design_tips"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"
