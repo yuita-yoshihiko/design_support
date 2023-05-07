@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   skip_before_action :require_login
   before_action :set_q, only: :top
+  before_action :ask, only: :top
 
   def top
     @search_design_tips = DesignTip.all
@@ -9,11 +10,7 @@ class HomeController < ApplicationController
     # @search_design_tips.each do |design_tip|
     #   @thumbnail = YoutubeApi.get_thumbnail(design_tip)
     # end
-    @answer_code = Answer.get_answer(params[:answer1], params[:answer2], params[:answer3])
-    @answer_design_tip = AnswerDesignTip.preload(:answer)
-
     @user = User.new
-
     @review = Review.new
     return unless current_user
     @recommend_design_tips = DesignTip.recommended_for(current_user)
@@ -29,5 +26,12 @@ class HomeController < ApplicationController
 
   def set_q
     @q = DesignTip.ransack(params[:q])
+  end
+
+  def ask
+    @asks = Ask.includes(:responses)
+    @answer_design_tip = AnswerDesignTip.preload(:answer)
+    responses = params[:responses]&.values || []
+    @answer_code = responses.map { |response_id| Response.find(response_id).is_answer }.join
   end
 end
