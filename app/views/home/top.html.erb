@@ -29,7 +29,7 @@
                         <div class= 'font-serif xl:text-lg'><%= ask.ask_detail %></div>
                         <% ask.responses.each do |response| %>
                           <div class="my-2">
-                            <%= f.radio_button "responses[#{ask.id}]", response.id %>
+                            <%= f.radio_button "responses[#{ask.id}]", response.id, required: true%>
                             <%= label_tag "responses_#{ask.id}_#{response.id}", response.content %>
                           </div>
                         <% end %>
