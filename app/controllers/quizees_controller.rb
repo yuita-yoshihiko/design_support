@@ -7,9 +7,6 @@ class QuizeesController < ApplicationController
     check_answer
   end
 
-  def commentary
-  end
-
   def check_answer
     correct = params[:correct]
     if correct == "true"
