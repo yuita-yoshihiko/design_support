@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'privacy_policy', to: 'home#privacy_policy'
   get 'terms_of_use', to: 'home#terms_of_use'
+  get 'trend', to: 'trends#index'
+  get 'image', to: 'images#index'
+  get 'quiz', to: 'quizees#index'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
@@ -12,8 +15,6 @@ Rails.application.routes.draw do
   post "oauth/callback", to: "oauths#callback"
   get "oauth/callback", to: "oauths#callback"
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
-
-  get 'trend', to: 'trends#index'
 
   resources :password_resets, only: %i[new create edit update]
 
