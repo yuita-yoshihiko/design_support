@@ -1,0 +1,41 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <div class='font-serif'>
+      <div class="my-5">
+        <strong class="block font-medium mb-1">id</strong>
+        <%= @map.id %>
+      </div>
+    </div>
+
+    <div class='font-serif'>
+      <div class="my-5">
+        <strong class="block font-medium mb-1">地域名</strong>
+        <%= @map.name %>
+      </div>
+    </div>
+
+    <div class='font-serif'>
+      <div class="my-5">
+        <strong class="block font-medium mb-1">経度</strong>
+        <%= @map.latitude %>
+      </div>
+    </div>
+
+    <div class='font-serif'>
+      <div class="my-5">
+        <strong class="block font-medium mb-1">緯度</strong>
+        <%= @map.longitude %>
+      </div>
+    </div>
+
+    <%= link_to '地域名編集へ', edit_admin_map_path(@map), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    <div class="inline-block ml-2">
+      <%= button_to '地域名削除', admin_map_path(@map), method: :delete, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+    </div>
+    <%= link_to '地域名一覧へ', admin_maps_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+</div>

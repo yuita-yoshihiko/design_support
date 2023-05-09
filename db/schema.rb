@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_06_231117) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_09_012206) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -89,6 +89,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_231117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "map_details", force: :cascade do |t|
+    t.bigint "map_id", null: false
+    t.string "name", null: false
+    t.string "url", null: false
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_id"], name: "index_map_details_on_map_id"
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.string "name", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notification_reads", force: :cascade do |t|
@@ -190,6 +208,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_231117) do
   add_foreign_key "list_design_tips", "design_tips"
   add_foreign_key "list_design_tips", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "map_details", "maps"
   add_foreign_key "notification_reads", "notifications"
   add_foreign_key "notification_reads", "users"
   add_foreign_key "responses", "asks"
