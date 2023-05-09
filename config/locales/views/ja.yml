@@ -80,6 +80,8 @@ ja:
   maps:
     index:
       title: 'design Trip'
+    show:
+      title: '地域のデザイン'
   quizees:
     index:
       title: 'UI・UXクイズ'
