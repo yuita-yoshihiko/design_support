@@ -1,0 +1,43 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
+    <%= link_to '地域詳細作成へ', new_admin_map_detail_path, class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+  </div>
+
+  <div class="min-w-full">
+    <div class='font-serif'>
+      <% @map_details.each do |map_detail| %>
+        <div class="my-5">
+          <strong class="block font-medium mb-1">サイト名</strong>
+          <%= map_detail.name %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">url</strong>
+          <%= map_detail.url %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">画像</strong>
+          <%= map_detail.image %>
+        </div>
+
+        <div class="my-5">
+          <strong class="block font-medium mb-1">マップid</strong>
+          <%= map_detail.map_id %>
+        </div>
+
+        <% if action_name != "show" %>
+          <%= link_to '地域詳細一覧へ', admin_map_details_path(map_detail), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '地域詳細編集', edit_admin_map_detail_path(map_detail), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <%= link_to '地域詳細詳細へ', admin_map_detail_path(map_detail), class: "btn btn-outline outline-green-800 text-green-800 hover:text-white hover:bg-green-800 rounded-lg" %>
+          <hr class="mt-6">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
