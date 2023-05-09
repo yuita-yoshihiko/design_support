@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'trend', to: 'trends#index'
   get 'image', to: 'images#index'
   get 'quiz', to: 'quizees#index'
+  get 'content', to: 'maps#content'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
@@ -38,7 +39,7 @@ Rails.application.routes.draw do
 
   resources :answers, only: :index
   resources :notifications, only: :index
-  resources :maps, only: :index
+  resources :maps, only: %i[index show]
   resources :quizees, only: :index do
     collection do
       get 'commentary'
@@ -58,6 +59,8 @@ Rails.application.routes.draw do
     resources :users, only: %i[index edit update show destroy]
     resources :quizees
     resources :choices
+    resources :maps
+    resources :map_details
   end
 
   get "/404", to: "error#not_found", as: "not_found"
