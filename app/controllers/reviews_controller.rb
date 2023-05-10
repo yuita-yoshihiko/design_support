@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_or_initialize_by(user_id: current_user.id, design_tip_id: review_params[:design_tip_id])
     @review.score = review_params[:score]
     if @review.save
-      redirect_to design_tips_path(q: { tags_name_cont: 'テクニック' })
+      redirect_to request.referer, success: '評価を登録しました。'
     else
       @design_tip = DesignTip.find(params[:id])
       render 'design_tips/show'

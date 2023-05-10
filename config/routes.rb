@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
 
   resources :users, only: %i[new create destroy]
-  resources :design_tips, only: %i[index show] do
+  resources :design_tips, only: :index do
     resources :reviews, only: %i[index create]
     collection do
       get 'search'

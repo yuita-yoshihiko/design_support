@@ -11,11 +11,6 @@ class DesignTipsController < ApplicationController
     @user = User.new
   end
 
-  def show
-    @design_tip = DesignTip.find(params[:id])
-    @review = Review.new
-  end
-
   def search
     @search_design_tips = DesignTip.all.preload(:reviews)
     @results = @q.result
