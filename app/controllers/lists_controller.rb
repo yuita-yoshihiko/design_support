@@ -11,7 +11,7 @@ class ListsController < ApplicationController
   def create
     @list = current_user.lists.build(list_params)
     if @list.save
-      redirect_to list_design_tips_path, success: 'リストを作成しました。'
+      redirect_to request.referer, success: 'リストを作成しました。'
     else
       flash[:error] = 'リストを作成できませんでした。'
       redirect_to request.referer
