@@ -1,9 +1,11 @@
 <% content_for(:title, t('.title')) %>
 <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-  <div class="flex justify-between items-center max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <div>
-      <div class='font-serif text-gray-600 text-xl md:text-3xl py-12'><%= @map.name%>のデザイン</div>
-      <%= link_to '地図に戻る', maps_path, class: 'btn btn-sm bg-green-700 hover:bg-green-600 text-white font-serif font-light rounded-full' %>
+  <div class="flex justify-between items-center max-w-screen-2xl px-4 md:px-8 mx-auto flex-col lg:flex-row">
+    <div class='py-8'>
+      <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-4 lg:py-12'><%= @map.name%>のデザイン</div>
+      <div class='flex justify-center lg:justify-start'>
+        <%= link_to '地図に戻る', maps_path, class: 'btn btn-sm bg-green-700 hover:bg-green-600 text-white font-serif font-light rounded-full' %>
+      </div>
     </div>
 
     <div class="mb-12 flex md:mb-16">
@@ -23,7 +25,7 @@
   <% @map_details.each do |map_detail| %>
     <div class='flex justify-center'>
       <% if map_detail.map_id == @map.id %>
-        <%= link_to map_detail.name, map_detail.url, class: 'bg-white rounded-lg w-96 text-center text-brown text-xl font-serif hover:text-yellow-900' %>
+        <%= link_to map_detail.name, map_detail.url, class: 'text-center text-brown text-xl font-serif hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
       <% end %>
     </div>
   <% end %>
