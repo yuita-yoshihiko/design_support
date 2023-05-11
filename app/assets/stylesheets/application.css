@@ -197,8 +197,3 @@ input[type="password"] {
 .submit:hover {
   color: #eab308;
 }
-
-.input_image {
-  cursor: pointer;
-  color: #6b7280;
-}
