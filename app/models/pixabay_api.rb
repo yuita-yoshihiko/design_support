@@ -1,4 +1,4 @@
-class PixabayApi < ApplicationRecord
+class PixabayApi
   BASE_URL = "https://pixabay.com/api/"
   API_KEY = Rails.application.credentials.dig(:pixabay, :key)
 
