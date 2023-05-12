@@ -4,6 +4,10 @@ class Notification < ApplicationRecord
   belongs_to :design_tip
   has_many :notification_reads, dependent: :destroy
 
+  validates :design_tip_id, presence: true
+  validates :title, presence: true
+  validates :url, presence: true
+
   def create_notification_reads
     User.where(role: 0).find_each do |user|
       notification_read = user.notification_reads.build(notification: self, checked: false)
