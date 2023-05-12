@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_09_012206) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_12_150421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,7 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_012206) do
     t.datetime "updated_at", null: false
     t.integer "medium", default: 0, null: false
     t.integer "user_id"
-    t.integer "day_pageview", default: 0, null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -95,7 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_012206) do
     t.bigint "map_id", null: false
     t.string "name", null: false
     t.string "url", null: false
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["map_id"], name: "index_map_details_on_map_id"
