@@ -1,5 +1,6 @@
 class YoutubeApi < ApplicationRecord
   belongs_to :design_tip
+
   require 'google/apis/youtube_v3'
   def self.get_thumbnail(design_tip)
     youtube = Google::Apis::YoutubeV3::YouTubeService.new
