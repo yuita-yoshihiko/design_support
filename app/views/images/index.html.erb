@@ -12,10 +12,20 @@
 
 <%= turbo_frame_tag "color" do %>
   <div class='container mx-auto'>
+    <div class='text-gray-600'>条件：jpeg(jpg)またはpng形式で5MB以下</div>
     <div class='flex'>
-      <%= form_with(url: images_path, data: { turbo_frame: 'color' }, remote: true, multipart: true) do |form| %>
+      <%= form_with(model: @image_restriction, url: images_path, data: { turbo_frame: 'color' }, remote: true, multipart: true) do |form| %>
         <div class='flex gap-1 font-serif'>
-          <%= form.file_field :image, required: true, class: 'file-input file-input-ghost w-full max-w-xs border border-gray-500 bg-white' %>
+          <div class='flex flex-col'>
+            <%= form.file_field :image, required: true, class: 'file-input file-input-ghost w-full max-w-xs border border-gray-500 bg-white' %>
+            <% if @image_restriction.errors[:image].any? %>
+              <div class="error-message">
+                <% @image_restriction.errors[:image].each do |message| %>
+                  <p class='text-red-500'><%= message %></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
           <%= form.submit "カラー抽出を行う", class: 'btn bg-green-700 hover:bg-green-600 text-white font-serif rounded-lg' %>
         </div>
       <% end %>
