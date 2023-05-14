@@ -6,12 +6,12 @@ class YoutubeApi < ApplicationRecord
     youtube = Google::Apis::YoutubeV3::YouTubeService.new
     youtube.key = Rails.application.credentials.google[:youtube_key]
 
-    if design_tip.medium == 'movie'
-      url = design_tip.url
-      video_id = url.split('v=').last
-      video_response = youtube.list_videos('snippet', id: video_id)
-      thumbnails = video_response.items.first.snippet.thumbnails
-      thumbnail_url = thumbnails.high.url
-    end
+    return unless design_tip.medium == 'movie'
+
+    url = design_tip.url
+    video_id = url.split('v=').last
+    video_response = youtube.list_videos('snippet', id: video_id)
+    thumbnails = video_response.items.first.snippet.thumbnails
+    thumbnail_url = thumbnails.high.url
   end
 end

@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     @user = User.new
     @review = Review.new
     return unless current_user
+
     @recommend_design_tips = DesignTip.recommended_for(current_user)
   end
 

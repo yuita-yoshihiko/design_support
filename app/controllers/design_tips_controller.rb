@@ -31,6 +31,7 @@ class DesignTipsController < ApplicationController
 
   def set_likes
     return unless current_user
+
     @like_design_tips = current_user.like_design_tips.order(created_at: :desc).preload(:reviews)
     @lists = current_user.lists
   end

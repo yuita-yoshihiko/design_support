@@ -4,7 +4,6 @@ class Notification < ApplicationRecord
   belongs_to :design_tip
   has_many :notification_reads, dependent: :destroy
 
-  validates :design_tip_id, presence: true
   validates :title, presence: true
   validates :url, presence: true
 

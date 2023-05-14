@@ -11,10 +11,8 @@ class ImagesController < ApplicationController
     if @image_restriction.valid?
       @colors = Image.get_image_colors(params)
       search_images
-      render :index
-    else
-      render :index
     end
+    render :index
   end
 
   private
