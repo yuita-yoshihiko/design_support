@@ -50,7 +50,7 @@ class Admin::ChoicesController < Admin::BaseController
   end
 
   def update_correct_attribute
-    if params[:choice][:correct] == "1"
+    if params[:choice][:correct] == '1'
       @choice.update_attribute(:correct, true)
     else
       @choice.update_attribute(:correct, false)
