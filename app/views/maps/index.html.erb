@@ -16,6 +16,43 @@
   <div id='map'></div>
 </div>
 
+<% @maps.each do |map| %>
+  <input type="checkbox" id="my-modal-<%= map.id %>" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative">
+      <label for="my-modal-<%= map.id %>" class="btn btn-sm btn-circle bg-green-800 hover:bg-green-700 text-white absolute right-2 top-2">✕</label>
+      <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+        <div class="flex justify-between items-center max-w-screen-2xl px-4 md:px-8 mx-auto flex-col">
+          <div class='py-4'>
+            <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-4 lg:py-12'><%= map.name%>のデザイン</div>
+          </div>
+
+          <div class="mb-12 flex md:mb-16">
+            <div class="relative top-12 left-12 z-10 -ml-12 overflow-hidden md:top-16 md:left-16 lg:ml-0">
+              <%= image_tag "trip_images/#{map.id}_1.jpg", loading: "lazy", class: "w-96 h-64 object-cover mx-auto rounded-lg" %>
+            </div>
+
+            <div class="overflow-hidden">
+              <%= image_tag "trip_images/#{map.id}_2.jpg", loading: "lazy", class: "w-96 h-64 object-cover mx-auto rounded-lg" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container mx-auto pt-3 grid sm:grid-cols-2 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+        <% @map_details.each do |map_detail| %>
+          <div class='flex justify-center'>
+            <% if map_detail.map_id == map.id %>
+              <%= link_to map_detail.name, map_detail.url, class: 'text-center text-brown text-xl font-serif hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <style>
 #map {
   height: 700px;
@@ -51,30 +88,13 @@ function initMap(){
     });
 
     infoWindow[i] = new google.maps.InfoWindow({
-      content: `<a href='/maps/${maps[i].id}'>${maps[i].name}</a>`,
+      content: `<label for="my-modal-${maps[i].id}">${maps[i].name}</label>`,
     });
     
     marker[i].addListener('click', function() {
       infoWindow[i].open(map, marker[i]);
     });
   }
-}
-
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
-      });
-      display.textContent = "検索結果：" + results[ 0 ].geometry.location
-    } else {
-      alert('該当する結果がありませんでした：' + status);
-    }
-  });   
 }
 
 </script>

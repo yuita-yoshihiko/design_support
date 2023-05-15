@@ -3,10 +3,7 @@ class MapsController < ApplicationController
 
   def index
     gon.maps = Map.all
-  end
-
-  def show
-    @map = Map.find(params[:id])
-    @map_details = @map.map_details
+    @maps = Map.all
+    @map_details = MapDetail.all
   end
 end
