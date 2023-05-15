@@ -1,6 +1,5 @@
 <div class="p-12 md:p-18">
   <%= form_with model: @user, local: true do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
     <div class="flex flex-col mb-4 md:mb-6">
       <%= f.label :name %>
       <%= f.text_field :name, class: 'border-none', required: true %>
