@@ -27,7 +27,7 @@
             <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-4 lg:py-12'><%= map.name%>のデザイン</div>
           </div>
 
-          <div class="mb-12 flex md:mb-16">
+          <div class="flex">
             <div class="relative top-12 left-12 z-10 -ml-12 overflow-hidden md:top-16 md:left-16 lg:ml-0">
               <%= image_tag "trip_images/#{map.id}_1.jpg", loading: "lazy", class: "w-96 h-64 object-cover mx-auto rounded-lg" %>
             </div>
@@ -40,14 +40,14 @@
         </div>
       </div>
 
-      <div class="container mx-auto pt-3 grid sm:grid-cols-2 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
-        <% @map_details.each do |map_detail| %>
-          <div class='flex justify-center'>
+      <div class="container mx-auto pt-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+        <div class='flex justify-center flex-col'>
+          <% @map_details.each do |map_detail| %>
             <% if map_detail.map_id == map.id %>
-              <%= link_to map_detail.name, map_detail.url, class: 'text-center text-brown text-xl font-serif hover:text-yellow-900', target: :_blank, rel: "noopener noreferrer" %>
+              <%= link_to map_detail.name, map_detail.url, class: 'text-center text-brown text-xl font-serif hover:text-yellow-900 mb-8', target: :_blank, rel: "noopener noreferrer" %>
             <% end %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
