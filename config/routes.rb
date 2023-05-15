@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   resources :answers, only: :index
   resources :notifications, only: :index
-  resources :maps, only: %i[index show]
+  resources :maps, only: :index
   resources :quizees, only: :index do
     collection do
       get 'commentary'
