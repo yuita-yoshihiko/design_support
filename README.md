@@ -4,7 +4,7 @@
 [https://www.anyone-design.com](https://www.anyone-design.com)  
   
 ## サービス概要  
-誰でもデザインは、Web系デザイン初学者向けの情報検索サービスです。  
+誰でもデザインは、Web系デザイン初学者向けの情報検索・閲覧サービスです。  
 Web系デザインに関する情報をジャンルごとにWebサイト、書籍、動画の3つの媒体に分けて掲載しており  
 学びたい情報を自分に合った媒体で探すことができます。  
   
@@ -13,45 +13,71 @@ Web系デザインに関する情報をジャンルごとにWebサイト、書�
 Web系のデザインの基本的な情報を手軽に収集、管理したい人。  
 Webデザイナーやエンジニアを目指しており、デザインの基礎やUI/UXについて勉強し始めた人。   
   
-## 機能紹介   
-#### トップページ
-トップページに掲載している機能は以下の通りです。  
-・あなたに合った情報（リコメンド機能）ページへの遷移  
-・情報の検索機能  
-・各サブコンテンツページへの遷移  
-・情報閲覧ページへの遷移  
-・初学者向けの簡易ロードマップ「初心者はこちら」の閲覧。  
-[![Image from Gyazo](https://i.gyazo.com/137e00a5862b0449990a49f82fc40f4f.jpg)](https://gyazo.com/137e00a5862b0449990a49f82fc40f4f)  
-[![Image from Gyazo](https://i.gyazo.com/d367e4d3fcd220f38d1efbc0a5224240.png)](https://gyazo.com/d367e4d3fcd220f38d1efbc0a5224240)  
-[![Image from Gyazo](https://i.gyazo.com/19c9c5de67912b467b5b4bda331b7e67.jpg)](https://gyazo.com/19c9c5de67912b467b5b4bda331b7e67)  
+## 主要機能一覧   
+・情報の閲覧、検索機能  
+・情報のレコメンド機能（2種類）  
+・トレンド情報の閲覧  
+・情報のお気に入り、リスト化機能  
+・カラー抽出機能  
+・UI・UXクイズ  
+・星レビュー機能  
+・高レビュー情報のピックアップ  
+・情報追加時の通知機能  
+・GoogleMapを用いたデザインギャラリー  
 
-#### あなたに合った情報  
-あなたに合った情報ページでは、3つの質問に対する回答をもとにユーザーにおすすめの情報を表示します。  
-[![Image from Gyazo](https://i.gyazo.com/95f64314dd930e4032cbe326af475adc.png)](https://gyazo.com/95f64314dd930e4032cbe326af475adc)  
-[![Image from Gyazo](https://i.gyazo.com/72360af6bbf45a707582999c66e65b30.png)](https://gyazo.com/72360af6bbf45a707582999c66e65b30)  
-
-#### 検索機能
-検索は情報タイトルの曖昧検索を実装しています。  
-[![Image from Gyazo](https://i.gyazo.com/f4ba0d7eb709e263d22abc36fe4fe087.jpg)](https://gyazo.com/f4ba0d7eb709e263d22abc36fe4fe087)  
-
-#### サブコンテンツページ  
-サブコンテンツページにはWebデザインと関連が深い情報や、ステップアップの助けになる情報を掲載しています。  
-[![Image from Gyazo](https://i.gyazo.com/c5ff0b3047e669920fd7344aab49fd9e.jpg)](https://gyazo.com/c5ff0b3047e669920fd7344aab49fd9e)  
-[![Image from Gyazo](https://i.gyazo.com/16d4db57c611143c3fc857c0e7940af1.jpg)](https://gyazo.com/16d4db57c611143c3fc857c0e7940af1)  
-[![Image from Gyazo](https://i.gyazo.com/ed2078d4f7dfb1d365a78af11a831fd2.jpg)](https://gyazo.com/ed2078d4f7dfb1d365a78af11a831fd2)  
-
-#### 情報閲覧ページ  
-トップページの情報ジャンルから遷移した画面で、媒体ごとに分けられた各ジャンルの情報を閲覧できます。 
-[![Image from Gyazo](https://i.gyazo.com/ec973f355b30f1c16b43060904a89754.jpg)](https://gyazo.com/ec973f355b30f1c16b43060904a89754)  
-
-### ログイン後
-#### お気に入り機能  
-気に入った情報はお気に入り登録することができます。  
-[![Image from Gyazo](https://i.gyazo.com/8bef14d325c0af0a967c8e366e8a02a3.jpg)](https://gyazo.com/8bef14d325c0af0a967c8e366e8a02a3)  
-
-#### お気に入りした情報のリスト化機能  
-お気に入り登録した情報を任意の名前をつけたリストに分けて管理することができます。  
-[![Image from Gyazo](https://i.gyazo.com/712b5edd4eb2d1e4aef48d9fb7c1d7a3.jpg)](https://gyazo.com/712b5edd4eb2d1e4aef48d9fb7c1d7a3)  
+#### 情報の閲覧、検索機能  
+トップページに情報ジャンルの一覧を表示しており、  
+そこからジャンルごとの情報一覧ページに遷移することができます。  
+検索バーは情報のタイトルのあいまい検索を実装し、オートコンプリート化しています。  
+[![Image from Gyazo](https://i.gyazo.com/6f973d3292a15ab2de363e4d550ef5ec.gif)](https://gyazo.com/6f973d3292a15ab2de363e4d550ef5ec)  
+  
+#### 情報のレコメンド機能（2種類）  
+1つ目は3つの質問を用意し、ユーザーの答えに応じたおすすめの情報を表示する機能です。  
+[![Image from Gyazo](https://i.gyazo.com/c5187b69e8a373ebca08a8862d61a1c3.gif)](https://gyazo.com/c5187b69e8a373ebca08a8862d61a1c3)  
+  
+もう一つはユーザーがお気に入り登録した情報から情報をピックアップしてトップページに表示するものです。  
+[![Image from Gyazo](https://i.gyazo.com/3b6ab713a11727b1452020f9f664f6b9.png)](https://gyazo.com/3b6ab713a11727b1452020f9f664f6b9)  
+  
+#### トレンド情報の閲覧  
+外部サービスから取得したトレンド情報を閲覧できます。  
+[![Image from Gyazo](https://i.gyazo.com/3e7ec08a193150586bc2cee3d96a7822.gif)](https://gyazo.com/3e7ec08a193150586bc2cee3d96a7822)  
+  
+#### 情報のお気に入り、リスト化機能  
+ログイン後に気に入った情報のお気に入り登録と、お気に入りした情報を  
+任意の名前をつけたリストに分類して管理することができるようになります。  
+[![Image from Gyazo](https://i.gyazo.com/c7ca10167f67224c722be1ae45bcea88.gif)](https://gyazo.com/c7ca10167f67224c722be1ae45bcea88)  
+  
+#### カラー抽出機能  
+GoogleCloudVisionAPIの画像解析機能を利用して  
+画像に多く使われている色を5色抽出する機能です。  
+お気に入りの画像や写真と同じ雰囲気のサイトを作りたい時や  
+ロゴやOGPなどから色を抽出してそれに寄せた配色をサポートすることを想定しています。  
+[![Image from Gyazo](https://i.gyazo.com/82294921963c349d27310e277056b467.gif)](https://gyazo.com/82294921963c349d27310e277056b467)  
+  
+#### UI・UXクイズ  
+UI・UXについてクイズ形式で学べる機能です。  
+[![Image from Gyazo](https://i.gyazo.com/ecb1be5efaa1a5bfac002da0ce2e2d4a.gif)](https://gyazo.com/ecb1be5efaa1a5bfac002da0ce2e2d4a)  
+  
+#### 星レビュー機能  
+5点満点で情報にレビューを付けることができます。  
+[![Image from Gyazo](https://i.gyazo.com/b5f2af2cbfd9f84943d0b590d4dd3512.gif)](https://gyazo.com/b5f2af2cbfd9f84943d0b590d4dd3512)  
+  
+#### 高レビュー情報のピックアップ  
+レビューの点数が高い情報をトップページに表示させてユーザーの目に触れやすくしています。  
+[![Image from Gyazo](https://i.gyazo.com/42a5561fed799cc7d985859b2699598a.png)](https://gyazo.com/42a5561fed799cc7d985859b2699598a)  
+  
+#### 情報追加時の通知機能  
+新たな情報が追加された際にはユーザーに通知されるようになっています。  
+未読の通知があると通知ボタンの右上にオレンジのアイコンが表示され、  
+既読になると消えるように実装しています。  
+[![Image from Gyazo](https://i.gyazo.com/f012d1084425f34cf3c07d969617d2e2.gif)](https://gyazo.com/f012d1084425f34cf3c07d969617d2e2)  
+#### GoogleMapを用いたデザインギャラリー  
+サービスのアクセントの意味も込めて  
+GoogleMapを用いて見た目のインパクトのある機能を実装しました。  
+ピンをクリックすると対象の地域の優れたデザインのWebサイトへのリンクが表示されます。  
+[![Image from Gyazo](https://i.gyazo.com/b1c27b2d8407246530da011ed654e956.gif)](https://gyazo.com/b1c27b2d8407246530da011ed654e956)  
+  
+  
 
 ## その他の機能
 ・ユーザー登録、ログイン機能  
@@ -80,6 +106,9 @@ GitHub Actions
 #### API(ログイン機能に使用)  
 Twitter API  
 Google API  
+Google Cloud Vision API  
+pixabay API  
+Google Map API  
 
 ## 画面遷移図
 [画面遷移図](https://www.figma.com/file/GddVj9pDkApNER6qXSPhmY/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=eQoRBW5SHxuSMXco-0)
