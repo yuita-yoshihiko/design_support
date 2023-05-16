@@ -13,8 +13,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to request.referer, success: '評価を登録しました。'
     else
-      @design_tip = DesignTip.find(params[:id])
-      render 'design_tips/show'
+      redirect_to request.referer, error: "評価が登録できませんでした。"
     end
   end
 
