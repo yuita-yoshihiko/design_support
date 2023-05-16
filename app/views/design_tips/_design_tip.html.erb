@@ -21,7 +21,7 @@
     <div class="flex place-content-between">
       <div class="flex text-sm gap-1 text-gray-500">評価 :
         <span class="star-rating">
-          <span class="star-rating-front" style="width: <%= design_tip.average_score_percentage(design_tip.id) %>%;">★★★★★</span>
+          <span class="star-rating-front" style="width: <%= design_tip.average_score(design_tip.id, percentage: true) %>%;">★★★★★</span>
           <span class="star-rating-back">★★★★★</span>
         </span> 
         <div><%= design_tip.average_score(design_tip.id) %>点</div>
