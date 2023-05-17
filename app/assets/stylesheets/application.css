@@ -23,9 +23,11 @@
   background: white;
 }
 
-.tab-top.is-active{
-  color: #9a8756;
-  transition: all 0.2s ease-out;
+@media (max-width: 768px) {
+  .tab.is-active {
+    box-shadow: none;
+    background: none;
+  }
 }
 
 input[type="text"]:focus {

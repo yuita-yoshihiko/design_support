@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <div class="flex font-serif flex-row justify-center lg:justify-start gap-2 lg:gap-8 items-center">
+        <div class="flex font-serif flex-row mb-8 md:mb-0 justify-start gap-2 lg:gap-8 items-center">
           <%= render 'search_form' %>
         </div>
       </div>
@@ -88,39 +88,39 @@
   </div>
 </div>
 
-<% if logged_in? %>
-  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>あなたにおすすめの情報</div>
-  <% if @recommend_design_tips.present? %>
-    <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16">
-      <% @recommend_design_tips.take(3).each do |design_tip| %>
-        <%= render 'design_tips/design_tip', design_tip: design_tip %>
-      <% end %>
-    </div>
+<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <% if logged_in? %>
+    <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>あなたにおすすめの情報</div>
+    <% if @recommend_design_tips.present? %>
+      <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16">
+        <% @recommend_design_tips.take(3).each do |design_tip| %>
+          <%= render 'design_tips/design_tip', design_tip: design_tip %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class='text-center text-gray-600 pb-20 font-serif pt-8'>お気に入り登録された情報がありません。情報をお気に入りしていただくと、<br>そちらをもとにあなたにおすすめの情報を表示します。</div>
+    <% end %>
   <% else %>
-    <div class='text-center text-gray-600 pb-20 font-serif pt-8'>お気に入り登録された情報がありません。情報をお気に入りしていただくと、<br>そちらをもとにあなたにおすすめの情報を表示します。</div>
+    <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>あなたにおすすめの情報</div>
+    <div class='text-center text-gray-600 pb-20 font-serif pt-8'>ログイン後、あなたがお気に入りした情報をもとにおすすめの情報が表示されます。</div>
   <% end %>
-<% else %>
-  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>あなたにおすすめの情報</div>
-  <div class='text-center text-gray-600 pb-20 font-serif pt-8'>ログイン後、あなたがお気に入りした情報をもとにおすすめの情報が表示されます。</div>
-<% end %>
 
-<div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>高評価の情報</div>
-<div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16">
-  <% @sort_design_tips.take(3).each do |design_tip| %>
-    <%= render 'design_tips/design_tip', design_tip: design_tip %>
-  <% end %>
-</div>
-
-<div data-controller="view">
-  <div class="flex justify-around pt-20">
-    <a class="tab is-active text-gray-500 hover:text-brown rounded-lg text-lg md:text-2xl font-serif mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
-    <a class="tab not-active text-gray-500 hover:text-brown rounded-lg text-lg md:text-2xl font-serif mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">脱・初心者に向けて</a>
-    <a class="tab not-active text-gray-500 hover:text-brown rounded-lg text-lg md:text-2xl font-serif mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">サービスの運用について</a>
+  <div class='text-brown text-lg md:text-xl lg:text-3xl font-serif text-center pt-16 md:pt-36'>高評価の情報</div>
+  <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16">
+    <% @sort_design_tips.take(3).each do |design_tip| %>
+      <%= render 'design_tips/design_tip', design_tip: design_tip %>
+    <% end %>
   </div>
 
-  <div data-view-target="content" >
-    <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div data-controller="view">
+    <div class="flex justify-around pt-20">
+      <a class="tab is-active text-gray-500 hover:text-brown rounded-lg md:text-2xl font-serif mb-4 md:mb-6" aria-current="page" data-view-target="menu" data-action="view#menuClick">初心者はこちら</a>
+      <a class="tab not-active text-gray-500 hover:text-brown rounded-lg md:text-2xl font-serif mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">脱・初心者に向けて</a>
+      <a class="tab not-active text-gray-500 hover:text-brown rounded-lg md:text-2xl font-serif mb-4 md:mb-6" data-view-target="menu" data-action="view#menuClick">サービスの運用について</a>
+    </div>
+
+    <div data-view-target="content" >
+      <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
         <div class="font-serif text-gray-600 text-xl md:text-3xl lg:text-4xl py-12">デザインって何から始めたらいいの？</div>
         <p class="max-w-md text-gray-600 mb-8">
         そんなあなたに向けて、まず始めに知っておきたいこと<br>
@@ -128,10 +128,8 @@
         まずはここから始めてみましょう。
         </p>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 sm:py-8 lg:py-12">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 sm:py-8 lg:py-12">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-48 sm:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "base.jpg", loading: "lazy", class: "w-full h-full object-cover object-center"%>
@@ -150,10 +148,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
             <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">手を動かす</div>
@@ -182,10 +178,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray pt-6 pb-12 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray pt-6 pb-12 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "make.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
@@ -204,10 +198,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
             <div class="font-serif text-gray-600 text-xl lg:text-2xl mb-4">※権利の確認は忘れずに※</div>
@@ -227,21 +219,17 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="hidden" data-view-target="content" >
-    <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="hidden" data-view-target="content" >
+      <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
         <div class="font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12">脱・初心者に向けて</div>
         <p class="text-gray-600 mb-8">
         初心者からステップアップするために知っておきたいことをまとめました。<br>
         より良いデザインを作るための知見を得て、初心者の壁を越えていきましょう。<br>
         </p>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "design_tool.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
@@ -261,10 +249,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
             <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">レスポンシブ対応について知る</div>
@@ -283,10 +269,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray pt-6 pb-12 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray pt-6 pb-12 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "look.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
@@ -306,10 +290,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
             <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">UI/UXについて知識を深める</div>
@@ -329,21 +311,17 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="hidden" data-view-target="content" >
-    <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="hidden" data-view-target="content" >
+      <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
         <div class="font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12">サービスの運用について</div>
         <p class="text-gray-600 mb-8">
         作成したサービスは多くの人に知ってもらって初めて価値が生まれます。<br>
         サービスの拡散や運用についての情報にも目を通しておきましょう。<br>
         </p>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "seo.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
@@ -363,10 +341,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray py-6 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray py-6 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-3/5 flex flex-col p-4 sm:p-8">
             <div class="font-serif text-gray-600 text-xl md:text-xl lg:text-2xl mb-4">Webマーケティング</div>
@@ -384,10 +360,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg-gray pt-6 pb-12 lg:py-20">
-      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="bg-gray pt-6 pb-12 lg:py-20">
         <div class="md:h-80 flex flex-col sm:flex-row bg-white rounded-lg overflow-hidden">
           <div class="w-full sm:w-1/2 lg:w-2/5 h-30 md:h-auto order-first sm:order-none bg-gray-300">
             <%= image_tag "branding.jpg", loading: "lazy", class: "w-full h-full object-cover object-center" %>
