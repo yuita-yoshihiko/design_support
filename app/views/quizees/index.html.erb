@@ -1,60 +1,60 @@
 <% content_for(:title, t('.title')) %>
-<div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
     <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>UI・UXクイズ</div>
     <p class="text-gray-600 mb-8">
       Webデザインを行う上で何かと耳にするUI・UXという言葉。<br>
       それにまつわる知識をクイズ形式で学ぶことができます。<br>
     </p>
   </div>
-</div>
 
-<div class='container mx-auto grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16'>
-  <% @quizees.each do |quiz| %>
-    <%= turbo_frame_tag quiz do %>
-      <div class="my-12 bg-white flex shadow-lg flex-col rounded-lg border-2 border-green-700">
-        <div class="bg-green-700 py-2 text-center font-serif text-sm text-white">問題</div>
-        <div class="flex flex-col p-6 pt-8">
-          <div class="mx-auto mb-8 px-8 text-center text-gray-600">
-            <%= quiz.question %>
-          </div>
-          <%= form_with(url: quizees_path, method: 'get', remote: true) do |f| %>
-            <% @choices.each do |choice| %>
-              <% if choice.quiz_id == quiz.id %>
-                <div class="space-y-4">
-                  <div class="flex items-center gap-2 pb-2 text-gray-500">
-                    <%= f.radio_button :correct, choice.correct %>
-                    <%= choice.content %>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-            <div class="mx-auto flex justify-center py-4">
-              <%= f.submit "回答する", data: { turbo_frame: quiz }, class: "btn btn-sm font-serif font-light bg-green-700 hover:bg-green-600 text-white text-center rounded-lg" %>
+  <div class='container mx-auto grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-12 md:mt-20 pb-16'>
+    <% @quizees.each do |quiz| %>
+      <%= turbo_frame_tag quiz do %>
+        <div class="my-12 bg-white flex shadow-lg flex-col rounded-lg border-2 border-green-700">
+          <div class="bg-green-700 py-2 text-center font-serif text-sm text-white">問題</div>
+          <div class="flex flex-col p-6 pt-8">
+            <div class="mx-auto mb-8 px-8 text-center text-gray-600">
+              <%= quiz.question %>
             </div>
-          <% end %>
-
-          <div class='text-gray-600'>
-            <div class='pb-4 font-serif text-lg'>
-              <%= @result %>
-            </div>
-            <% if @result %>
-              <% @choices.each do |choice| %> 
+            <%= form_with(url: quizees_path, method: 'get', remote: true) do |f| %>
+              <% @choices.each do |choice| %>
                 <% if choice.quiz_id == quiz.id %>
-                  <% if choice.correct == true %>
-                    <div class='pb-4'>
-                      <div class='font-serif text-lg'>答え</div>
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-2 pb-2 text-gray-500">
+                      <%= f.radio_button :correct, choice.correct %>
                       <%= choice.content %>
                     </div>
-                  <% end %>
+                  </div>
                 <% end %>
               <% end %>
-              <div class='font-serif text-lg'>解説</div>
-              <%= quiz.commentary%>
+              <div class="mx-auto flex justify-center py-4">
+                <%= f.submit "回答する", data: { turbo_frame: quiz }, class: "btn btn-sm font-serif font-light bg-green-700 hover:bg-green-600 text-white text-center rounded-lg" %>
+              </div>
             <% end %>
+
+            <div class='text-gray-600'>
+              <div class='pb-4 font-serif text-lg'>
+                <%= @result %>
+              </div>
+              <% if @result %>
+                <% @choices.each do |choice| %> 
+                  <% if choice.quiz_id == quiz.id %>
+                    <% if choice.correct == true %>
+                      <div class='pb-4'>
+                        <div class='font-serif text-lg'>答え</div>
+                        <%= choice.content %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <div class='font-serif text-lg'>解説</div>
+                <%= quiz.commentary%>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

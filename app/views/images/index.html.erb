@@ -1,17 +1,15 @@
 <% content_for(:title, t('.title')) %>
-<div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
-  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>カラー抽出</div>
+<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div class="pb-6 sm:pb-8 lg:pb-12 mt-20">
+    <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-8 mb:py-12'>カラー抽出</div>
     <p class="text-gray-600 mb-6">
       お持ちの写真や画像に多く使われている色とそのカラーコード、RGB値を抽出します。<br>
       この写真の中にある色は何色だろう？　この画像みたいな雰囲気のデザインを作りたい！<br>
       そんなときに色の特定や、配色のヒントを得るためにお使いください。<br>
     </p>
   </div>
-</div>
 
-<%= turbo_frame_tag "color" do %>
-  <div class='container mx-auto'>
+  <%= turbo_frame_tag "color" do %>
     <div class='text-gray-600'>条件：jpeg(jpg)またはpng形式で5MB以下</div>
     <div class='flex'>
       <%= form_with(model: @image_restriction, url: images_path, data: { turbo_frame: 'color' }, remote: true, multipart: true) do |form| %>
@@ -42,13 +40,11 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
 
-<hr class='my-28'>
+  <hr class='my-28'>
 
-<div>
-  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div>
     <p class="text-gray-600 mb-8">
       下のフォームから、画像を検索　→　画像を保存　→　保存した画像を選択してカラー抽出<br>
       以上の手順でも機能をお使いいただけます。<br>
@@ -56,23 +52,23 @@
       出典元：<%= link_to 'pixabay', 'https://pixabay.com/ja/', class: 'text-green-700 hover:text-green-900', target: :_blank, rel: "noopener noreferrer" %>
     </p>
   </div>
-</div>
 
-<%= turbo_frame_tag 'search' do %>
-  <div class='container mx-auto font-serif mb-12'>
-    <%= form_with(url: images_path, method: 'get', remote: true) do |form| %>
-      <%= form.search_field :query, class: "w-44 md:w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'キーワードを入力', required: true  %>
-      <%= form.submit '画像を検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
-    <% end %>
-  </div>
-
-  <% if @query.present? %>
-    <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
-      <% @images.each do |image_url| %>
-        <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
-          <%= image_tag image_url , class: "w-96 h-64 object-cover mx-auto" %>
-        </div>
+  <%= turbo_frame_tag 'search' do %>
+    <div class='container mx-auto font-serif mb-12'>
+      <%= form_with(url: images_path, method: 'get', remote: true) do |form| %>
+        <%= form.search_field :query, class: "w-44 md:w-48 md:w-64 h-12 outline-green-800 rounded-lg", placeholder: 'キーワードを入力', required: true  %>
+        <%= form.submit '画像を検索', data: { turbo_frame: 'search' }, class: 'btn bg-green-700 hover:bg-green-600 text-white rounded-lg' %>
       <% end %>
     </div>
+
+    <% if @query.present? %>
+      <div class="container mx-auto pt-3 grid sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 mt-20 pb-16">
+        <% @images.each do |image_url| %>
+          <div class="bg-white rounded-lg shadow-lg p-4 lg:p-5">
+            <%= image_tag image_url , class: "w-96 h-64 object-cover mx-auto" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -1,15 +1,13 @@
 <% content_for(:title, t('.title')) %>
-<div class="mt-20">
-  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+<div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+  <div class="mt-20">
     <div class='font-serif text-gray-600 text-xl mb:text-3xl lg:text-4xl py-12'>新着情報通知</div>
     <p class="text-gray-600 mb-8">
       新しい情報が追加された際はこちらに通知します。
     </p>
   </div>
-</div>
 
-<div class="py-6 sm:py-8 lg:py-12">
-  <div class="mx-auto max-w-screen-md px-4 md:px-8">
+  <div class="py-6 sm:py-8 lg:py-12">
     <div class="divide-y">
       <% if @notifications.exists? %>
         <%= render @notifications %>
