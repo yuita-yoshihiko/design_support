@@ -14,15 +14,17 @@
 </div>
 
 <div class='xl:hidden'>
-  <div class="dropdown dropdown-hover my-8">
-    <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 font-serif ml-2 lg:ml-0 hover:text-white hover:bg-green-800 rounded-lg">情報ジャンル</label>
-    <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-164 font-normal text-sm">
-      <li>
-        <% @tag_list.each do|tag| %>
-          <%= link_to tag.name, design_tips_path(q: { tags_name_cont: tag.name }), { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
-        <% end %>
-      </li>
-    </ul>
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <div class="dropdown dropdown-hover my-8">
+      <label tabindex="0" class="btn btn-outline outline-green-800 text-green-800 font-serif ml-2 lg:ml-0 hover:text-white hover:bg-green-800 rounded-lg">情報ジャンル</label>
+      <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-white rounded-lg w-52 h-164 font-normal text-sm">
+        <li>
+          <% @tag_list.each do|tag| %>
+            <%= link_to tag.name, design_tips_path(q: { tags_name_cont: tag.name }), { class: "text-base font-serif text-gray-500 hover:text-emerald-600 m-4" } %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
