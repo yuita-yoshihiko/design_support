@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'maps/index'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
-  root 'home#top'
-  get 'privacy_policy', to: 'home#privacy_policy'
-  get 'terms_of_use', to: 'home#terms_of_use'
+  root 'homes#top'
+  get 'privacy_policy', to: 'homes#privacy_policy'
+  get 'terms_of_use', to: 'homes#terms_of_use'
   get 'trend', to: 'trends#index'
   get 'image', to: 'images#index'
   get 'quiz', to: 'quizees#index'
@@ -63,6 +63,6 @@ Rails.application.routes.draw do
     resources :map_details
   end
 
-  get "/404", to: "error#not_found", as: "not_found"
-  get "/500", to: "error#internal_server_error", as: "internal_server_error"
+  get "/404", to: "errors#not_found", as: "not_found"
+  get "/500", to: "errors#internal_server_error", as: "internal_server_error"
 end

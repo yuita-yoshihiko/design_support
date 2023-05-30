@@ -19,7 +19,7 @@ ja:
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
-  home:
+  homes:
     privacy_policy:
       title: 'プライバシーポリシー'
     terms_of_use:

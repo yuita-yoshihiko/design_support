@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomesController < ApplicationController
   skip_before_action :require_login
   before_action :set_q, only: :top
   before_action :set_tag_list, only: :top
