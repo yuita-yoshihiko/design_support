@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  config.external_providers = %i[twitter google]
+  config.external_providers = %i[google]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -115,10 +115,10 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # Make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = Rails.application.credentials.dig(:twitter, :key)
-  config.twitter.secret = Rails.application.credentials.dig(:twitter, :secret_key)
-  config.twitter.callback_url = Settings.sorcery[:twitter_callback_url]
-  config.twitter.user_info_mapping = {email: 'screen_name', name: 'name'}
+  # config.twitter.key = Rails.application.credentials.dig(:twitter, :key)
+  # config.twitter.secret = Rails.application.credentials.dig(:twitter, :secret_key)
+  # config.twitter.callback_url = Settings.sorcery[:twitter_callback_url]
+  # config.twitter.user_info_mapping = {email: 'screen_name', name: 'name'}
   #
   # config.facebook.key = ""
   # config.facebook.secret = ""
