@@ -1,6 +1,7 @@
 class MapDetail < ApplicationRecord
   belongs_to :map
 
-  validates :content, presence: true, length: { maximum: 65_535 }
+  validates :name, presence: true, length: { maximum: 255 }
   validates :url, presence: true
+  validates :map_id, presence: true
 end
