@@ -1,38 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:user) { build(:user) }
+
   it 'ユーザー名、メールアドレス、パスワードがあれば登録できること' do
-    user = User.new(
-      name: 'first',
-      email: 'tester@example.com',
-      password: 'dottle-nouveau-pavilion-tights-furze',
-      password_confirmation: 'dottle-nouveau-pavilion-tights-furze'
-    )
     expect(user).to be_valid
   end
 
   it 'ユーザー名がなければ登録できないこと' do
-    user = User.new(name: nil)
+    user.name = nil
     user.valid?
     expect(user.errors[:name]).to include('を入力してください')
   end
 
+  it "ユーザー名は20文字以内であること" do
+    user.name = 'a' * 21
+    user.valid?
+    expect(user.errors[:name]).to include("は20文字以内で入力してください")
+  end
+
   it 'メールアドレスがなければ登録できないこと' do
-    user = User.new(email: nil)
+    user.email = nil
     user.valid?
     expect(user.errors[:email]).to include('を入力してください')
   end
 
   it '重複したメールアドレスなら登録できないこと' do
-    User.create(
-      name: 'first',
-      email: 'tester@example.com',
-      password: 'dottle-nouveau-pavilion-tights-furze',
-      password_confirmation: 'dottle-nouveau-pavilion-tights-furze'
-    )
+    created_user = create(:user)
     user = User.new(
       name: 'first',
-      email: 'tester@example.com',
+      email: created_user.email,
       password: 'dottle-nouveau-pavilion-tights-furze',
       password_confirmation: 'dottle-nouveau-pavilion-tights-furze'
     )
@@ -40,8 +37,14 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include('はすでに存在します')
   end
 
+  it "パスワードがなければ無効であること" do
+    user.password = nil
+    user.valid?
+    expect(user.errors[:password]).to include("は3文字以上で入力してください")
+  end
+
   it 'パスワードは3文字以上でなければ登録できないこと' do
-    user = User.new(password: nil)
+    user.password = 'a' * 2
     user.valid?
     expect(user.errors[:password]).to include('は3文字以上で入力してください')
   end
