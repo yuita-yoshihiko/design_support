@@ -1,7 +1,7 @@
 class Ask < ApplicationRecord
   has_many :responses, dependent: :destroy
 
-  validates :ask_detail, presence: true
+  validates :ask_detail, presence: true, length: { maximum: 255 }
 
   def self.create_response(params)
     responses = params[:responses]&.values || []
