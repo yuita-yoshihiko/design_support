@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :review do
-    user { nil }
-    design_tip { nil }
+    association :user
+    association :design_tip
     score { 1 }
   end
 end
