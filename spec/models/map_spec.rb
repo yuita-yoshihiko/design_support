@@ -13,6 +13,12 @@ RSpec.describe Map, type: :model do
     expect(map.errors[:name]).to include("を入力してください")
   end
 
+  it "地域名は100文字以内であること" do
+    map.name = 'a' * 101
+    map.valid?
+    expect(map.errors[:name]).to include("は100文字以内で入力してください")
+  end
+
   it "緯度がなければ登録できないこと" do
     map.latitude = nil
     map.valid?

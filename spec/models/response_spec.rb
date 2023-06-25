@@ -13,6 +13,12 @@ RSpec.describe Response, type: :model do
     expect(response.errors[:content]).to include("を入力してください")
   end
 
+  it "選択肢は500文字以内であること" do
+    response.content = 'a' * 501
+    response.valid?
+    expect(response.errors[:content]).to include("は500文字以内で入力してください")
+  end
+
   it "回答コードがなければ登録できないこと" do
     response.is_answer = nil
     response.valid?
